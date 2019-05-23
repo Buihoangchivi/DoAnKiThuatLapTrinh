@@ -10,6 +10,7 @@ void DaoHam2(float a, float b, float c);
 void DaoHam3(float a, float b, float c, float d);
 void DaoHam4(float a, float b, float c);
 void DaoHam5(float a, float b, float c, float d);
+void DaoHam6(float a, float b, float c, float d, float e);
 void DH_4(float a, float b, float c, float d);
 
 #endif

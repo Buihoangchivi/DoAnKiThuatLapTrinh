@@ -26,9 +26,9 @@ void DaoHam_XetDau(int k, float a, float b, float c, float d, float e)
 	case 5:
 		DaoHam5(a, b, c, d);
 		break;
-		//case 6:
-		//DaoHam_XetDau_6(a, b, c, d, e);
-		//break;
+	case 6:
+		DaoHam6(a, b, c, d, e);
+		break;
 	default:
 		break;
 	}
@@ -77,13 +77,13 @@ void XetDau2(float a, float b, float c)
 	{
 		if (a < 0)
 		{
-			cout << "\tDao ham luon am voi x chay tu -" << (char)236 << " den be hon " << x << " va x chay tu lon hon " 
+			cout << "\tDao ham luon am voi x chay tu -" << (char)236 << " den be hon " << x << " va x chay tu lon hon "
 				<< y << " den +" << (char)236 << endl;
 			cout << "\tDao ham luon duong voi x chay tu lon hon " << x << " den be hon " << y << endl;
 		}
 		else
 		{
-			cout << "\tDao ham luon duong voi x chay tu -" << (char)236 << " den be hon " << x 
+			cout << "\tDao ham luon duong voi x chay tu -" << (char)236 << " den be hon " << x
 				<< " va x chay tu lon hon " << y << " den +" << (char)236 << endl;
 			cout << "\tDao ham luon am voi x chay tu lon hon " << x << " den be hon " << y << endl;
 		}
@@ -210,5 +210,53 @@ void DaoHam5(float a, float b, float c, float d)
 	cout << endl;
 	cout << "Xet dau dao ham y':" << endl;
 	XetDau4(a*d - b*c, c, d);
+}
+
+void DH_5(float a, float b, float c, float d, float e)
+{
+	float a1 = a*d, b1 = 2 * a*e, c1 = b*e - c*d;
+	if (b1 != 0 || c1 != 0) cout << "(";
+	PT_2(a*d, 2 * a*e, b*e - c*d);
+	if (b1 != 0 || c1 != 0) cout << ")";
+	cout << " / ";
+	if (2 * d*e != 0 || e*e != 0) cout << "(";
+	PT_2(d*d, 2 * d*e, e*e);
+	if (2 * d*e != 0 || e*e != 0) cout << ")";
+}
+
+void DaoHam6(float a, float b, float c, float d, float e)
+{
+	if (a == 0)
+	{
+		DaoHam5(b, c, d, e);
+		return;
+	}
+	if (d == 0)
+	{
+		DaoHam2(a / e, b / e, c / e);
+		return;
+	}
+	float x, y;
+	short k;
+	GiaiPT_Bac2(a, b, c, x, y, k);
+	if (k != -1)
+	{
+		if (k == 0) y = x;
+		if (x + e / d < epsilon)
+		{
+			DaoHam1(a/d, -a*y/d);
+			return;
+		}
+		if (y + e / d < epsilon)
+		{
+			DaoHam1(a/d, -a*x/d);
+			return;
+		}
+	}
+	cout << "Ham so dao ham co dang: y' = ";
+	DH_5(a, b, c, d, e);
+	cout << endl;
+	cout << "Xet dau dao ham y':" << endl;
+	XetDau2(a*d, 2 * a*e, b*e - c*d);
 }
 

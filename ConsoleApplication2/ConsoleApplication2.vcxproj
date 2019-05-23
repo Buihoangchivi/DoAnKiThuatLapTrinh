@@ -82,6 +82,7 @@
     <ClInclude Include="Daoham.h" />
     <ClInclude Include="Draw.h" />
     <ClInclude Include="Equation.h" />
+    <ClInclude Include="GioiHan.h" />
     <ClInclude Include="Input_Output.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="TapXacDinh.h" />
@@ -92,6 +93,7 @@
     <ClCompile Include="Daoham.cpp" />
     <ClCompile Include="Draw.cpp" />
     <ClCompile Include="Equation.cpp" />
+    <ClCompile Include="GioiHan.cpp" />
     <ClCompile Include="Input_Output.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="TapXacDinh.cpp" />

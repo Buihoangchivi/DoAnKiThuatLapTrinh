@@ -1,5 +1,6 @@
 #include "Input_Output.h"
 #include "TapXacDinh.h"
+#include "Equation.h"
 #include <iostream>
 
 using namespace std;
@@ -49,6 +50,7 @@ void Output_Equation(int k, float &a, float &b, float &c, float &d, float &e)
 		Input('d', d);
 		cout << "Ham so co dang: y = ";
 		PT_3(a, b, c, d);
+		cout << endl;
 		break;
 	case 4:
 		Input('a', a);
@@ -56,6 +58,7 @@ void Output_Equation(int k, float &a, float &b, float &c, float &d, float &e)
 		Input('c', c);
 		cout << "Ham so co dang: y = ";
 		PT_4(a, b, c);
+		cout << endl;
 		break;
 	case 5:
 		Input('a', a);
@@ -74,6 +77,7 @@ void Output_Equation(int k, float &a, float &b, float &c, float &d, float &e)
 		}
 		cout << "Ham so co dang: y = ";
 		PT_5(a, b, c, d);
+		cout << endl;
 		break;
 	case 6:
 		Input('a', a);
@@ -93,6 +97,7 @@ void Output_Equation(int k, float &a, float &b, float &c, float &d, float &e)
 		}
 		cout << "Ham so co dang: y = ";
 		PT_6(a, b, c, d, e);
+		cout << endl;
 		break;
 	default:
 		cout << "Du lieu ban nhap vao khong hop le!!!" << endl;
@@ -162,10 +167,9 @@ void PT_3(float a, float b, float c, float d)
 	else if (c < 0) cout << " - " << -c << "x";
 	if (d != 0)
 	{
-		if (d > 0) cout << " + " << d << endl;
-		else if (d < 0) cout << " - " << -d << endl;
+		if (d > 0) cout << " + " << d;
+		else if (d < 0) cout << " - " << -d;
 	}
-	else cout << endl;
 }
 
 void PT_4(float a, float b, float c)
@@ -185,10 +189,9 @@ void PT_4(float a, float b, float c)
 	else if (b < 0) cout << " - " << -b << "x^2";
 	if (c != 0)
 	{
-		if (c > 0) cout << " + " << c << endl;
-		else if (c < 0) cout << " - " << -c << endl;
+		if (c > 0) cout << " + " << c;
+		else if (c < 0) cout << " - " << -c;
 	}
-	else cout << endl;
 }
 
 void PT_5(float a, float b, float c, float d)
@@ -200,7 +203,6 @@ void PT_5(float a, float b, float c, float d)
 	if (c != 0 && d != 0) cout << "(";
 	PT_1(c, d);
 	if (c != 0 && d != 0) cout << ")";
-	cout << endl;
 }
 
 void PT_6(float a, float b, float c, float d, float e)
@@ -217,6 +219,5 @@ void PT_6(float a, float b, float c, float d, float e)
 	if (d != 0 && e != 0) cout << "(";
 	PT_1(d, e);
 	if (d != 0 && e != 0) cout << ")";
-	cout << endl;
 }
 

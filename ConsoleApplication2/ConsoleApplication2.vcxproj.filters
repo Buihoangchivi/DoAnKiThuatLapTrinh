@@ -39,6 +39,9 @@
     <ClInclude Include="Daoham.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GioiHan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -60,6 +63,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Daoham.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GioiHan.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
