@@ -13,12 +13,12 @@ void Input(char ch, T &k)
 
 void Input_Equation(int &k)
 {
-	cout << "Chon Phuong Trinh ax + b = 0                    : Nhap 1" << endl;
-	cout << "Chon Phuong Trinh ax^2 + bx + c = 0             : Nhap 2" << endl;
-	cout << "Chon Phuong Trinh ax^3 + bx^2 + cx + d = 0      : Nhap 3" << endl;
-	cout << "Chon Phuong Trinh ax^4 + bx^2 + c = 0           : Nhap 4" << endl;
-	cout << "Chon Phuong Trinh (ax + b) / (cx + d) = 0       : Nhap 5" << endl;
-	cout << "Chon Phuong Trinh (ax^2 + bx + c) / (dx + e) = 0: Nhap 6" << endl;
+	cout << "Chon Ham so ax + b = 0                    : Nhap 1" << endl;
+	cout << "Chon Ham so ax^2 + bx + c = 0             : Nhap 2" << endl;
+	cout << "Chon Ham so ax^3 + bx^2 + cx + d = 0      : Nhap 3" << endl;
+	cout << "Chon Ham so ax^4 + bx^2 + c = 0           : Nhap 4" << endl;
+	cout << "Chon Ham so (ax + b) / (cx + d) = 0       : Nhap 5" << endl;
+	cout << "Chon Ham so (ax^2 + bx + c) / (dx + e) = 0: Nhap 6" << endl;
 	cout << "Nhap vao 1 so N: ";
 	Input('N', k);
 }
@@ -30,7 +30,7 @@ void Output_Equation(int k, float &a, float &b, float &c, float &d, float &e)
 	case 1:
 		Input('a', a);
 		Input('b', b);
-		cout << "Phuong trinh co dang: y = ";
+		cout << "Ham so co dang: y = ";
 		PT_1(a, b);
 		cout << endl;
 		break;
@@ -38,7 +38,7 @@ void Output_Equation(int k, float &a, float &b, float &c, float &d, float &e)
 		Input('a', a);
 		Input('b', b);
 		Input('c', c);
-		cout << "Phuong trinh co dang: y = ";
+		cout << "Ham so co dang: y = ";
 		PT_2(a, b, c);
 		cout << endl;
 		break;
@@ -47,14 +47,14 @@ void Output_Equation(int k, float &a, float &b, float &c, float &d, float &e)
 		Input('b', b);
 		Input('c', c);
 		Input('d', d);
-		cout << "Phuong trinh co dang: y = ";
+		cout << "Ham so co dang: y = ";
 		PT_3(a, b, c, d);
 		break;
 	case 4:
 		Input('a', a);
 		Input('b', b);
 		Input('c', c);
-		cout << "Phuong trinh co dang: y = ";
+		cout << "Ham so co dang: y = ";
 		PT_4(a, b, c);
 		break;
 	case 5:
@@ -72,7 +72,7 @@ void Output_Equation(int k, float &a, float &b, float &c, float &d, float &e)
 			cout << "0" << endl;
 			return;
 		}
-		cout << "Phuong trinh co dang: y = ";
+		cout << "Ham so co dang: y = ";
 		PT_5(a, b, c, d);
 		break;
 	case 6:
@@ -91,7 +91,7 @@ void Output_Equation(int k, float &a, float &b, float &c, float &d, float &e)
 			cout << "0" << endl;
 			return;
 		}
-		cout << "Phuong trinh co dang: y = ";
+		cout << "Ham so co dang: y = ";
 		PT_6(a, b, c, d, e);
 		break;
 	default:

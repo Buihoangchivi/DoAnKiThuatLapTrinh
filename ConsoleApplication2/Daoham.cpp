@@ -139,7 +139,7 @@ void XetDau4(float a, float c, float d)
 
 void DaoHam1(float a, float b)
 {
-	cout << "Phuong trinh dao ham co dang: y' = " << a << endl;
+	cout << "Ham so dao ham co dang: y' = " << a << endl;
 	cout << "Xet dau dao ham y':" << endl;
 	XetDau0(a);
 }
@@ -151,7 +151,7 @@ void DaoHam2(float a, float b, float c)
 		DaoHam1(b, c);
 		return;
 	}
-	cout << "Phuong trinh dao ham co dang: y' = ";
+	cout << "Ham so dao ham co dang: y' = ";
 	PT_1(2 * a, b);
 	cout << endl;
 	cout << "Xet dau dao ham y':" << endl;
@@ -165,7 +165,7 @@ void DaoHam3(float a, float b, float c, float d)
 		DaoHam2(b, c, d);
 		return;
 	}
-	cout << "Phuong trinh dao ham co dang: y' = ";
+	cout << "Ham so dao ham co dang: y' = ";
 	PT_2(3 * a, 2 * b, c);
 	cout << endl;
 	cout << "Xet dau dao ham y':" << endl;
@@ -179,7 +179,7 @@ void DaoHam4(float a, float b, float c)
 		DaoHam2(b, 0, c);
 		return;
 	}
-	cout << "Phuong trinh dao ham co dang: y' = ";
+	cout << "Ham so dao ham co dang: y' = ";
 	PT_3(4 * a, 0, 2 * b, 0);
 	cout << endl;
 	cout << "Xet dau dao ham y':" << endl;
@@ -205,7 +205,7 @@ void DaoHam5(float a, float b, float c, float d)
 		DaoHam1(a / d, b / d);
 		return;
 	}
-	cout << "Phuong trinh dao ham co dang: y' = ";
+	cout << "Ham so dao ham co dang: y' = ";
 	DH_4(a, b, c, d);
 	cout << endl;
 	cout << "Xet dau dao ham y':" << endl;
