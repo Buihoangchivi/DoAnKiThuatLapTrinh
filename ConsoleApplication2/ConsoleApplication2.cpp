@@ -10,6 +10,7 @@
 #include "Draw.h"
 #include "Daoham.h"
 #include "GioiHan.h"
+#include "MinMax.h"
 
 using namespace std;
 
@@ -30,6 +31,8 @@ int _tmain(int argc, char* argv[])
 		cout << endl;
 		Choice_And_Lim(k, a, b, c, d, e);
 		cout << endl;
+		MinMax(k, a, b, c, d, e);
+		system("pause");
 		//Draw(argc, argv);
 	Next:
 		system("cls");

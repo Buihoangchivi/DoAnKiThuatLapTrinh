@@ -55,14 +55,12 @@ void TapXacDinh_4()
 
 void TapXacDinh_5(float a, float b, float c, float d)
 {
-	if (fabs(c) <= esilon || fabs(Equa_1(a, b, -d / c)) <= esilon) cout << "Tap xac dinh cua Ham so la R" << endl;
-	else if (d != 0) cout << "Tap xac dinh cua Ham so la R \\ {" << -d / c << "}" << endl;
+	if (d != 0) cout << "Tap xac dinh cua Ham so la R \\ {" << -d / c << "}" << endl;
 	else cout << "Tap xac dinh cua Ham so la R \\ {0}" << endl;
 }
 
 void TapXacDinh_6(float a, float b, float c, float d, float e)
 {
-	if (fabs(d) <= esilon || fabs(Equa_2(a, b, c, -e / d)) <= esilon) cout << "Tap xac dinh cua Ham so la R" << endl;
-	else if (e != 0) cout << "Tap xac dinh cua Ham so la R \\ {" << -e / d << "}" << endl;
+	if (e != 0) cout << "Tap xac dinh cua Ham so la R \\ {" << -e / d << "}" << endl;
 	else cout << "Tap xac dinh cua Ham so la R \\ {0}" << endl;
 }

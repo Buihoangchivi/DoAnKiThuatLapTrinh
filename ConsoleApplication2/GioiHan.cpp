@@ -94,8 +94,6 @@ void GioiHan2(float a, float b, float c, int select)
 		{
 			cout << "\tKhi x -> +" << char(236) << "  lim("; PT_2(a, b, c); cout << ") = +" << char(236) << endl;
 		}
-		else
-			GioiHan1(b, c, 1);
 		break;
 	case 2:
 		if (a < 0)
@@ -106,8 +104,6 @@ void GioiHan2(float a, float b, float c, int select)
 		{
 			cout << "\tKhi x -> -" << char(236) << "  lim("; PT_2(a, b, c); cout << ") = +" << char(236) << endl;
 		}
-		else
-			GioiHan1(b, c, 2);
 		break;
 	case 3:
 		float x0;
@@ -132,7 +128,6 @@ void GioiHan3(float a, float b, float c, float d, int select)
 		{
 			cout << "\tKhi x -> +" << char(236) << "  lim("; PT_3(a, b, c, d); cout << ") = +" << char(236) << endl;
 		}
-		else GioiHan2(b, c, d, 1);
 		break;
 	case 2:
 		if (a < 0)
@@ -143,7 +138,6 @@ void GioiHan3(float a, float b, float c, float d, int select)
 		{
 			cout << "\tKhi x -> -" << char(236) << "  lim("; PT_3(a, b, c, d); cout << ") = -" << char(236) << endl;
 		}
-		else GioiHan2(b, c, d, 2);
 		break;
 	case 3:
 		float x0;
@@ -168,7 +162,6 @@ void GioiHan4(float a, float b, float c, int select)
 		{
 			cout << "\tKhi x -> +" << char(236) << "  lim("; PT_4(a, b, c); cout << ") = +" << char(236) << endl;
 		}
-		else GioiHan2(b, 0, c, 1);
 		break;
 	case 2:
 		if (a < 0)
@@ -179,7 +172,6 @@ void GioiHan4(float a, float b, float c, int select)
 		{
 			cout << "\tKhi x -> -" << char(236) << "  lim("; PT_4(a, b, c); cout << ") = +" << char(236) << endl;
 		}
-		else GioiHan2(b, 0, c, 2);
 		break;
 	case 3:
 		float x0;
@@ -193,120 +185,69 @@ void GioiHan4(float a, float b, float c, int select)
 
 void GioiHan5(float a, float b, float c, float d, int select)
 {
-	if (c == 0) GioiHan1(a / d, b / d, select);
-	else if (a == 0)
-	if (b == 0) cout << "Ham so la ham hang co gia tri 0, lim luon = 0!!!" << endl;
-	else
-		switch (select)
+	switch (select)
 	{
-		case 1:
-			cout << "\tKhi x -> +" << char(236) << "  lim("; PT_5(a, b, c, d); cout << ") = 0 " << endl;
-			break;
-		case 2:
-			cout << "\tKhi x -> -" << char(236) << "  lim("; PT_5(a, b, c, d); cout << ") = 0 " << endl;
-			break;
-		case 3:
-			float x0;
-			cout << "Nhap x0 = "; cin >> x0;
-			if (x0 != -d / c)
-			{
-				cout << "\tKhi x -> " << x0 << "  lim("; PT_5(a, b, c, d); cout << ") = " << Equa_5(a, b, c, d, x0) << endl;
-			}
-			else
-			{
-				cout << "\tKhi x -> " << x0 << "  lim("; PT_5(a, b, c, d); cout << ") = " << char(236) << endl;
-			}
-			break;
-		default:
-			break;
-	}
-	else
-		switch (select)
-	{
-		case 1:
-			cout << "\tKhi x -> +" << char(236) << "  lim("; PT_5(a, b, c, d); cout << ") = " << a / c << endl;
-			break;
-		case 2:
-			cout << "\tKhi x -> -" << char(236) << "  lim("; PT_5(a, b, c, d); cout << ") = " << a / c << endl;
-			break;
-		case 3:
-			float x0;
-			cout << "Nhap x0 = "; cin >> x0;
-			if (x0 != -d / c)
-			{
-				cout << "\tKhi x -> " << x0 << "  lim("; PT_5(a, b, c, d); cout << ") = " << Equa_5(a, b, c, d, x0) << endl;
-			}
-			else if (a / c != b / d)
-			{
-				cout << "\tKhi x -> " << x0 << "  lim("; PT_5(a, b, c, d); cout << ") = " << char(236) << endl;
-			}
-			else cout << "Ham so la ham hang co gia tri " << a / c << ", lim luon = " << a / c << "!!!" << endl;
-			break;
-		default:
-			break;
+	case 1:
+		cout << "\tKhi x -> +" << char(236) << "  lim("; PT_5(a, b, c, d); cout << ") = 0 " << endl;
+		break;
+	case 2:
+		cout << "\tKhi x -> -" << char(236) << "  lim("; PT_5(a, b, c, d); cout << ") = 0 " << endl;
+		break;
+	case 3:
+		float x0;
+		cout << "Nhap x0 = "; cin >> x0;
+		if (x0 != -d / c)
+		{
+			cout << "\tKhi x -> " << x0 << "  lim("; PT_5(a, b, c, d); cout << ") = " << Equa_5(a, b, c, d, x0) << endl;
+		}
+		else
+		{
+			cout << "\tKhi x -> " << x0 << "  lim("; PT_5(a, b, c, d); cout << ") = " << char(236) << endl;
+		}
+		break;
+	default:
+		break;
 	}
 }
 
 void GioiHan6(float a, float b, float c, float d, float e, int select)
 {
-	if (a == 0) GioiHan5(b, c, d, e, select);
-	else if (d == 0) GioiHan2(a / e, b / e, c / e, select);
-	else
+	switch (select)
 	{
-		float x, y;
-		short k;
-		GiaiPT_Bac2(a, b, c, x, y, k);
-		if (k != -1)
+	case 1:
+		if (a * d > 0)
 		{
-			if (k == 0) y = x;
-			if (x + e / d < epsilon)
-			{
-				GioiHan1(a / d, -a*y / d, select);
-				return;
-			}
-			if (y + e / d < epsilon)
-			{
-				GioiHan1(a / d, -a*x / d, select);
-				return;
-			}
+			cout << "\tKhi x -> +" << char(236) << "  lim("; PT_6(a, b, c, d, e); cout << ") = +" << char(236) << endl;
 		}
-		switch (select)
+		else
 		{
-		case 1:
-			if (a*d > 0)
-			{
-				cout << "\tKhi x -> +" << char(236) << "  lim("; PT_6(a, b, c, d, e); cout << ") = +" << char(236) << endl;
-			}
-			else
-			{
-				cout << "\tKhi x -> +" << char(236) << "  lim("; PT_6(a, b, c, d, e); cout << ") = -" << char(236) << endl;
-			}
-			break;
-		case 2:
-			if (a*d < 0)
-			{
-				cout << "\tKhi x -> -" << char(236) << "  lim("; PT_6(a, b, c, d, e); cout << ") = +" << char(236) << endl;
-			}
-			else
-			{
-				cout << "\tKhi x -> -" << char(236) << "  lim("; PT_6(a, b, c, d, e); cout << ") = -" << char(236) << endl;
-			}
-			break;
-		case 3:
-			float x0;
-			cout << "Nhap x0 = "; cin >> x0;
-			if (x0 != -e / d)
-			{
-				cout << "\tKhi x -> " << x0 << "  lim("; PT_6(a, b, c, d, e); cout << ") = " << Equa_6(a, b, c, d, e, x0) << endl;
-			}
-			else
-			{
-				cout << "\tKhi x -> " << x0 << "  lim("; PT_6(a, b, c, d, e); cout << ") = " << char(236) << endl;
-			}
-			break;
-		default:
-			break;
+			cout << "\tKhi x -> +" << char(236) << "  lim("; PT_6(a, b, c, d, e); cout << ") = -" << char(236) << endl;
 		}
+		break;
+	case 2:
+		if (a * d < 0)
+		{
+			cout << "\tKhi x -> -" << char(236) << "  lim("; PT_6(a, b, c, d, e); cout << ") = +" << char(236) << endl;
+		}
+		else
+		{
+			cout << "\tKhi x -> -" << char(236) << "  lim("; PT_6(a, b, c, d, e); cout << ") = -" << char(236) << endl;
+		}
+		break;
+	case 3:
+		float x0;
+		cout << "Nhap x0 = "; cin >> x0;
+		if (x0 != -e / d)
+		{
+			cout << "\tKhi x -> " << x0 << "  lim("; PT_6(a, b, c, d, e); cout << ") = " << Equa_6(a, b, c, d, e, x0) << endl;
+		}
+		else
+		{
+			cout << "\tKhi x -> " << x0 << "  lim("; PT_6(a, b, c, d, e); cout << ") = " << char(236) << endl;
+		}
+		break;
+	default:
+		break;
 	}
 }
 

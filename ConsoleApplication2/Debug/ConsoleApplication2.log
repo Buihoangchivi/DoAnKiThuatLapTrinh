@@ -1,10 +1,2 @@
-﻿  Draw.cpp
-c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdlib.h(52): error C2381: 'exit': redefinition; '__declspec(noreturn)' or '[[noreturn]]' differs
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\auxiliary\vs\include\glut.h(146): note: see declaration of 'exit'
-  MinMax.cpp
-c:\users\tien pham\desktop\pt\consoleapplication2\minmax.cpp(223): warning C4477: 'printf' : format string '%f' requires an argument of type 'double', but variadic argument 1 has type 'int'
-c:\users\tien pham\desktop\pt\consoleapplication2\minmax.cpp(229): warning C4477: 'printf' : format string '%f' requires an argument of type 'double', but variadic argument 1 has type 'int'
-c:\users\tien pham\desktop\pt\consoleapplication2\minmax.cpp(206): warning C4101: 'MAX': unreferenced local variable
-c:\users\tien pham\desktop\pt\consoleapplication2\minmax.cpp(206): warning C4101: 'MIN': unreferenced local variable
-c:\users\tien pham\desktop\pt\consoleapplication2\minmax.cpp(262): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  Generating Code...
+﻿  Daoham.cpp
+  ConsoleApplication2.vcxproj -> C:\Users\Dell\Desktop\ConsoleApplication1\Debug\ConsoleApplication2.exe
