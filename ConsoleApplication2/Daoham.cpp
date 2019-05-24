@@ -45,15 +45,15 @@ void XetDau1(float a, float b)
 {
 	if (a > 0)
 	{
-		cout << "\tDao ham luon am voi x chay tu -" << (char)236 << " den be hon " << -b / a << endl;
-		cout << "\tDao ham bang 0 voi x bang " << -b / a << endl;
-		cout << "\tDao ham luon duong voi x chay tu lon hon " << -b / a << " den +" << (char)236 << endl;
+		cout << "\tDao ham luon am voi x thuoc (-" << (char)236 << ", " << -b / a << ")" << endl;
+		cout << "\tDao ham bang 0 voi x = " << -b / a << endl;
+		cout << "\tDao ham luon duong voi x thuoc (" << -b / a << ", +" << (char)236 << ")" << endl;
 	}
 	else
 	{
-		cout << "\tDao ham luon duong voi x chay tu -" << (char)236 << " den be hon " << -b / a << endl;
-		cout << "\tDao ham bang 0 voi x bang " << -b / a << endl;
-		cout << "\tDao ham luon am voi x chay tu lon hon " << -b / a << " den -" << (char)236 << endl;
+		cout << "\tDao ham luon duong voi x thuoc (-" << (char)236 << ", " << -b / a << ")" << endl;
+		cout << "\tDao ham bang 0 voi x = " << -b / a << endl;
+		cout << "\tDao ham luon am voi x thuoc (" << -b / a << ", -" << (char)236 << ")" << endl;
 	}
 }
 
@@ -71,21 +71,21 @@ void XetDau2(float a, float b, float c)
 	{
 		if (a < 0) cout << "\tDao ham luon am voi moi x thuoc R \\ {" << x << "}" << endl;
 		else cout << "\tDao ham luon duong voi moi x thuoc R \\ {" << x << "}" << endl;
-		cout << "Dao ham bang 0 tai x bang " << x << endl;
+		cout << "Dao ham bang 0 tai x = " << x << endl;
 	}
 	else
 	{
 		if (a < 0)
 		{
-			cout << "\tDao ham luon am voi x chay tu -" << (char)236 << " den be hon " << x << " va x chay tu lon hon "
-				<< y << " den +" << (char)236 << endl;
-			cout << "\tDao ham luon duong voi x chay tu lon hon " << x << " den be hon " << y << endl;
+			cout << "\tDao ham luon am voi x thuoc (-" << (char)236 << ", " << x << ")" << " va x thuoc ("
+				<< y << ", +" << (char)236 << ")" << endl;
+			cout << "\tDao ham luon duong voi x thuoc (" << x << ", " << y << ")" << endl;
 		}
 		else
 		{
-			cout << "\tDao ham luon duong voi x chay tu -" << (char)236 << " den be hon " << x
-				<< " va x chay tu lon hon " << y << " den +" << (char)236 << endl;
-			cout << "\tDao ham luon am voi x chay tu lon hon " << x << " den be hon " << y << endl;
+			cout << "\tDao ham luon duong voi x thuoc (-" << (char)236 << ", " << x
+				<< " va x thuoc (" << y << ", +" << (char)236 << ")" << endl;
+			cout << "\tDao ham luon am voi x thuoc (" << x << ", " << y << ")" << endl;
 		}
 		cout << "\tDao ham bang 0 tai x = " << x << " va x = " << y << endl;
 	}
@@ -98,33 +98,33 @@ void XetDau3(float a, float b)
 		float temp = sqrt(-b / a);
 		if (a > 0)
 		{
-			cout << "\tDao ham luon am voi x chay tu -" << (char)236 << " den be hon " << -temp
-				<< " va x chay tu lon hon 0 den be hon " << temp << endl;
-			cout << "\tDao ham luon duong voi x chay tu lon hon " << -temp
-				<< " den be hon 0 va x chay tu lon hon " << temp << " den +" << (char)236 << endl;
+			cout << "\tDao ham luon am voi x thuoc (-" << (char)236 << ", " << -temp
+				<< ") va x thuoc (0, " << temp << endl;
+			cout << "\tDao ham luon duong voi x thuoc (" << -temp
+				<< ", 0) va x thuoc (" << temp << ", +" << (char)236 << ")" << endl;
 		}
 		else
 		{
-			cout << "\tDao ham luon duong voi x chay tu -" << (char)236 << " den be hon " << -temp
-				<< " va x chay tu lon hon 0 den be hon " << temp << endl;
-			cout << "\tDao ham luon am voi x chay tu lon hon " << -temp
-				<< " den be hon 0 va x chay tu lon hon " << temp << " den +" << (char)236 << endl;
+			cout << "\tDao ham luon duong voi x thuoc (-" << (char)236 << ", " << -temp
+				<< ") va x thuoc (0, " << temp << ")" << endl;
+			cout << "\tDao ham luon am voi x thuoc (" << -temp
+				<< ", 0) va x thuoc (" << temp << ", +" << (char)236 << ")" << endl;
 		}
-		cout << "\tDao ham bang 0 tai x = 0, x = " << -temp << " va x = " << temp << endl;
+		cout << "\tDao ham bang 0 tai x = 0,  x = " << -temp << " va x = " << temp << endl;
 	}
 	else
 	{
 		if (a > 0)
 		{
-			cout << "\tDao ham luon am voi x chay tu -" << (char)236 << " den be hon 0" << endl;
+			cout << "\tDao ham luon am voi x thuoc (-" << (char)236 << ", 0)" << endl;
 			cout << "\tDao ham bang 0 voi x = 0" << endl;
-			cout << "\tDao ham luon duong voi x chay tu lon hon 0 den duong vo cung" << endl;
+			cout << "\tDao ham luon duong voi x thuoc (0, +" << (char)236 << ")" << endl;
 		}
 		else
 		{
-			cout << "\tDao ham luon duong voi x chay tu -" << (char)236 << "den be hon 0" << endl;
+			cout << "\tDao ham luon duong voi x thuoc (-" << (char)236 << ", 0)" << endl;
 			cout << "\tDao ham bang 0 voi x = 0" << endl;
-			cout << "\tDao ham luon am voi x chay tu lon hon 0 den +" << (char)236 << endl;
+			cout << "\tDao ham luon am voi x thuoc (0, +" << (char)236 << ")" << endl;
 		}
 	}
 }
@@ -244,12 +244,12 @@ void DaoHam6(float a, float b, float c, float d, float e)
 		if (k == 0) y = x;
 		if (x + e / d < epsilon)
 		{
-			DaoHam1(a/d, -a*y/d);
+			DaoHam1(a / d, -a*y / d);
 			return;
 		}
 		if (y + e / d < epsilon)
 		{
-			DaoHam1(a/d, -a*x/d);
+			DaoHam1(a / d, -a*x / d);
 			return;
 		}
 	}

@@ -2,7 +2,7 @@
 #define _MY_WRITE_PROPOSAL
 
 void Input_Equation(int &k);
-void Output_Equation(int k, float &a, float &b, float &c, float &d, float &e);
+void Output_Equation(int &k, float &a, float &b, float &c, float &d, float &e);
 template<class T>
 void Input(char ch, T &k);
 void PT_1(float a, float b);

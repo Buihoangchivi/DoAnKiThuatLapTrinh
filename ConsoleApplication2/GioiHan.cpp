@@ -12,10 +12,8 @@
 using namespace std;
 
 
-void GioiHan(int k, float a, float b, float c, float d, float e)
+void GioiHan(int k, float a, float b, float c, float d, float e, int select)
 {
-	int select;
-	Choice(select);
 	switch (k)
 	{
 	case 1:
@@ -238,7 +236,7 @@ void GioiHan5(float a, float b, float c, float d, int select)
 			{
 				cout << "\tKhi x -> " << x0 << "  lim("; PT_5(a, b, c, d); cout << ") = " << Equa_5(a, b, c, d, x0) << endl;
 			}
-			else 
+			else if (a / c != b / d)
 			{
 				cout << "\tKhi x -> " << x0 << "  lim("; PT_5(a, b, c, d); cout << ") = " << char(236) << endl;
 			}
@@ -263,12 +261,12 @@ void GioiHan6(float a, float b, float c, float d, float e, int select)
 			if (k == 0) y = x;
 			if (x + e / d < epsilon)
 			{
-				GioiHan1(a/d, -a*y/d, select);
+				GioiHan1(a / d, -a*y / d, select);
 				return;
 			}
 			if (y + e / d < epsilon)
 			{
-				GioiHan1(a/d, -a*x/d, select);
+				GioiHan1(a / d, -a*x / d, select);
 				return;
 			}
 		}
@@ -301,7 +299,7 @@ void GioiHan6(float a, float b, float c, float d, float e, int select)
 			{
 				cout << "\tKhi x -> " << x0 << "  lim("; PT_6(a, b, c, d, e); cout << ") = " << Equa_6(a, b, c, d, e, x0) << endl;
 			}
-			else 
+			else
 			{
 				cout << "\tKhi x -> " << x0 << "  lim("; PT_6(a, b, c, d, e); cout << ") = " << char(236) << endl;
 			}
@@ -312,15 +310,28 @@ void GioiHan6(float a, float b, float c, float d, float e, int select)
 	}
 }
 
-void Choice(int& select)
+void Choice_And_Lim(int k, float a, float b, float c, float d, float e)
 {
 	cout << "**Ban muon tim gioi han cua ham so \tKhi x -> " << endl;
 	cout << "- Nhan 1 de tim gioi han \tKhi x -> +" << (char)236 << endl;
 	cout << "- Nhan 2 de tim gioi han \tKhi x -> -" << (char)236 << endl;
 	cout << "- Nhan 3 de tim gioi han \tKhi x -> x0" << endl;
-	cout << "Nhap lua chon cua ban: "; cin >> select;
-	while (select < 1 || select > 3)
+	int select;
+	while (true)
 	{
-		cout << "Nhap lai lua chon cua ban: "; cin >> select;
+		cout << "Nhap lua chon cua ban: "; cin >> select;
+		if (select == 0) return;
+		while (select < 1 || select > 3)
+		{
+			cout << "\aDu lieu khong hop le!!! Moi ban nhap lai: "; cin >> select;
+			if (select == 0) return;
+		}
+		GioiHan(k, a, b, c, d, e, select);
+		cout << "\nBan co muon tiep tuc tim gioi han cua ham so khong?" << endl;
+		cout << "Neu ban muon tim tiep: Nhap 1" << endl;
+		cout << "Neu ban muon dung tim: Nhap cac gia tri khac 1" << endl;
+		cout << "Nhap lua chon cua ban: "; cin >> select;
+		if (select != 1) return;
+		cout << endl;
 	}
 }

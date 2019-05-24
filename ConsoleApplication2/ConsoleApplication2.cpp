@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include <iostream>
+#include <stdlib.h>
 #include <cmath>
 #include "Input_Output.h"
 #include "TapXacDinh.h"
@@ -16,17 +17,23 @@ int _tmain(int argc, char* argv[])
 {
 	int k;
 	float a, b, c, d, e;
-	Input_Equation(k);
-	Output_Equation(k, a, b, c, d, e);
-	cout << endl;
-	if (k<1 || k>6) return 0;
-	TapXacDinh(k, a, b, c, d, e);
-	cout << endl;
-	DaoHam_XetDau(k, a, b, c, d, e);
-	cout << endl;
-	GioiHan(k, a, b, c, d, e);
-	cout << endl;
-	//Draw(argc, argv);
+	while (true)
+	{
+		Input_Equation(k);
+		if (k == 0) break;
+		Output_Equation(k, a, b, c, d, e);
+		if (k == 0) goto Next;
+		cout << endl;
+		TapXacDinh(k, a, b, c, d, e);
+		cout << endl;
+		DaoHam_XetDau(k, a, b, c, d, e);
+		cout << endl;
+		Choice_And_Lim(k, a, b, c, d, e);
+		cout << endl;
+		//Draw(argc, argv);
+	Next:
+		system("cls");
+	}
 	return 0;
 }
 
