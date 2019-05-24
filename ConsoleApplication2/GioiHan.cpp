@@ -314,9 +314,9 @@ void GioiHan6(float a, float b, float c, float d, float e, int select)
 
 void Choice(int& select)
 {
-	cout << "**Ban muon tinh gioi han cua ham so \tKhi x -> " << endl;
-	cout << "- Nhan 1 de tim gioi han \tKhi x -> + " << (char)236 << endl;
-	cout << "- Nhan 2 de tim gioi han \tKhi x -> - " << (char)236 << endl;
+	cout << "**Ban muon tim gioi han cua ham so \tKhi x -> " << endl;
+	cout << "- Nhan 1 de tim gioi han \tKhi x -> +" << (char)236 << endl;
+	cout << "- Nhan 2 de tim gioi han \tKhi x -> -" << (char)236 << endl;
 	cout << "- Nhan 3 de tim gioi han \tKhi x -> x0" << endl;
 	cout << "Nhap lua chon cua ban: "; cin >> select;
 	while (select < 1 || select > 3)
