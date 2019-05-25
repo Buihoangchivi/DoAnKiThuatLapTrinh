@@ -1,0 +1,50 @@
+* Ham so co dang: y = 2.00x + 3.00
+
+Tap xac dinh cua Ham so la R
+
+Ham so dao ham co dang: y' = 2.00
+Xet dau dao ham y':
+	Dao ham luon duong voi moi x thuoc R
+
+	Khi x -> +ì  lim(2.00x + 3.00) = +ì
+	Khi x -> -ì  lim(2.00x + 3.00) = -ì
+	Khi x -> 1.00  lim(2.00x + 3.00) = 5.00
+
+Ham so khong co cuc tieu hay cuc dai !!!
+
+
+* Ham so co dang: y = -4.00x^3 + 6.00x^2 + 2.00x + 4.00
+
+Tap xac dinh cua Ham so la R
+
+Ham so dao ham co dang: y' = -12.00x^2 + 12.00x + 2.00
+Xet dau dao ham y':
+	Dao ham luon am voi x thuoc (-ì, -0.15) va x thuoc (1.15, +ì)
+	Dao ham luon duong voi x thuoc (-0.15, 1.15)
+	Dao ham bang 0 tai x = -0.15 va x = 1.15
+
+	Khi x -> +ì  lim(-4.00x^3 + 6.00x^2 + 2.00x + 4.00) = -ì
+	Khi x -> -ì  lim(-4.00x^3 + 6.00x^2 + 2.00x + 4.00) = +ì
+	Khi x -> -4.00  lim(-4.00x^3 + 6.00x^2 + 2.00x + 4.00) = 348.00
+
+Ham so co cuc tieu la: ( -0.145497,   3.848343)
+Ham so co cuc tieu la: (  1.145497,   8.151657)
+
+
+* Ham so co dang: y = (4.00x - 4.00) / (3.00x + 6.00)
+
+Tap xac dinh cua Ham so la R \ {-2.00}
+
+Ham so dao ham co dang: y' = 36.00 / (9.00x^2 + 36.00x + 36.00)
+Xet dau dao ham y':
+	Dao ham luon duong voi moi x thuoc R \ {-2.00}
+	Dao ham tien toi ì khi x = -2.00
+
+	Khi x -> +ì  lim((4.00x - 4.00) / (3.00x + 6.00)) = 0
+	Khi x -> -ì  lim((4.00x - 4.00) / (3.00x + 6.00)) = 0
+	Khi x -> -1.00  lim((4.00x - 4.00) / (3.00x + 6.00)) = -2.67
+	Khi x -> 1.00  lim((4.00x - 4.00) / (3.00x + 6.00)) = 0.00
+
+Ham so khong co cuc tieu hay cuc dai !!!
+
+

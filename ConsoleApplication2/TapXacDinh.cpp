@@ -2,7 +2,10 @@
 #include "Equation.h"
 #include <iostream>
 #include <cmath>
-#define esilon 1e-5
+
+#define _CRT_NONSTDC_NO_WARNINGS
+
+extern FILE* input, * output;
 
 using namespace std;
 
@@ -35,32 +38,32 @@ void TapXacDinh(int k, float a, float b, float c, float d, float e)
 
 void TapXacDinh_1()
 {
-	cout << "Tap xac dinh cua Ham so la R" << endl;
+	fprintf(output, "Tap xac dinh cua Ham so la R\n");
 }
 
 void TapXacDinh_2()
 {
-	cout << "Tap xac dinh cua Ham so la R" << endl;
+	fprintf(output, "Tap xac dinh cua Ham so la R\n");
 }
 
 void TapXacDinh_3()
 {
-	cout << "Tap xac dinh cua Ham so la R" << endl;
+	fprintf(output, "Tap xac dinh cua Ham so la R\n");
 }
 
 void TapXacDinh_4()
 {
-	cout << "Tap xac dinh cua Ham so la R" << endl;
+	fprintf(output, "Tap xac dinh cua Ham so la R\n");
 }
 
 void TapXacDinh_5(float a, float b, float c, float d)
 {
-	if (d != 0) cout << "Tap xac dinh cua Ham so la R \\ {" << -d / c << "}" << endl;
-	else cout << "Tap xac dinh cua Ham so la R \\ {0}" << endl;
+	if (d != 0) fprintf(output, "Tap xac dinh cua Ham so la R \\ {%.2f}\n", -d / c);
+	else fprintf(output, "Tap xac dinh cua Ham so la R \\ {0}\n");
 }
 
 void TapXacDinh_6(float a, float b, float c, float d, float e)
 {
-	if (e != 0) cout << "Tap xac dinh cua Ham so la R \\ {" << -e / d << "}" << endl;
-	else cout << "Tap xac dinh cua Ham so la R \\ {0}" << endl;
+	if (e != 0) fprintf(output, "Tap xac dinh cua Ham so la R \\ {%.2f}\n", -e / d);
+	else fprintf(output, "Tap xac dinh cua Ham so la R \\ {0}\n");
 }

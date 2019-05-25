@@ -3,37 +3,49 @@
 #include "Equation.h"
 #include <iostream>
 #define epsilon 1e-5
+#define _CRT_NONSTDC_NO_WARNINGS
+
+extern FILE * input, * output;
 
 using namespace std;
 
-template<class T>
-void Input(char ch, T& k)
+void Input(char ch, int& k)
 {
-	cout << ch << " = ";
-	cin >> k;
+	if (input == stdin) fprintf(stdout, "%c = ", ch);
+	fscanf(input, "%d", &k);
 }
 
-void Input_Equation(int& k)
+void Input(char ch, float& k)
 {
-	cout << "Chon Ham so ax + b = 0                    : Nhap 1" << endl;
-	cout << "Chon Ham so ax^2 + bx + c = 0             : Nhap 2" << endl;
-	cout << "Chon Ham so ax^3 + bx^2 + cx + d = 0      : Nhap 3" << endl;
-	cout << "Chon Ham so ax^4 + bx^2 + c = 0           : Nhap 4" << endl;
-	cout << "Chon Ham so (ax + b) / (cx + d) = 0       : Nhap 5" << endl;
-	cout << "Chon Ham so (ax^2 + bx + c) / (dx + e) = 0: Nhap 6" << endl;
-	cout << "De dung chuong trinh                      : Nhap 0" << endl;
-	cout << "Nhap vao 1 so N: ";
+	if (input == stdin) fprintf(stdout, "%c = ", ch);
+	fscanf(input, "%f", &k);
+}
+
+void Input_Equation_Console(int& k)
+{
+	fprintf(stdout, "Chon Ham so ax + b = 0                    : Nhap 1\n");
+	fprintf(stdout, "Chon Ham so ax^2 + bx + c = 0             : Nhap 2\n");
+	fprintf(stdout, "Chon Ham so ax^3 + bx^2 + cx + d = 0      : Nhap 3\n");
+	fprintf(stdout, "Chon Ham so ax^4 + bx^2 + c = 0           : Nhap 4\n");
+	fprintf(stdout, "Chon Ham so (ax + b) / (cx + d) = 0       : Nhap 5\n");
+	fprintf(stdout, "Chon Ham so (ax^2 + bx + c) / (dx + e) = 0: Nhap 6\n");
+	fprintf(stdout, "De dung chuong trinh                      : Nhap 0\n");
+	fprintf(stdout, "Nhap vao 1 so N: ");
 	while (true)
 	{
 		Input('N', k);
 		if (k < 0 || k>6)
 		{
-			cout << "Du lieu ban nhap vao khong hop le!!!\a" << endl;
-			cout << "Xin moi ban nhap lai 1 so N: ";
+			fprintf(stdout, "Du lieu ban nhap vao khong hop le!!!\a\n");
+			fprintf(stdout, "Xin moi ban nhap lai 1 so N: ");
 		}
 		else break;
 	}
+}
 
+void Input_Equation_File(int& k)
+{
+	Input('N', k);
 }
 
 void Output_Equation(int& k, float& a, float& b, float& c, float& d, float& e)
@@ -44,9 +56,9 @@ void Output_Equation(int& k, float& a, float& b, float& c, float& d, float& e)
 		Input('a', a);
 		Input('b', b);
 	Equation1:
-		cout << "Ham so co dang: y = ";
+		fprintf(output, "* Ham so co dang: y = ");
 		PT_1(a, b);
-		cout << endl;
+		fprintf(output, "\n");
 		break;
 	case 2:
 		Input('a', a);
@@ -60,9 +72,9 @@ void Output_Equation(int& k, float& a, float& b, float& c, float& d, float& e)
 			b = c;
 			goto Equation1;
 		}
-		cout << "Ham so co dang: y = ";
+		fprintf(output, "* Ham so co dang: y = ");
 		PT_2(a, b, c);
-		cout << endl;
+		fprintf(output, "\n");
 		break;
 	case 3:
 		Input('a', a);
@@ -77,9 +89,9 @@ void Output_Equation(int& k, float& a, float& b, float& c, float& d, float& e)
 			c = d;
 			goto Equation2;
 		}
-		cout << "Ham so co dang: y = ";
+		fprintf(output, "* Ham so co dang: y = ");
 		PT_3(a, b, c, d);
-		cout << endl;
+		fprintf(output, "\n");
 		break;
 	case 4:
 		Input('a', a);
@@ -92,9 +104,9 @@ void Output_Equation(int& k, float& a, float& b, float& c, float& d, float& e)
 			b = 0;
 			goto Equation2;
 		}
-		cout << "Ham so co dang: y = ";
+		fprintf(output, "* Ham so co dang: y = ");
 		PT_4(a, b, c);
-		cout << endl;
+		fprintf(output, "\n");
 		break;
 	case 5:
 	Equa5:
@@ -105,17 +117,17 @@ void Output_Equation(int& k, float& a, float& b, float& c, float& d, float& e)
 	Equation5:
 		if (c == 0 && d == 0)
 		{
-			cout << "Ham so khong hop le vi mau so bang 0!!!" << endl;
-			cout << "Ban muon nhap lai phuong trinh loai nay : Nhap 1" << endl;
-			cout << "Ban muon nhap cac loai phuong trinh khac: Nhap 2" << endl;
-			short n;
+			fprintf(output, "Ham so khong hop le vi mau so bang 0!!!\n");
+			fprintf(output, "Ban muon nhap lai phuong trinh loai nay : Nhap 1\n");
+			fprintf(output, "Ban muon nhap cac loai phuong trinh khac: Nhap 2\n");
+			int n;
 			while (true)
 			{
 				Input('N', n);
 				if (n != 1 && n != 2)
 				{
-					cout << "Du lieu ban nhap vao khong hop le!!!\a" << endl;
-					cout << "Xin moi ban nhap lai 1 so N: ";
+					fprintf(output, "Du lieu ban nhap vao khong hop le!!!\a\n");
+					fprintf(output, "Xin moi ban nhap lai 1 so N: ");
 				}
 				else break;
 			}
@@ -147,9 +159,9 @@ void Output_Equation(int& k, float& a, float& b, float& c, float& d, float& e)
 			a = 0;
 			goto Equation1;
 		}
-		cout << "Ham so co dang: y = ";
+		fprintf(output, "* Ham so co dang: y = ");
 		PT_5(a, b, c, d);
-		cout << endl;
+		fprintf(output, "\n");
 		break;
 	case 6:
 	Equa6:
@@ -169,17 +181,17 @@ void Output_Equation(int& k, float& a, float& b, float& c, float& d, float& e)
 		}
 		if (d == 0 && e == 0)
 		{
-			cout << "Ham so khong hop le vi mau so bang 0!!!" << endl;
-			cout << "Ban muon nhap lai phuong trinh loai nay : Nhap 1" << endl;
-			cout << "Ban muon nhap cac loai phuong trinh khac: Nhap 2" << endl;
-			short n;
+			fprintf(output, "Ham so khong hop le vi mau so bang 0!!!\n");
+			fprintf(output, "Ban muon nhap lai phuong trinh loai nay : Nhap 1\n");
+			fprintf(output, "Ban muon nhap cac loai phuong trinh khac: Nhap 2\n");
+			int n;
 			while (true)
 			{
 				Input('N', n);
 				if (n != 1 && n != 2)
 				{
-					cout << "Du lieu ban nhap vao khong hop le!!!\a" << endl;
-					cout << "Xin moi ban nhap lai 1 so N: ";
+					fprintf(output, "Du lieu ban nhap vao khong hop le!!!\a\n");
+					fprintf(output, "Xin moi ban nhap lai 1 so N: ");
 				}
 				else break;
 			}
@@ -233,9 +245,9 @@ void Output_Equation(int& k, float& a, float& b, float& c, float& d, float& e)
 				goto Equation1;
 			}
 		}
-		cout << "Ham so co dang: y = ";
+		fprintf(output, "* Ham so co dang: y = ");
 		PT_6(a, b, c, d, e);
-		cout << endl;
+		fprintf(output, "\n");
 		break;
 	default:
 		break;
@@ -246,15 +258,15 @@ void PT_1(float a, float b)
 {
 	if (a != 0)
 	{
-		if (a == 1) cout << "x";
-		else if (a == -1) cout << "-x";
-		else cout << a << "x";
+		if (a == 1) fprintf(output, "x");
+		else if (a == -1) fprintf(output, "-x");
+		else fprintf(output, "%.2fx", a);
 	}
-	if (a == 0) cout << b;
+	if (a == 0) fprintf(output, "%.2f", b);
 	else
 	{
-		if (b > 0) cout << " + " << b;
-		else if (b < 0) cout << " - " << -b;
+		if (b > 0) fprintf(output, " + %.2f", b);
+		else if (b < 0) fprintf(output, " - %.2f", -b);
 	}
 }
 
@@ -265,20 +277,20 @@ void PT_2(float a, float b, float c)
 		PT_1(b, c);
 		return;
 	}
-	if (a == 1) cout << "x^2";
-	else if (a == -1) cout << "-x^2";
-	else cout << a << "x^2";
+	if (a == 1) fprintf(output, "x^2");
+	else if (a == -1) fprintf(output, "-x^2");
+	else fprintf(output, "%.2fx^2", a);
 	if (b != 0)
 	{
-		if (b == 1) cout << " + x";
-		else if (b == -1) cout << " - x";
-		else if (b > 0) cout << " + " << b << "x";
-		else if (b < 0) cout << " - " << -b << "x";
+		if (b == 1) fprintf(output, " + x");
+		else if (b == -1) fprintf(output, " - x");
+		else if (b > 0) fprintf(output, " + %.2fx", b);
+		else if (b < 0) fprintf(output, " - %.2fx", -b);
 	}
 	if (c != 0)
 	{
-		if (c > 0) cout << " + " << c;
-		else if (c < 0) cout << " - " << -c;
+		if (c > 0) fprintf(output, " + %.2f", c);
+		else if (c < 0) fprintf(output, " - %.2f", -c);
 	}
 }
 
@@ -289,23 +301,23 @@ void PT_3(float a, float b, float c, float d)
 		PT_2(b, c, d);
 		return;
 	}
-	if (a == 1) cout << "x^3";
-	else if (a == -1) cout << "-x^3";
-	else cout << a << "x^3";
+	if (a == 1) fprintf(output, "x^3");
+	else if (a == -1) fprintf(output, "-x^3");
+	else fprintf(output, "%.2fx^3", a);
 	if (b != 0)
-		if (b == 1) cout << " + x^2";
-		else if (b == -1) cout << " - x^2";
-		else if (b > 0) cout << " + " << b << "x^2";
-		else if (b < 0) cout << " - " << -b << "x^2";
+		if (b == 1) fprintf(output, " + x^2");
+		else if (b == -1) fprintf(output, " - x^2");
+		else if (b > 0) fprintf(output, " + %.2fx^2", b);
+		else if (b < 0) fprintf(output, " - %.2fx^2", -b);
 	if (c != 0)
-		if (c == 1) cout << " + x";
-		else if (c == -1) cout << " - x";
-		else if (c > 0) cout << " + " << c << "x";
-		else if (c < 0) cout << " - " << -c << "x";
+		if (c == 1) fprintf(output, " + x");
+		else if (c == -1) fprintf(output, " - x");
+		else if (c > 0) fprintf(output, " + %.2fx", c);
+		else if (c < 0) fprintf(output, " - %.2fx", -c);
 	if (d != 0)
 	{
-		if (d > 0) cout << " + " << d;
-		else if (d < 0) cout << " - " << -d;
+		if (d > 0) fprintf(output, " + %.2f", d);
+		else if (d < 0) fprintf(output, " - %.2f", -d);
 	}
 }
 
@@ -316,30 +328,30 @@ void PT_4(float a, float b, float c)
 		PT_2(b, 0, c);
 		return;
 	}
-	if (a == 1) cout << "x^4";
-	else if (a == -1) cout << "-x^4";
-	else cout << a << "x^4";
+	if (a == 1) fprintf(output, "x^4");
+	else if (a == -1) fprintf(output, "-x^4");
+	else fprintf(output, "%.2fx^4", a);
 	if (b != 0)
-		if (b == 1) cout << " + x^2";
-		else if (b == -1) cout << " - x^2";
-		else if (b > 0) cout << " + " << b << "x^2";
-		else if (b < 0) cout << " - " << -b << "x^2";
+		if (b == 1) fprintf(output, " + x^2");
+		else if (b == -1) fprintf(output, " - x^2");
+		else if (b > 0) fprintf(output, " + %.2fx^2", b);
+		else if (b < 0) fprintf(output, " - %.2fx^2", -b);
 	if (c != 0)
 	{
-		if (c > 0) cout << " + " << c;
-		else if (c < 0) cout << " - " << -c;
+		if (c > 0) fprintf(output, " + %.2f", c);
+		else if (c < 0) fprintf(output, " - %.2f", -c);
 	}
 }
 
 void PT_5(float a, float b, float c, float d)
 {
-	if (a != 0 && b != 0) cout << "(";
+	if (a != 0 && b != 0) fprintf(output, "(");
 	PT_1(a, b);
-	if (a != 0 && b != 0) cout << ")";
-	cout << " / ";
-	if (c != 0 && d != 0) cout << "(";
+	if (a != 0 && b != 0) fprintf(output, ")");
+	fprintf(output, " / ");
+	if (c != 0 && d != 0) fprintf(output, "(");
 	PT_1(c, d);
-	if (c != 0 && d != 0) cout << ")";
+	if (c != 0 && d != 0) fprintf(output, ")");
 }
 
 void PT_6(float a, float b, float c, float d, float e)
@@ -349,12 +361,12 @@ void PT_6(float a, float b, float c, float d, float e)
 		PT_5(b, c, d, e);
 		return;
 	}
-	if (b != 0 || c != 0) cout << "(";
+	if (b != 0 || c != 0) fprintf(output, "(");
 	PT_2(a, b, c);
-	if (b != 0 || c != 0) cout << ")";
-	cout << " / ";
-	if (d != 0 && e != 0) cout << "(";
+	if (b != 0 || c != 0) fprintf(output, ")");
+	fprintf(output, " / ");
+	if (d != 0 && e != 0) fprintf(output, "(");
 	PT_1(d, e);
-	if (d != 0 && e != 0) cout << ")";
+	if (d != 0 && e != 0) fprintf(output, ")");
 }
 
