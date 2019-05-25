@@ -49,7 +49,7 @@ void GioiHan1(float a, float b, int select)
 		if (a < 0)
 		{
 			fprintf(output, "\tKhi x -> +%c  lim(", char(236)); PT_1(a, b);
-			fprintf(input, ") = -%c\n", char(236));
+			fprintf(output, ") = -%c\n", char(236));
 		}
 		else if (a > 0)
 		{
