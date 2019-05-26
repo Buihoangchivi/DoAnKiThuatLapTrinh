@@ -74,17 +74,20 @@ int _tmain(int argc, char* argv[])
 		arr_k[NN] = k; arr_a[NN] = a; arr_b[NN] = b;
 		arr_c[NN] = c; arr_d[NN] = d; arr_e[NN] = e;
 		NN++;
-		fprintf(output, "\n");
-		TapXacDinh(k, a, b, c, d, e);
-		fprintf(output, "\n");
-		DaoHam_XetDau(k, a, b, c, d, e);
-		fprintf(output, "\n");
-		Choice_And_Lim(k, a, b, c, d, e);
-		fprintf(output, "\n");
-		MinMax(k, a, b, c, d, e);
+		if (k <= 6 || k >= 11)
+		{
+			fprintf(output, "\n");
+			TapXacDinh(k, a, b, c, d, e);
+			fprintf(output, "\n");
+			DaoHam_XetDau(k, a, b, c, d, e);
+			fprintf(output, "\n");
+			Choice_And_Lim(k, a, b, c, d, e);
+			fprintf(output, "\n");
+			MinMax(k, a, b, c, d, e);
+			BBT(k, a, b, c, d, e);
+		}
 		if (output == stdout) system("pause");
 		else fprintf(output, "\n\n");
-		BBT(k, a, b, c, d, e);
 	Next:
 		system("cls");
 	}

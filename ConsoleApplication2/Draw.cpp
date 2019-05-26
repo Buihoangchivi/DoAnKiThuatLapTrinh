@@ -132,6 +132,71 @@ void PT6(float a, float b, float c, float d, float e)
 	glEnd();
 }
 
+void PT7(float a, float b, float c)
+{
+	glColor3f(0.4, 0.3, 0.6);
+	glBegin(GL_POINTS);
+	float y1, y2;
+	for (float i = a - c; i <= a + c; i += cl)
+	{
+		Equa_7(a, b, c, i, y1, y2);
+		glVertex2f(i, y1);
+		glVertex2f(i, y2);
+	}
+	glEnd();
+}
+
+void PT8(float a, float b)
+{
+	glColor3f(1, 0.1, 0.5);
+	glBegin(GL_POINTS);
+	float y1, y2;
+	for (float i = -a; i <= a; i += cl)
+	{
+		Equa_8(a, b, i, y1, y2);
+		glVertex2f(i, y1);
+		glVertex2f(i, y2);
+	}
+	glEnd();
+}
+
+void PT9(float a, float b, float c, float d)
+{
+	glColor3f(0.7, 0.2, 0.4);
+	glBegin(GL_POINTS);
+	float y1, y2;
+	for (float i = xMin; i <= a - c; i += cl)
+	{
+		Equa_9(a, b, c, d, i, y1, y2);
+		glVertex2f(i, y1);
+		glVertex2f(i, y2);
+	}
+	for (float i = a + c; i <= xMax; i += cl)
+	{
+		Equa_9(a, b, c, d, i, y1, y2);
+		glVertex2f(i, y1);
+		glVertex2f(i, y2);
+	}
+	glEnd();
+}
+
+void PT10(float a, float b, float c, float d, float e)
+{
+	glColor3f(0.1, 1, 0.3);
+	glBegin(GL_POINTS);
+	float y1, y2, temp;
+	short k;
+	for (float i = xMin; i <= xMax; i += cl)
+	{
+		Equa_10(a, b, c, d, e, i, y1, y2, k);
+		if (k == -1) continue;
+		glVertex2f(i, y1);
+		if (k == 0) continue;
+		glVertex2f(i, y2);
+	}
+	glEnd();
+}
+
 void Display(void)
 {
 	/* draw unit square polygon */
@@ -189,6 +254,18 @@ void Display(void)
 			break;
 		case 6:
 			PT6(arr_a[i], arr_b[i], arr_c[i], arr_d[i], arr_e[i]);
+			break;
+		case 7:
+			PT7(arr_a[i], arr_b[i], arr_c[i]);
+			break;
+		case 8:
+			PT8(arr_a[i], arr_b[i]);
+			break;
+		case 9:
+			PT9(arr_a[i], arr_b[i], arr_c[i], arr_d[i]);
+			break;
+		case 10:
+			PT10(arr_a[i], arr_b[i], arr_c[i], arr_d[i], arr_e[i]);
 			break;
 		default:
 			break;
