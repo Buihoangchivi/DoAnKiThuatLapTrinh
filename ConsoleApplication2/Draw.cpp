@@ -5,10 +5,10 @@
 #include <GL/GL.h>
 #include <GL/GLU.h>
 #include "Draw.h"
-#define xMin -15
-#define xMax 15
-#define yMin -15
-#define yMax 15
+#define xMin -14
+#define xMax 14
+#define yMin -14
+#define yMax 14
 #define cl 0.02
 
 void Sin()
