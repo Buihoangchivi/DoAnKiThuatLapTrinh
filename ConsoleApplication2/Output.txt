@@ -1,50 +1,102 @@
-* Ham so co dang: y = 2.00x + 3.00
+* Ham so co dang: y = -4.00x^3 + 2.00x^2 + x + 6.00
 
 Tap xac dinh cua Ham so la R
 
-Ham so dao ham co dang: y' = 2.00
+Ham so dao ham co dang: y' = -12.00x^2 + 4.00x + 1.00
+Xet dau dao ham y':
+	Dao ham luon am voi x thuoc (-oo, -0.17) va x thuoc (0.50, +oo)
+	Dao ham luon duong voi x thuoc (-0.17, 0.50)
+	Dao ham bang 0 tai x = -0.17 va x = 0.50
+
+	Khi x -> -oo  lim(-4.00x^3 + 2.00x^2 + x + 6.00) = +oo
+	Khi x -> +oo  lim(-4.00x^3 + 2.00x^2 + x + 6.00) = -oo
+
+
+Ham so co cuc tieu la: ( -0.166667,   5.907407)
+
+Ham so co cuc tieu la: (  0.500000,   6.500000)
+
+
+Bang bien thien cua ham so tren la: 
+
+	|-----|---------------------------------------
+	|  x  | -oo      -0.17        0.50      +oo  
+	|-----|---------------------------------------
+	|f'(x)|      -     0     +     0    -       
+	|-----|---------------------------------------
+	|     | +oo                  5.91           
+	|     |    \              /      \        
+	|     |     \            /        \       
+	|f(x) |      \          /          \      
+	|     |       \        /            \     
+	|     |        \      /              \    
+	|     |         \    /                \   
+	|     |          6.50                   +oo 
+	|-----|---------------------------------------
+
+* Ham so co dang: y = -6.00x^2 + x + 2.00
+
+Tap xac dinh cua Ham so la R
+
+Ham so dao ham co dang: y' = -12.00x + 1.00
+Xet dau dao ham y':
+	Dao ham luon duong voi x thuoc (-oo, 0.08)
+	Dao ham bang 0 voi x = 0.08
+	Dao ham luon am voi x thuoc (0.08, +oo)
+
+	Khi x -> +oo  lim(-6.00x^2 + x + 2.00) = -oo
+
+
+Ham so khong co cuc tieu!!!
+
+Ham so co cuc tieu la: (  0.083333,   2.041667)
+
+
+Bang bien thien cua ham so tren la: 
+
+	|-----|-----------------------------
+	|  x  |-oo        0.08        +oo 
+	|-----|-----------------------------
+	|f'(x)|      +     0     -        
+	|-----|-----------------------------
+	|     |          2.04             
+	|     |        /       \         
+	|     |       /         \        
+	|f(x) |      / 	         \      
+	|     |     /             \      
+	|     |    /               \     
+	|     |   /                 \    
+	|     |-oo                    -oo 
+	|-----|-----------------------------
+
+* Ham so co dang: y = (-4.00x^2 + 3.00) / (-2.00x + 1.00)
+
+Tap xac dinh cua Ham so la R \ {0.50}
+
+Ham so dao ham co dang: y' = (8.00x^2 - 8.00x + 6.00) / (4.00x^2 - 4.00x + 1.00)
 Xet dau dao ham y':
 	Dao ham luon duong voi moi x thuoc R
 
-	Khi x -> +ì  lim(2.00x + 3.00) = +ì
-	Khi x -> -ì  lim(2.00x + 3.00) = -ì
-	Khi x -> 1.00  lim(2.00x + 3.00) = 5.00
+	Khi x -> 1.00  lim((-4.00x^2 + 3.00) / (-2.00x + 1.00)) = 1.00
+
 
 Ham so khong co cuc tieu hay cuc dai !!!
 
 
-* Ham so co dang: y = -4.00x^3 + 6.00x^2 + 2.00x + 4.00
+Bang bien thien cua ham so tren la: 
 
-Tap xac dinh cua Ham so la R
-
-Ham so dao ham co dang: y' = -12.00x^2 + 12.00x + 2.00
-Xet dau dao ham y':
-	Dao ham luon am voi x thuoc (-ì, -0.15) va x thuoc (1.15, +ì)
-	Dao ham luon duong voi x thuoc (-0.15, 1.15)
-	Dao ham bang 0 tai x = -0.15 va x = 1.15
-
-	Khi x -> +ì  lim(-4.00x^3 + 6.00x^2 + 2.00x + 4.00) = -ì
-	Khi x -> -ì  lim(-4.00x^3 + 6.00x^2 + 2.00x + 4.00) = +ì
-	Khi x -> -4.00  lim(-4.00x^3 + 6.00x^2 + 2.00x + 4.00) = 348.00
-
-Ham so co cuc tieu la: ( -0.145497,   3.848343)
-Ham so co cuc tieu la: (  1.145497,   8.151657)
-
-
-* Ham so co dang: y = (4.00x - 4.00) / (3.00x + 6.00)
-
-Tap xac dinh cua Ham so la R \ {-2.00}
-
-Ham so dao ham co dang: y' = 36.00 / (9.00x^2 + 36.00x + 36.00)
-Xet dau dao ham y':
-	Dao ham luon duong voi moi x thuoc R \ {-2.00}
-	Dao ham tien toi ì khi x = -2.00
-
-	Khi x -> +ì  lim((4.00x - 4.00) / (3.00x + 6.00)) = 0
-	Khi x -> -ì  lim((4.00x - 4.00) / (3.00x + 6.00)) = 0
-	Khi x -> -1.00  lim((4.00x - 4.00) / (3.00x + 6.00)) = -2.67
-	Khi x -> 1.00  lim((4.00x - 4.00) / (3.00x + 6.00)) = 0.00
-
-Ham so khong co cuc tieu hay cuc dai !!!
-
+	|-----|-------------------------------
+	|  x  |-oo         0.50          +oo 
+	|-----|-------------||----------------
+	|f'(x)|     +       ||     +        
+	|-----|-------------||----------------
+	|     |         +oo ||          +oo 
+	|     |        /    ||         /    
+	|     |       /     ||        /     
+	|f(x) |      / 	   ||       /      
+	|     |     /       ||      /       
+	|     |    /        ||     /        
+	|     |   /         ||    /         
+	|     |-oo          || -oo          
+	|-----|-------------||----------------
 

@@ -11,11 +11,17 @@
 #include "Daoham.h"
 #include "GioiHan.h"
 #include "MinMax.h"
+#include "Bangbienthien.h"
 #define fi "Input.txt"
 #define fo "Output.txt"
 #define _CRT_NONSTDC_NO_WARNINGS
+#define MAX 50
 
-FILE* input, * output;
+FILE * input, * output;
+
+int arr_k[MAX];
+float arr_a[MAX]; float arr_b[MAX]; float arr_c[MAX]; float arr_d[MAX]; float arr_e[MAX];
+int NN;
 
 using namespace std;
 
@@ -55,6 +61,7 @@ void NhapCach_Input_Output()
 int _tmain(int argc, char* argv[])
 {
 	int k;
+	NN = 0;
 	float a, b, c, d, e;
 	NhapCach_Input_Output();
 	while (true)
@@ -64,6 +71,9 @@ int _tmain(int argc, char* argv[])
 		if (k == 0) break;
 		Output_Equation(k, a, b, c, d, e);
 		if (k == 0) goto Next;
+		arr_k[NN] = k; arr_a[NN] = a; arr_b[NN] = b;
+		arr_c[NN] = c; arr_d[NN] = d; arr_e[NN] = e;
+		NN++;
 		fprintf(output, "\n");
 		TapXacDinh(k, a, b, c, d, e);
 		fprintf(output, "\n");
@@ -74,10 +84,11 @@ int _tmain(int argc, char* argv[])
 		MinMax(k, a, b, c, d, e);
 		if (output == stdout) system("pause");
 		else fprintf(output, "\n\n");
-		//Draw(argc, argv);
+		BBT(k, a, b, c, d, e);
 	Next:
 		system("cls");
 	}
+	Draw(argc, argv);
 	return 0;
 }
 

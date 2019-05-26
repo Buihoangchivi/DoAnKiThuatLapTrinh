@@ -23,13 +23,14 @@ void Input(char ch, float& k)
 
 void Input_Equation_Console(int& k)
 {
-	fprintf(stdout, "Chon Ham so ax + b = 0                    : Nhap 1\n");
-	fprintf(stdout, "Chon Ham so ax^2 + bx + c = 0             : Nhap 2\n");
-	fprintf(stdout, "Chon Ham so ax^3 + bx^2 + cx + d = 0      : Nhap 3\n");
-	fprintf(stdout, "Chon Ham so ax^4 + bx^2 + c = 0           : Nhap 4\n");
-	fprintf(stdout, "Chon Ham so (ax + b) / (cx + d) = 0       : Nhap 5\n");
-	fprintf(stdout, "Chon Ham so (ax^2 + bx + c) / (dx + e) = 0: Nhap 6\n");
-	fprintf(stdout, "De dung chuong trinh                      : Nhap 0\n");
+	fprintf(stdout, "Chon Ham so ax + b                     : Nhap 1\n");
+	fprintf(stdout, "Chon Ham so ax^2 + bx + c              : Nhap 2\n");
+	fprintf(stdout, "Chon Ham so ax^3 + bx^2 + cx + d       : Nhap 3\n");
+	fprintf(stdout, "Chon Ham so ax^4 + bx^2 + c            : Nhap 4\n");
+	fprintf(stdout, "Chon Ham so (ax + b) / (cx + d)        : Nhap 5\n");
+	fprintf(stdout, "Chon Ham so (ax^2 + bx + c) / (dx + e) : Nhap 6\n");
+	fprintf(stdout, "Chon cac Ham so khac                   : Nhap 7\n");
+	fprintf(stdout, "De dung chuong trinh                   : Nhap 0\n");
 	fprintf(stdout, "Nhap vao 1 so N: ");
 	while (true)
 	{
@@ -250,7 +251,37 @@ void Output_Equation(int& k, float& a, float& b, float& c, float& d, float& e)
 		fprintf(output, "\n");
 		break;
 	default:
+		//CacHamSoKhac(k, a, b, c, d, e);
 		break;
+	}
+}
+
+void CacHamSoKhac(int& k, float& a, float& b, float& c, float& d, float& e)
+{
+	fprintf(stdout, "Chon Phuong trinh Duong tron (x - a)^2 + (y - b)^2 = R^2              : Nhap 1\n");
+	fprintf(stdout, "Chon Phuong trinh Elips (x^2 / a^2) + (y^2 / b^2) = 1                 : Nhap 2\n");
+	fprintf(stdout, "Chon Phuong trinh Parabol (ax + by)^2 + cx + dy + e = 0               : Nhap 3\n");
+	fprintf(stdout, "Chon Phuong trinh Hyperbol [(x - h)^2 / a^2] - [(y - k)^2 / b^2] = 1  : Nhap 4\n");
+	fprintf(stdout, "Chon Ham so y = Sin(x)                                                : Nhap 5\n");
+	fprintf(stdout, "Chon Ham so y = Cos(x)                                                : Nhap 6\n");
+	fprintf(stdout, "Chon Ham so y = Tan(x)                                                : Nhap 7\n");
+	fprintf(stdout, "Chon Ham so y = Cotan(x)                                              : Nhap 8\n");
+	fprintf(stdout, "Chon Ham so y = e^x                                                   : Nhap 9\n");
+	fprintf(stdout, "Chon Ham so y = [Ln(a)]^b                                             : Nhap 10\n");
+	fprintf(stdout, "Chon Ham so y = Log(x)a                                               : Nhap 11\n");
+	fprintf(stdout, "Ban muon tinh ham can thuc cua cac ham so co ban                      : Nhap 12\n");
+	fprintf(stdout, "Ban muon tinh ham tri tuyet doi cua cac ham so co ban                 : Nhap 13\n");
+	fprintf(stdout, "De dung chuong trinh                                                  : Nhap 0\n");
+	fprintf(stdout, "Nhap vao 1 so N: ");
+	while (true)
+	{
+		Input('N', k);
+		if (k < 0 || k>13)
+		{
+			fprintf(stdout, "Du lieu ban nhap vao khong hop le!!!\a\n");
+			fprintf(stdout, "Xin moi ban nhap lai 1 so N: ");
+		}
+		else break;
 	}
 }
 

@@ -1,4 +1,4 @@
-#define _CRT_NONSTDC_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS
 #include "GioiHan.h"
 #include "Equation.h"
 #include "Input_Output.h"
@@ -48,33 +48,45 @@ void GioiHan1(float a, float b, int select)
 	case 1:
 		if (a < 0)
 		{
-			fprintf(output, "\tKhi x -> +%c  lim(", char(236)); PT_1(a, b);
-			fprintf(input, ") = -%c\n", char(236));
+			if (output == stdout) fprintf(output, "\tKhi x -> +%c  lim(", char(236));
+			else fprintf(output, "\tKhi x -> +oo  lim("); PT_1(a, b);
+			if (output == stdout) fprintf(output, ") = -%c\n", char(236));
+			else fprintf(output, ") = -oo\n");
 		}
 		else if (a > 0)
 		{
-			fprintf(output, "\tKhi x -> +%c  lim(", char(236)); PT_1(a, b);
-			fprintf(output, ") = +%c\n", char(236));
+			if (output == stdout) fprintf(output, "\tKhi x -> +%c  lim(", char(236));
+			else fprintf(output, "\tKhi x -> +oo  lim("); PT_1(a, b);
+			if (output == stdout) fprintf(output, ") = +%c\n", char(236));
+			else fprintf(output, ") = +oo\n");
 		}
 		else
 		{
-			fprintf(output, "\tKhi x -> +%c  lim(", char(236)); PT_1(a, b);
+			if (output == stdout) fprintf(output, "\tKhi x -> +%c  lim(", char(236));
+			else fprintf(output, "\tKhi x -> +oo  lim("); PT_1(a, b);
 			fprintf(output, ") = %.2f\n", b);
 		}
 		break;
 	case 2:
 		if (a < 0)
 		{
-			fprintf(output, "\tKhi x -> -%c  lim(", char(236)); PT_1(a, b);
-			fprintf(output, ") = +%c\n", char(236));
+			if (output == stdout) fprintf(output, "\tKhi x -> -%c  lim(", char(236));
+			else fprintf(output, "\tKhi x -> -oo  lim("); PT_1(a, b);
+			if (output == stdout) fprintf(output, ") = +%c\n", char(236));
+			else fprintf(output, ") = +oo\n");
 		}
 		else if (a > 0)
 		{
-			fprintf(output, "\tKhi x -> -%c  lim(", char(236)); PT_1(a, b); fprintf(output, ") = -%c\n", char(236));
+			if (output == stdout) fprintf(output, "\tKhi x -> -%c  lim(", char(236));
+			else fprintf(output, "\tKhi x -> -oo  lim("); PT_1(a, b);
+			if (output == stdout) fprintf(output, ") = -%c\n", char(236));
+			else fprintf(output, ") = -oo\n");
 		}
 		else
 		{
-			fprintf(output, "\tKhi x -> -%c  lim(", char(236)); PT_1(a, b); fprintf(output, ") = %.2f\n", b);
+			if (output == stdout) fprintf(output, "\tKhi x -> -%c  lim(", char(236));
+			else fprintf(output, "\tKhi x -> -oo  lim("); PT_1(a, b);
+			fprintf(output, ") = %.2f\n", b);
 		}
 		break;
 	case 3:
@@ -95,21 +107,33 @@ void GioiHan2(float a, float b, float c, int select)
 	case 1:
 		if (a < 0)
 		{
-			fprintf(output, "\tKhi x -> +%c  lim(", char(236)); PT_2(a, b, c); fprintf(output, ") = -%c\n", char(236));
+			if (output == stdout) fprintf(output, "\tKhi x -> +%c  lim(", char(236));
+			else fprintf(output, "\tKhi x -> +oo  lim("); PT_2(a, b, c);
+			if (output == stdout) fprintf(output, ") = -%c\n", char(236));
+			else fprintf(output, ") = -oo\n");
 		}
 		else if (a > 0)
 		{
-			fprintf(output, "\tKhi x -> +%c  lim(", char(236)); PT_2(a, b, c); fprintf(output, ") = +%c\n", char(236));
+			if (output == stdout) fprintf(output, "\tKhi x -> +%c  lim(", char(236));
+			else fprintf(output, "\tKhi x -> +oo  lim("); PT_2(a, b, c);
+			if (output == stdout) fprintf(output, ") = +%c\n", char(236));
+			else fprintf(output, ") = +oo\n");
 		}
 		break;
 	case 2:
 		if (a < 0)
 		{
-			fprintf(output, "\tKhi x -> -%c  lim(", char(236)); PT_2(a, b, c); fprintf(output, ") = -%c\n", char(236));
+			if (output == stdout) fprintf(output, "\tKhi x -> -%c  lim(", char(236));
+			else fprintf(output, "\tKhi x -> -oo  lim("); PT_2(a, b, c);
+			if (output == stdout) fprintf(output, ") = -%c\n", char(236));
+			else fprintf(output, ") = -oo\n");
 		}
 		else if (a > 0)
 		{
-			fprintf(output, "\tKhi x -> -%c  lim(", char(236)); PT_2(a, b, c); fprintf(output, ") = +%c\n", char(236));
+			if (output == stdout) fprintf(output, "\tKhi x -> -%c  lim(", char(236));
+			else fprintf(output, "\tKhi x -> -oo  lim("); PT_2(a, b, c);
+			if (output == stdout) fprintf(output, ") = +%c\n", char(236));
+			else fprintf(output, ") = +oo\n");
 		}
 		break;
 	case 3:
@@ -130,21 +154,33 @@ void GioiHan3(float a, float b, float c, float d, int select)
 	case 1:
 		if (a < 0)
 		{
-			fprintf(output, "\tKhi x -> +%c  lim(", char(236)); PT_3(a, b, c, d); fprintf(output, ") = -%c\n", char(236));
+			if (output == stdout) fprintf(output, "\tKhi x -> +%c  lim(", char(236));
+			else fprintf(output, "\tKhi x -> +oo  lim("); PT_3(a, b, c, d);
+			if (output == stdout) fprintf(output, ") = -%c\n", char(236));
+			else fprintf(output, ") = -oo\n");
 		}
 		else if (a > 0)
 		{
-			fprintf(output, "\tKhi x -> +%c  lim(", char(236)); PT_3(a, b, c, d); fprintf(output, ") = +%c\n", char(236));
+			if (output == stdout) fprintf(output, "\tKhi x -> +%c  lim(", char(236));
+			else fprintf(output, "\tKhi x -> +oo  lim("); PT_3(a, b, c, d);
+			if (output == stdout) fprintf(output, ") = +%c\n", char(236));
+			else fprintf(output, ") = +oo\n");
 		}
 		break;
 	case 2:
 		if (a < 0)
 		{
-			fprintf(output, "\tKhi x -> -%c  lim(", char(236)); PT_3(a, b, c, d); fprintf(output, ") = +%c\n", char(236));
+			if (output == stdout) fprintf(output, "\tKhi x -> -%c  lim(", char(236));
+			else fprintf(output, "\tKhi x -> -oo  lim("); PT_3(a, b, c, d);
+			if (output == stdout) fprintf(output, ") = +%c\n", char(236));
+			else fprintf(output, ") = +oo\n");
 		}
 		else if (a > 0)
 		{
-			fprintf(output, "\tKhi x -> -%c  lim(", char(236)); PT_3(a, b, c, d); fprintf(output, ") = -%c\n", char(236));
+			if (output == stdout) fprintf(output, "\tKhi x -> -%c  lim(", char(236));
+			else fprintf(output, "\tKhi x -> -oo  lim("); PT_3(a, b, c, d);
+			if (output == stdout) fprintf(output, ") = -%c\n", char(236));
+			else fprintf(output, ") = -oo\n");
 		}
 		break;
 	case 3:
@@ -165,21 +201,33 @@ void GioiHan4(float a, float b, float c, int select)
 	case 1:
 		if (a < 0)
 		{
-			fprintf(output, "\tKhi x -> +%c  lim(", char(236)); PT_4(a, b, c); fprintf(output, ") = -%c\n", char(236));
+			if (output == stdout) fprintf(output, "\tKhi x -> +%c  lim(", char(236));
+			else fprintf(output, "\tKhi x -> +oo  lim("); PT_4(a, b, c);
+			if (output == stdout) fprintf(output, ") = -%c\n", char(236));
+			else fprintf(output, ") = -oo\n");
 		}
 		else if (a > 0)
 		{
-			fprintf(output, "\tKhi x -> +%c  lim(", char(236)); PT_4(a, b, c); fprintf(output, ") = +%c\n", char(236));
+			if (output == stdout) fprintf(output, "\tKhi x -> +%c  lim(", char(236));
+			else fprintf(output, "\tKhi x -> +oo  lim("); PT_4(a, b, c);
+			if (output == stdout) fprintf(output, ") = +%c\n", char(236));
+			else fprintf(output, ") = +oo\n");
 		}
 		break;
 	case 2:
 		if (a < 0)
 		{
-			fprintf(output, "\tKhi x -> -%c  lim(", char(236)); PT_4(a, b, c); fprintf(output, ") = -%c\n", char(236));
+			if (output == stdout) fprintf(output, "\tKhi x -> -%c  lim(", char(236));
+			else fprintf(output, "\tKhi x -> -oo  lim("); PT_4(a, b, c);
+			if (output == stdout) fprintf(output, ") = -%c\n", char(236));
+			else fprintf(output, ") = -oo\n");
 		}
 		else if (a > 0)
 		{
-			fprintf(output, "\tKhi x -> -%c  lim(", char(236)); PT_4(a, b, c); fprintf(output, ") = +%c\n", char(236));
+			if (output == stdout) fprintf(output, "\tKhi x -> -%c  lim(", char(236));
+			else fprintf(output, "\tKhi x -> -oo  lim("); PT_4(a, b, c);
+			if (output == stdout) fprintf(output, ") = +%c\n", char(236));
+			else fprintf(output, ") = +oo\n");
 		}
 		break;
 	case 3:
@@ -198,11 +246,13 @@ void GioiHan5(float a, float b, float c, float d, int select)
 	switch (select)
 	{
 	case 1:
-		fprintf(output, "\tKhi x -> +%c  lim(", char(236)); PT_5(a, b, c, d);
+		if (output == stdout) fprintf(output, "\tKhi x -> +%c  lim(", char(236));
+		else fprintf(output, "\tKhi x -> +oo  lim("); PT_5(a, b, c, d);
 		fprintf(output, ") = 0\n");
 		break;
 	case 2:
-		fprintf(output, "\tKhi x -> -%c  lim(", char(236)); PT_5(a, b, c, d);
+		if (output == stdout) fprintf(output, "\tKhi x -> -%c  lim(", char(236));
+		else fprintf(output, "\tKhi x -> -oo  lim("); PT_5(a, b, c, d);
 		fprintf(output, ") = 0\n");
 		break;
 	case 3:
@@ -215,7 +265,9 @@ void GioiHan5(float a, float b, float c, float d, int select)
 		}
 		else
 		{
-			fprintf(output, "\tKhi x -> %.2f  lim", x0); PT_5(a, b, c, d); fprintf(output, ") = %c\n", char(236));
+			fprintf(output, "\tKhi x -> %.2f  lim", x0); PT_5(a, b, c, d);
+			if (output == stdout) fprintf(output, ") = %c\n", char(236));
+			else fprintf(output, ") = oo\n");
 		}
 		break;
 	default:
@@ -230,21 +282,34 @@ void GioiHan6(float a, float b, float c, float d, float e, int select)
 	case 1:
 		if (a * d > 0)
 		{
-			fprintf(output, "\tKhi x -> +%c  lim(", char(236)); PT_6(a, b, c, d, e); fprintf(output, ") = +%c\n", char(236));
+			if (output == stdout) fprintf(output, "\tKhi x -> +%c  lim(", char(236));
+			else fprintf(output, "\tKhi x -> +oo  lim("); PT_6(a, b, c, d, e);
+			if (output == stdout) fprintf(output, ") = +%c\n", char(236));
+			else fprintf(output, ") = +oo\n");
 		}
 		else
 		{
-			fprintf(output, "\tKhi x -> +%c  lim(", char(236)); PT_6(a, b, c, d, e); fprintf(output, ") = -%c\n", char(236));
+			if (output == stdout) fprintf(output, "\tKhi x -> +%c  lim(", char(236));
+			else fprintf(output, "\tKhi x -> +oo  lim("); PT_6(a, b, c, d, e);
+			if (output == stdout) fprintf(output, ") = -%c\n", char(236));
+			else fprintf(output, ") = -oo\n");
 		}
 		break;
 	case 2:
 		if (a * d < 0)
 		{
-			fprintf(output, "\tKhi x -> -%c  lim(", char(236)); PT_6(a, b, c, d, e); fprintf(output, ") = +%c\n", char(236));
+			if (output == stdout) fprintf(output, "\tKhi x -> -%c  lim(", char(236));
+			else fprintf(output, "\tKhi x -> -oo  lim("); PT_6(a, b, c, d, e);
+			if (output == stdout) fprintf(output, ") = +%c\n", char(236));
+			else fprintf(output, ") = +oo\n");
 		}
 		else
 		{
-			fprintf(output, "\tKhi x -> -%c  lim(", char(236)); PT_6(a, b, c, d, e); fprintf(output, ") = -%c\n", char(236));
+			if (output == stdout) fprintf(output, "\tKhi x -> -%c  lim(", char(236));
+			else fprintf(output, "\tKhi x -> -oo  lim(");
+			PT_6(a, b, c, d, e);
+			if (output == stdout) fprintf(output, ") = -%c\n", char(236));
+			else fprintf(output, ") = -oo\n");
 		}
 		break;
 	case 3:
@@ -258,7 +323,7 @@ void GioiHan6(float a, float b, float c, float d, float e, int select)
 		else
 		{
 			fprintf(output, "\tKhi x -> %.2f  lim(", x0); PT_6(a, b, c, d, e);
-			fprintf(output, ") = %c\n", char(236));
+			if (output == stdout) fprintf(output, ") = %c\n", char(236));
 		}
 		break;
 	default:
