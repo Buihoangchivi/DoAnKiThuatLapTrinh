@@ -33,6 +33,18 @@ void BBT(int k, float a, float b, float c, float d, float e)
 	case 6:
 		BBT6(a, b, c, d, e);
 		break;
+	case 14:
+		BBT14();
+		break;
+	case 15:
+		BBT15();
+		break;
+	case 16:
+		BBT16();
+		break;
+	case 17:
+		BBT17();
+		break;
 	default:
 		break;
 	}
@@ -372,7 +384,7 @@ void BBT6(float a, float b, float c, float d, float e)
 			fprintf(output, "\t|     |         +oo ||          +oo \n");
 			fprintf(output, "\t|     |        /    ||         /    \n");
 			fprintf(output, "\t|     |       /     ||        /     \n");
-			fprintf(output, "\t|f(x) |      / 	   ||       /      \n");
+			fprintf(output, "\t|f(x) |      /  	    ||       /      \n");
 			fprintf(output, "\t|     |     /       ||      /       \n");
 			fprintf(output, "\t|     |    /        ||     /        \n");
 			fprintf(output, "\t|     |   /         ||    /         \n");
@@ -398,4 +410,99 @@ void BBT6(float a, float b, float c, float d, float e)
 			fprintf(output, "\t|-----|-------------||----------------\n");
 			fprintf(output, "\n");
 		}
+}
+
+void BBT14()
+{
+	fprintf(output, "|=====|===================================================================================\n");
+	fprintf(output, "|  x  |-2* Pi       -3* Pi/2          -Pi/2            Pi/2            3* Pi/2        2* Pi\n");
+	fprintf(output, "|-----|-----------------------------------------------------------------------------------\n");
+	fprintf(output, "|f'(x)|       +             -                 +               -                +          \n");
+	fprintf(output, "|-----|-----------------------------------------------------------------------------------\n");
+	fprintf(output, "|     |              1                                 1                                 0\n");
+	fprintf(output, "| f(x)|           /      \\                         /        \\                          /  \n");
+	fprintf(output, "|     |          /        \\                       /          \\                        /   \n");
+	fprintf(output, "|     |         /          \\                     /            \\                      /    \n");
+	fprintf(output, "|     |        /            \\                   /              \\                    /     \n");
+	fprintf(output, "|     |       /              \\                 /                \\                  /      \n");
+	fprintf(output, "|     |      /                \\               /                  \\                /       \n");
+	fprintf(output, "|     |     /                  \\             /                    \\              /        \n");
+	fprintf(output, "|     |    /                    \\           /                      \\            /         \n");
+	fprintf(output, "|     |   /                      \\         /                        \\          /          \n");
+	fprintf(output, "|     |  /                        \\       /                          \\        /           \n");
+	fprintf(output, "|     | /                          \\     /                            \\      /            \n");
+	fprintf(output, "|     |0                              -1                                  -1              \n");
+	fprintf(output, "|=====|===================================================================================\n");
+}
+
+void BBT15()
+{
+	fprintf(output, "\t|=====|====================================================================\n");
+	fprintf(output, "\t|  x  |-2* Pi          -Pi                0               -Pi         2* Pi\n");
+	fprintf(output, "\t|-----|--------------------------------------------------------------------\n");
+	fprintf(output, "\t|f'(x)|       -             +                     -              +         \n");
+	fprintf(output, "\t|-----|--------------------------------------------------------------------\n");
+	fprintf(output, "\t|     |  1                               1                               1  \n");
+	fprintf(output, "\t| f(x)|    \\                         /      \\                         /    \n");
+	fprintf(output, "\t|     |     \\                       /        \\                       /     \n");
+	fprintf(output, "\t|     |      \\                     /          \\                     /      \n");
+	fprintf(output, "\t|     |       \\                   /            \\                   /       \n");
+	fprintf(output, "\t|     |        \\                 /              \\                 /        \n");
+	fprintf(output, "\t|     |         \\               /                \\               /         \n");
+	fprintf(output, "\t|     |          \\             /                  \\             /          \n");
+	fprintf(output, "\t|     |           \\           /                    \\           /           \n");
+	fprintf(output, "\t|     |            \\         /                      \\         /            \n");
+	fprintf(output, "\t|     |             \\       /                        \\       /             \n");
+	fprintf(output, "\t|     |              \\     /                          \\     /              \n");
+	fprintf(output, "\t|     |                -1                               -1                 \n");
+	fprintf(output, "\t|=====|====================================================================\n");
+}
+
+void BBT16()
+{
+	fprintf(output, "|=====|=======================|\n");
+	fprintf(output, "|  x  | -Pi/2            Pi/2 |\n");
+	fprintf(output, "|-----|-----------------------|\n");
+	fprintf(output, "|f'(x)|                       |\n");
+	fprintf(output, "|-----|-----------------------|\n");
+	fprintf(output, "|-----|                  +oo  |\n");
+	fprintf(output, "|-----|                 /     |\n");
+	fprintf(output, "|-----|                /      |\n");
+	fprintf(output, "|-----|               /       |\n");
+	fprintf(output, "|-----|              /        |\n");
+	fprintf(output, "|-----|             /         |\n");
+	fprintf(output, "|-----|            /          |\n");
+	fprintf(output, "|-----|           /           |\n");
+	fprintf(output, "|-----|          /            |\n");
+	fprintf(output, "|-----|         /             |\n");
+	fprintf(output, "|-----|        /              |\n");
+	fprintf(output, "|-----|       /               |\n");
+	fprintf(output, "|-----|      /                |\n");
+	fprintf(output, "|-----|     /                 |\n");
+	fprintf(output, "|-----|    /                  |\n");
+	fprintf(output, "|-----| -oo                   |\n");
+	fprintf(output, "|=====|=======================|\n");
+}
+
+void BBT17()
+{
+	fprintf(output, "\t|=====|======================|\n");
+	fprintf(output, "\t|  x  | 0               Pi   |\n");
+	fprintf(output, "\t|-----|----------------------|\n");
+	fprintf(output, "\t|f'(x)|          -           |\n");
+	fprintf(output, "\t|-----|----------------------|\n");
+	fprintf(output, "\t|     |  +oo                 |\n");
+	fprintf(output, "\t| f(x)|     \\               |\n");
+	fprintf(output, "\t|     |      \\              |\n");
+	fprintf(output, "\t|     |       \\             |\n");
+	fprintf(output, "\t|     |        \\            |\n");
+	fprintf(output, "\t|     |         \\           |\n");
+	fprintf(output, "\t|     |          \\          |\n");
+	fprintf(output, "\t|     |           \\         |\n");
+	fprintf(output, "\t|     |            \\        |\n");
+	fprintf(output, "\t|     |             \\       |\n");
+	fprintf(output, "\t|     |              \\      |\n");
+	fprintf(output, "\t|     |               \\     |\n");
+	fprintf(output, "\t|     |                -oo   |\n");
+	fprintf(output, "\t|=====|======================|\n");
 }

@@ -3,10 +3,9 @@
 
 void TapXacDinh(int k, float a, float b, float c, float d, float e);
 void TapXacDinh_1();
-void TapXacDinh_2();
-void TapXacDinh_3();
+void TapXacDinh_2(float a, float b, float c, float d);
+void TapXacDinh_3(float a, float b, float c, float d, float e);
 void TapXacDinh_4();
-void TapXacDinh_5(float a, float b, float c, float d);
-void TapXacDinh_6(float a, float b, float c, float d, float e);
+void TapXacDinh_5();
 
 #endif

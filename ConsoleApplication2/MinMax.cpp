@@ -43,6 +43,30 @@ void MinMax(int k, float a, float b, float c, float d, float e)
 		MinMax_6(a, b, c, d, e);
 		break;
 	}
+	case 14:
+	{
+		MinMax_17();
+		break;
+	}
+
+	case 15:
+	{
+		MinMax_15();
+		break;
+	}
+
+	case 16:
+	{
+		MinMax_16();
+		break;
+	}
+
+	case 17:
+	{
+		MinMax_17();
+		break;
+	}
+
 	default:
 		break;
 	}
@@ -83,24 +107,24 @@ void MinMax_3(float a, float b, float c, float d)
 	}
 	else
 	{
-		float X1, X2;
 		if (a < 0)
 		{
-			float MAX, MIN;
+			float X1, X2;
 			if (x < y)
 			{
-				MIN = a * pow(x, 3) + b * pow(x, 2) + c * x + d;
+				float MIN = a * pow(x, 3) + b * pow(x, 2) + c * x + d;
 				X1 = x;
-				MAX = a * pow(y, 3) + b * pow(y, 2) + c * y + d;
+				float MAX = a * pow(y, 3) + b * pow(y, 2) + c * y + d;
 				X2 = y;
 				fprintf(output, "\nHam so co cuc tieu la: (%10f, %10f)\n", X1, MIN);
 				fprintf(output, "\nHam so co cuc tieu la: (%10f, %10f)\n", X2, MAX);
 			}
 			else
 			{
-				MAX = a * pow(x, 3) + b * pow(x, 2) + c * x + d;
+				float X1, X2;
+				float MAX = a * pow(x, 3) + b * pow(x, 2) + c * x + d;
 				X2 = x;
-				MIN = a * pow(y, 3) + b * pow(y, 2) + c * y + d;
+				float MIN = a * pow(y, 3) + b * pow(y, 2) + c * y + d;
 				X1 = y;
 				fprintf(output, "\nHam so co cuc tieu la: (%10f, %10f)\n", X1, MIN);
 				fprintf(output, "\nHam so co cuc tieu la: (%10f, %10f)\n", X2, MAX);
@@ -108,9 +132,9 @@ void MinMax_3(float a, float b, float c, float d)
 		}
 		else
 		{
-			float MAX, MIN;
 			if (x < y)
 			{
+				float X1, X2;
 				float MAX = a * pow(x, 3) + b * pow(x, 2) + c * x + d;
 				X1 = x;
 				float MIN = a * pow(y, 3) + b * pow(y, 2) + c * y + d;
@@ -120,6 +144,7 @@ void MinMax_3(float a, float b, float c, float d)
 			}
 			else
 			{
+				float X1, X2;
 				float MIN = a * pow(x, 3) + b * pow(x, 2) + c * x + d;
 				X2 = x;
 				float MAX = a * pow(y, 3) + b * pow(y, 2) + c * y + d;
@@ -188,4 +213,30 @@ void MinMax_6(float a, float b, float c, float d, float e)
 			fprintf(output, "\nHam so co cuc dai la: (%10f, %10f)\n", x, Equa_6(a, b, c, d, e, x));
 		}
 	}
+}
+
+void MinMax_14()
+{
+	if (output==stdout) fprintf(output, "Ham so co cuc tieu tai cac diem (-%c/2 + k* 2%c,-1), k thuoc Z\n",(char)227,(char)227);
+	else fprintf(output, "Ham so co cuc tieu tai cac diem (-Pi/2 + k* 2Pi,-1), k thuoc Z\n");
+	if (output == stdout) fprintf(output, "Ham so co cuc dai tai cac diem (%c/2 + k* 2%c,1), k thuoc Z\n", (char)227, (char)227);
+	else fprintf(output, "Ham so co cuc dai tai cac diem (Pi/2 + k* 2Pi,1), k thuoc Z\n");
+}
+
+void MinMax_15()
+{
+	if (output == stdout) fprintf(output, "Ham so co cuc tieu tai cac diem (%c + k* 2%c,-1), k thuoc Z\n", (char)227, (char)227);
+	else fprintf(output, "Ham so co cuc tieu tai cac diem (Pi + k* 2Pi,-1), k thuoc Z\n");
+	if (output == stdout) fprintf(output, "Ham so co cuc dai tai cac diem (k* 2%c,1), k thuoc Z\n", (char)227);
+	else fprintf(output, "Ham so co cuc dai tai cac diem (k* 2Pi,1), k thuoc Z\n");
+}
+
+void MinMax_16()
+{
+	fprintf(output, "\nHam so khong co cuc tri!!!\n");
+}
+
+void MinMax_17()
+{
+	fprintf(output, "Ham so khong co cuc tri!!!\n");
 }

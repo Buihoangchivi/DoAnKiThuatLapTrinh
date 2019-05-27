@@ -148,7 +148,7 @@ void PT7(float a, float b, float c)
 
 void PT8(float a, float b)
 {
-	glColor3f(1, 0.1, 0.5);
+	glColor3f(0.4, 0.1, 0.5);
 	glBegin(GL_POINTS);
 	float y1, y2;
 	for (float i = -a; i <= a; i += cl)
@@ -229,10 +229,6 @@ void Display(void)
 	glVertex2f(xMax, 0);
 	glVertex2f(xMax - 10 * cl, cl * 5);
 	glEnd();
-	/*Sin();
-	Cos();
-	Tan();
-	CoTan();*/
 	for (int i = 0; i < NN; i++)
 	{
 		switch (arr_k[i])
@@ -266,6 +262,18 @@ void Display(void)
 			break;
 		case 10:
 			PT10(arr_a[i], arr_b[i], arr_c[i], arr_d[i], arr_e[i]);
+			break;
+		case 14:
+			Sin();
+			break;
+		case 15:
+			Cos();
+			break;
+		case 16:
+			Tan();
+			break;
+		case 17:
+			CoTan();
 			break;
 		default:
 			break;

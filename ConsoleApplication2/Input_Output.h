@@ -5,6 +5,7 @@ void Input_Equation_Console(int &k);
 void Input_Equation_File(int& k);
 void Output_Equation(int &k, float &a, float &b, float &c, float &d, float &e);
 void Output_Advanced_Equation(int& k, float& a, float& b, float& c, float& d, float& e);
+void Ham_Khac(int& k, int temp);
 void CacHamSoKhac(int& k, float& a, float& b, float& c, float& d, float& e);
 void Input(char ch, int &k);
 void Input(char ch, float& k);

@@ -9,5 +9,9 @@ void BBT3(float a, float b, float c, float d);
 void BBT4(float a, float b, float c);
 void BBT5(float a, float b, float c, float d);
 void BBT6(float a, float b, float c, float d, float e);
+void BBT14();
+void BBT15();
+void BBT16();
+void BBT17();
 
 #endif
