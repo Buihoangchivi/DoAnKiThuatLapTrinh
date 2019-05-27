@@ -79,19 +79,19 @@ void XetDau1(float a, float b)
 {
 	if (a > 0)
 	{
-		if (output == stdout) fprintf(output, "\tDao ham luon am voi x thuoc (-%c, %.2f)\n", (char)236, -b / a);
-		else fprintf(output, "\tDao ham luon am voi x thuoc (-oo, %.2f)\n", -b / a);
+		if (output == stdout) fprintf(output, "\tDao ham luon am voi x thuoc (-%c; %.2f)\n", (char)236, -b / a);
+		else fprintf(output, "\tDao ham luon am voi x thuoc (-oo; %.2f)\n", -b / a);
 		fprintf(output, "\tDao ham bang 0 voi x = %.2f\n", -b / a);
-		if (output == stdout) fprintf(output, "\tDao ham luon duong voi x thuoc (%.2f, +%c)\n", -b / a, (char)236);
-		else fprintf(output, "\tDao ham luon duong voi x thuoc (%.2f, +oo)\n", -b / a);
+		if (output == stdout) fprintf(output, "\tDao ham luon duong voi x thuoc (%.2f; +%c)\n", -b / a, (char)236);
+		else fprintf(output, "\tDao ham luon duong voi x thuoc (%.2f; +oo)\n", -b / a);
 	}
 	else
 	{
-		if (output == stdout) fprintf(output, "\tDao ham luon duong voi x thuoc (-%c, %.2f)\n", (char)236, -b / a);
-		else fprintf(output, "\tDao ham luon duong voi x thuoc (-oo, %.2f)\n", -b / a);
+		if (output == stdout) fprintf(output, "\tDao ham luon duong voi x thuoc (-%c; %.2f)\n", (char)236, -b / a);
+		else fprintf(output, "\tDao ham luon duong voi x thuoc (-oo; %.2f)\n", -b / a);
 		fprintf(output, "\tDao ham bang 0 voi x = %.2f\n", -b / a);
-		if (output == stdout) fprintf(output, "\tDao ham luon am voi x thuoc (%.2f, +%c)\n", -b / a, (char)236);
-		else fprintf(output, "\tDao ham luon am voi x thuoc (%.2f, +oo)\n", -b / a);
+		if (output == stdout) fprintf(output, "\tDao ham luon am voi x thuoc (%.2f; +%c)\n", -b / a, (char)236);
+		else fprintf(output, "\tDao ham luon am voi x thuoc (%.2f; +oo)\n", -b / a);
 	}
 }
 
@@ -115,17 +115,17 @@ void XetDau2(float a, float b, float c)
 	{
 		if (a < 0)
 		{
-			if (output == stdout) fprintf(output, "\tDao ham luon am voi x thuoc (-%c, %.2f) va x thuoc (%.2f, +%c)\n"
+			if (output == stdout) fprintf(output, "\tDao ham luon am voi x thuoc (-%c; %.2f) va x thuoc (%.2f; +%c)\n"
 				, (char)236, x, y, (char)236);
-			else fprintf(output, "\tDao ham luon am voi x thuoc (-oo, %.2f) va x thuoc (%.2f, +oo)\n", x, y);
-			fprintf(output, "\tDao ham luon duong voi x thuoc (%.2f, %.2f)\n", x, y);
+			else fprintf(output, "\tDao ham luon am voi x thuoc (-oo; %.2f) va x thuoc (%.2f; +oo)\n", x, y);
+			fprintf(output, "\tDao ham luon duong voi x thuoc (%.2f; %.2f)\n", x, y);
 		}
 		else
 		{
-			if (output == stdout) fprintf(output, "\tDao ham luon duong voi x thuoc (-%c, %.2f) va x thuoc (%.2f, +%c)\n"
+			if (output == stdout) fprintf(output, "\tDao ham luon duong voi x thuoc (-%c; %.2f) va x thuoc (%.2f; +%c)\n"
 				, (char)236, x, y, (char)236);
-			else fprintf(output, "\tDao ham luon duong voi x thuoc (-oo, %.2f) va x thuoc (%.2f, +oo)\n", x, y);
-			fprintf(output, "\tDao ham luon am voi x thuoc (%.2f, %.2f)\n", x, y);
+			else fprintf(output, "\tDao ham luon duong voi x thuoc (-oo; %.2f) va x thuoc (%.2f; +oo)\n", x, y);
+			fprintf(output, "\tDao ham luon am voi x thuoc (%.2f; %.2f)\n", x, y);
 		}
 		fprintf(output, "\tDao ham bang 0 tai x = %.2f va x = %.2f\n", x, y);
 	}
@@ -138,21 +138,26 @@ void XetDau3(float a, float b)
 		float temp = sqrt(-b / a);
 		if (a > 0)
 		{
-			if (output == stdout) fprintf(output, "\tDao ham luon am voi x thuoc (-%c, %.2f) va x thuoc (%d, %.2f)\n"
+			if (output == stdout) fprintf(output, "\tDao ham luon am voi x thuoc (-%c; %.2f) va x thuoc (%d; %.2f)\n"
 				, (char)236, -temp, 0, temp);
+<<<<<<< HEAD
 			else fprintf(output, "\tDao ham luon am voi x thuoc (-oo, %.2f) va x thuoc (%d, %.2f)\n", -temp, 0, temp);
 			if (output == stdout) fprintf(output, "\tDao ham luon duong voi x thuoc (%.2f, %d) va x thuoc (%.2f, +%c)\n"
+=======
+			else fprintf(output, "\tDao ham luon am voi x thuoc (-oo; %.2f) va x thuoc (%d; %.2f)\n", -temp,0,temp);
+			if (output == stdout) fprintf(output, "\tDao ham luon duong voi x thuoc (%.2f; %d) va x thuoc (%.2f; +%c)\n"
+>>>>>>> 1b2b4575eb5837650f63bc1dcf0d7ae5584ed0a6
 				, -temp, 0, temp, (char)236);
-			else  fprintf(output, "\tDao ham luon duong voi x thuoc (%.2f, %d) va x thuoc (%.2f, +oo)\n", -temp, 0, temp);
+			else  fprintf(output, "\tDao ham luon duong voi x thuoc (%.2f; %d) va x thuoc (%.2f; +oo)\n", -temp, 0, temp);
 		}
 		else
 		{
-			if (output == stdout) fprintf(output, "\tDao ham luon duong voi x thuoc (-%c, %.2f) va x thuoc (%d, %.2f)\n"
+			if (output == stdout) fprintf(output, "\tDao ham luon duong voi x thuoc (-%c; %.2f) va x thuoc (%d; %.2f)\n"
 				, (char)236, -temp, 0, temp);
-			else  fprintf(output, "\tDao ham luon duong voi x thuoc (-oo, %.2f) va x thuoc (%d, %.2f)\n", -temp, 0, temp);
-			if (output == stdout) fprintf(output, "\tDao ham luon am voi x thuoc (%.2f, %d) va x thuoc (%.2f, +%c)\n"
+			else  fprintf(output, "\tDao ham luon duong voi x thuoc (-oo; %.2f) va x thuoc (%d; %.2f)\n", -temp, 0, temp);
+			if (output == stdout) fprintf(output, "\tDao ham luon am voi x thuoc (%.2f; %d) va x thuoc (%.2f; +%c)\n"
 				, -temp, 0, temp, (char)236);
-			else fprintf(output, "\tDao ham luon am voi x thuoc (%.2f, %d) va x thuoc (%.2f, +oo)\n", -temp, 0, temp);
+			else fprintf(output, "\tDao ham luon am voi x thuoc (%.2f; %d) va x thuoc (%.2f; +oo)\n", -temp, 0, temp);
 		}
 		fprintf(output, "\tDao ham bang 0 tai x = 0,  x = %.2f va x = %.2f\n", -temp, temp);
 	}
@@ -160,19 +165,19 @@ void XetDau3(float a, float b)
 	{
 		if (a > 0)
 		{
-			if (output == stdout) fprintf(output, "\tDao ham luon am voi x thuoc (-%c, 0)\n", (char)236);
-			else fprintf(output, "\tDao ham luon am voi x thuoc (-oo, 0)\n");
+			if (output == stdout) fprintf(output, "\tDao ham luon am voi x thuoc (-%c; 0)\n", (char)236);
+			else fprintf(output, "\tDao ham luon am voi x thuoc (-oo; 0)\n");
 			fprintf(output, "\tDao ham bang 0 voi x = 0\n");
-			if (output == stdout) fprintf(output, "\tDao ham luon duong voi x thuoc (0, +%c)\n", (char)236);
-			else fprintf(output, "\tDao ham luon duong voi x thuoc (0, +oo)\n");
+			if (output == stdout) fprintf(output, "\tDao ham luon duong voi x thuoc (0; +%c)\n", (char)236);
+			else fprintf(output, "\tDao ham luon duong voi x thuoc (0; +oo)\n");
 		}
 		else
 		{
-			if (output == stdout) fprintf(output, "\tDao ham luon duong voi x thuoc (-%c, 0)\n", (char)236);
-			else fprintf(output, "\tDao ham luon duong voi x thuoc (-oo, 0)\n");
+			if (output == stdout) fprintf(output, "\tDao ham luon duong voi x thuoc (-%c; 0)\n", (char)236);
+			else fprintf(output, "\tDao ham luon duong voi x thuoc (-oo; 0)\n");
 			fprintf(output, "\tDao ham bang 0 voi x = 0\n");
-			if (output == stdout) fprintf(output, "\tDao ham luon am voi x thuoc (0, +%c)\n", (char)236);
-			else fprintf(output, "\tDao ham luon am voi x thuoc (0, +oo)\n");
+			if (output == stdout) fprintf(output, "\tDao ham luon am voi x thuoc (0; +%c)\n", (char)236);
+			else fprintf(output, "\tDao ham luon am voi x thuoc (0; +oo)\n");
 		}
 	}
 }
