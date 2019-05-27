@@ -162,7 +162,7 @@ void PT8(float a, float b)
 
 void PT9(float a, float b, float c, float d)
 {
-	glColor3f(0.7, 0.2, 0.4);
+	glColor3f(0.7, 0.8, 0.4);
 	glBegin(GL_POINTS);
 	float y1, y2;
 	for (float i = xMin; i <= a - c; i += cl)
@@ -289,8 +289,8 @@ void Init()
 	glColor3f(1.0, 1.0, 1.0);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	/* void glOrtho(double left, double right, double bottom, double top,
-	double nearVal, double farVal); */
+	/* void glOrtho(float left, float right, float bottom, float top,
+	float nearVal, float farVal); */
 	glOrtho(xMin, xMax, yMin, yMax, -cl, cl);
 }
 

@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include <iostream>
 #include <stdlib.h>
+#include <stdio.h>
 #include <cmath>
 #include "Input_Output.h"
 #include "TapXacDinh.h"
@@ -14,7 +15,6 @@
 #include "Bangbienthien.h"
 #define fi "Input.txt"
 #define fo "Output.txt"
-#define _CRT_NONSTDC_NO_WARNINGS
 #define MAX 50
 
 FILE * input, * output;

@@ -2,8 +2,10 @@
 #include "TapXacDinh.h"
 #include "Equation.h"
 #include <iostream>
+#include <stdio.h>
 #include <stdlib.h>
 #include <cmath>
+#include <string>
 #define epsilon 1e-5
 #define _CRT_NONSTDC_NO_WARNINGS
 
@@ -13,14 +15,57 @@ using namespace std;
 
 void Input(char ch, int& k)
 {
-	if (input == stdin) fprintf(stdout, "%c = ", ch);
+	if (input == stdin && ch != ' ') fprintf(stdout, "%c = ", ch);
 	fscanf(input, "%d", &k);
 }
 
 void Input(char ch, float& k)
 {
-	if (input == stdin) fprintf(stdout, "%c = ", ch);
-	fscanf(input, "%f", &k);
+	if (input == stdin && ch != ' ') fprintf(stdout, "%c = ", ch);
+	char s[50];
+	fflush(input);
+	fscanf(input, "%s", &s);
+	k = 0;
+	int i,dem=0;
+	for (i = 0; i < strlen(s); i++)
+		if ((s[i] < '0' || s[i] > '9') && s[i] != ' ' && s[i] != '-') break;
+		else if (s[i] != '-') k = k * 10 + (int)(s[i] - '0'); else dem++;
+	if (s[i] == '.')
+	{
+		float temp = 1;
+		int j;
+		for (j = i + 1; j < strlen(s); j++)
+			if (s[j] == '\n') return; else
+				if ((s[j] < '0' || s[j] > '9') && s[j] != ' ') break; else
+				{
+					temp *= 0.1;
+					k += temp * (int)(s[j] - '0');
+				}
+		i = j;
+	}
+	if (dem % 2 != 0) k *= -1;
+	if (s[i] == '/')
+	{
+		float temp = 0;
+		int j,dem=0;
+		for (j = i + 1; j < strlen(s); j++)
+			if ((s[j] < '0' || s[j] > '9') && s[j] != ' ' && s[j] != '-') break;
+			else if (s[j] != '-') temp = temp * 10 + (int)(s[j] - '0'); else dem++;
+		if (s[j] == '.')
+		{
+			float temp1 = 1;
+			for (int k = j + 1; k < strlen(s); k++)
+				if (s[k] == '\n') break; else
+					if ((s[k] < '0' || s[k] > '9') && s[k] != ' ') break; else
+					{
+						temp1 *= 0.1;
+						temp += temp1 * (int)(s[k] - '0');
+					}
+		}
+		if (dem % 2 != 0) temp *= -1;
+		if (temp != 0) k /= temp;
+	}
+
 }
 
 void Input_Equation_Console(int& k)
@@ -48,7 +93,7 @@ void Input_Equation_Console(int& k)
 
 void Input_Equation_File(int& k)
 {
-	Input('N', k);
+	fscanf(input, "%d", &k);
 }
 
 void Output_Equation(int& k, float& a, float& b, float& c, float& d, float& e)

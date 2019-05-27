@@ -196,14 +196,14 @@ void BBT3(float a, float b, float c, float d)
 			fprintf(output, "\t|-----|---------------------------------------\n");
 			fprintf(output, "\t|f'(x)|      -     0     +     0    -       \n");
 			fprintf(output, "\t|-----|---------------------------------------\n");
-			fprintf(output, "\t|     | +oo                  %.2f           \n", Equa_3(a, b, c, d, x));
+			fprintf(output, "\t|     | +oo                  %.2f           \n", Equa_3(a, b, c, d, y));
 			fprintf(output, "\t|     |    \\              /      \\        \n");
 			fprintf(output, "\t|     |     \\            /        \\       \n");
 			fprintf(output, "\t|f(x) |      \\          /          \\      \n");
 			fprintf(output, "\t|     |       \\        /            \\     \n");
 			fprintf(output, "\t|     |        \\      /              \\    \n");
 			fprintf(output, "\t|     |         \\    /                \\   \n");
-			fprintf(output, "\t|     |          %.2f                   +oo \n", Equa_3(a, b, c, d, y));
+			fprintf(output, "\t|     |          %.2f                   +oo \n", Equa_3(a, b, c, d, x));
 			fprintf(output, "\t|-----|---------------------------------------\n");
 			fprintf(output, "\n");
 		}
@@ -317,7 +317,7 @@ void BBT5(float a, float b, float c, float d)
 		fprintf(output, "\t|-----|-------------------------------\n");
 		fprintf(output, "\t|  x  |-oo         %.2f          +oo \n", -d / c);
 		fprintf(output, "\t|-----|-------------||---------------\n");
-		fprintf(output, "\t|f'(x)|     +       ||     +        \n");
+		fprintf(output, "\t|f'(x)|      -      ||        -     \n");
 		fprintf(output, "\t|-----|-------------||----------------\n");
 		fprintf(output, "\t|     |%.2f         ||+oo           \n", a / c);
 		fprintf(output, "\t|     |   \\         ||    \\        \n");

@@ -117,7 +117,7 @@ void MinMax_3(float a, float b, float c, float d)
 				float MAX = a * pow(y, 3) + b * pow(y, 2) + c * y + d;
 				X2 = y;
 				fprintf(output, "\nHam so co cuc tieu la: (%10f, %10f)\n", X1, MIN);
-				fprintf(output, "\nHam so co cuc tieu la: (%10f, %10f)\n", X2, MAX);
+				fprintf(output, "\nHam so co cuc dai la: (%10f, %10f)\n", X2, MAX);
 			}
 			else
 			{
@@ -127,7 +127,7 @@ void MinMax_3(float a, float b, float c, float d)
 				float MIN = a * pow(y, 3) + b * pow(y, 2) + c * y + d;
 				X1 = y;
 				fprintf(output, "\nHam so co cuc tieu la: (%10f, %10f)\n", X1, MIN);
-				fprintf(output, "\nHam so co cuc tieu la: (%10f, %10f)\n", X2, MAX);
+				fprintf(output, "\nHam so co cuc dai la: (%10f, %10f)\n", X2, MAX);
 			}
 		}
 		else
@@ -140,7 +140,7 @@ void MinMax_3(float a, float b, float c, float d)
 				float MIN = a * pow(y, 3) + b * pow(y, 2) + c * y + d;
 				X2 = y;
 				fprintf(output, "\nHam so co cuc tieu la: (%10f, %10f)\n", X1, MIN);
-				fprintf(output, "\nHam so co cuc tieu la: (%10f, %10f)\n", X2, MAX);
+				fprintf(output, "\nHam so co cuc dai la: (%10f, %10f)\n", X2, MAX);
 			}
 			else
 			{
@@ -150,7 +150,7 @@ void MinMax_3(float a, float b, float c, float d)
 				float MAX = a * pow(y, 3) + b * pow(y, 2) + c * y + d;
 				X1 = y;
 				fprintf(output, "\nHam so co cuc tieu la: (%10f, %10f)\n", X1, MIN);
-				fprintf(output, "\nHam so co cuc tieu la: (%10f, %10f)\n", X2, MAX);
+				fprintf(output, "\nHam so co cuc dai la: (%10f, %10f)\n", X2, MAX);
 			}
 		}
 	}

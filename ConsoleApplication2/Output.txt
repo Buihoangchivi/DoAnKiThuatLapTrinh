@@ -1,1 +1,88 @@
-* Phuong trinh co dang: (x + 5.00)^2 + (y - 6.00)^2 = 1.00
+* Ham so co dang: y = 6.00x^2 - 4.00x + 3.00
+
+Tap xac dinh cua Ham so la R
+
+Dao ham cua ham so co dang: y' = 12.00x - 4.00
+Xet dau dao ham y':
+	Dao ham luon am voi x thuoc (-oo; 0.33)
+	Dao ham bang 0 voi x = 0.33
+	Dao ham luon duong voi x thuoc (0.33; +oo)
+
+	Khi x -> +oo  lim(6.00x^2 - 4.00x + 3.00) = +oo
+	Khi x -> -7.00  lim(6.00x^2 - 4.00x + 3.00) = 325.00
+
+
+Ham so co cuc tieu la: (  0.333333,   2.333333)
+
+Ham so khong co cuc dai!!!
+Bang bien thien cua ham so tren la: 
+
+	|-----|-----------------------------
+	|  x  |-oo        0.33        +oo 
+	|-----|-----------------------------
+	|f'(x)|      -     0     +        
+	|-----|-----------------------------
+	|     |+oo                    +oo 
+	|     |    \                /    
+	|     |     \              /     
+	|f(x) |      \            /      
+	|     |       \          /       
+	|     |        \        /        
+	|     |         \      /         
+	|     |           2.33           
+	|-----|-----------------------------
+
+
+
+* Phuong trinh co dang: x^2 / 9.00 + y^2 / 36.00 = 1
+
+
+
+* Ham so co dang: y = Sin(x)
+
+Tap xac dinh cua Ham so la R
+
+Dao ham cua ham so co dang: y' = Cos(x)
+Xet dau dao ham y':
+	Dao ham luon am voi x thuoc (Pi/2 + k* Pi, 3* Pi/2 + k* Pi) voi k thuoc Z
+	Dao ham luon duong voi x thuoc (-Pi/2 + k* Pi, Pi/2 + k* Pi) voi k thuoc Z
+	Dao ham bang 0 voi x = Pi/2 + k* Pi voi k thuoc Z
+
+	Khi x->+oo Lim(Sin(x)) khong xac dinh
+
+Ham so khong co cuc tri!!!
+Bang bien thien cua ham so tren la: 
+
+|=====|===================================================================================
+|  x  |-2* Pi       -3* Pi/2          -Pi/2            Pi/2            3* Pi/2        2* Pi
+|-----|-----------------------------------------------------------------------------------
+|f'(x)|       +             -                 +               -                +          
+|-----|-----------------------------------------------------------------------------------
+|     |              1                                 1                                 0
+| f(x)|           /      \                         /        \                          /  
+|     |          /        \                       /          \                        /   
+|     |         /          \                     /            \                      /    
+|     |        /            \                   /              \                    /     
+|     |       /              \                 /                \                  /      
+|     |      /                \               /                  \                /       
+|     |     /                  \             /                    \              /        
+|     |    /                    \           /                      \            /         
+|     |   /                      \         /                        \          /          
+|     |  /                        \       /                          \        /           
+|     | /                          \     /                            \      /            
+|     |0                              -1                                  -1              
+|=====|===================================================================================
+
+
+* Ham so co dang: y = Can(-4.00x + 3.00)
+
+
+Dao ham cua ham so co dang: y' = -2.00 / Can(-4.00x + 3.00)
+Xet dau dao ham y':
+	Dao ham luon am voi moi x < 0.75
+	Khi x -> +oo  lim(-4.00x + 3.00) khong xac dinh
+
+Bang bien thien cua ham so tren la: 
+
+
+
