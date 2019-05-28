@@ -333,7 +333,7 @@ void XetDau20(float a, float b, float c, float d)
 							if (x2 == x3)
 								fprintf(output, "(%.2f,+oo)\n", x1);
 							else
-								fprintf(output, "(%.2f,%.2f)v(%.2f,+oo)\n", x1, x2, x3);
+								fprintf(output, "(%.2f,%.2f) v (%.2f,+oo)\n", x1, x2, x3);
 						}
 					}
 				}
@@ -351,7 +351,7 @@ void XetDau20(float a, float b, float c, float d)
 							if (x2 == x3)
 								fprintf(output, "(-oo,%.2f)v{%.2f}\n", x1, x2);
 							else
-								fprintf(output, "(-oo,%.2f)v(%.2f,%.2f)\n", x1, x2, x3);
+								fprintf(output, "(-oo,%.2f) v (%.2f,%.2f)\n", x1, x2, x3);
 						}
 					}
 				}
@@ -414,7 +414,7 @@ void XetDau20(float a, float b, float c, float d)
 								}
 								else {
 									if (x < x1) {
-										fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (%.2f,%.2f)v(%.2f,+oo)\n", x1, x2, x3);
+										fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (%.2f,%.2f) v (%.2f,+oo)\n", x1, x2, x3);
 									}
 									else {
 										if (x > x1 && x < x2) {
@@ -423,11 +423,11 @@ void XetDau20(float a, float b, float c, float d)
 										}
 										else {
 											if (x > x2 && x < x3) {
-												fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (%.2f,%.2f)v(%.2f,+oo)\n", x1, x2, x3);
+												fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (%.2f,%.2f) v (%.2f,+oo)\n", x1, x2, x3);
 											}
 											else {
 												fprintf(output, "Dao ham cua ham so bang 0 voi x = %.2f", x);
-												fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (%.2f,%.2f)v(%.2f,+oo)\n", x1, x2, x3);
+												fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (%.2f,%.2f) v (%.2f,+oo)\n", x1, x2, x3);
 											}
 
 										}
@@ -471,20 +471,20 @@ void XetDau20(float a, float b, float c, float d)
 								else
 								{
 									if (x > x3) {
-										fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (-oo,%.2f)v(%.2f,%.2f)\n", x1, x2, x3);
+										fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (-oo,%.2f) v (%.2f,%.2f)\n", x1, x2, x3);
 									}
 									else {
 										if (x > x2 && x < x3) {
 											fprintf(output, "Dao ham cua ham so bang 0 voi x = %.2f", x);
-											fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (-oo,%.2f)v(%.2f,%.2f) sao cho x khac %.2f\n", x1, x2, x3, x);
+											fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (-oo,%.2f) v (%.2f,%.2f) sao cho x khac %.2f\n", x1, x2, x3, x);
 										}
 										else {
 											if (x > x1 && x < x2) {
-												fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (-oo,%.2f)v(%.2f,%.2f)\n", x1, x2, x3);
+												fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (-oo,%.2f) v (%.2f,%.2f)\n", x1, x2, x3);
 											}
 											else {
 												fprintf(output, "Dao ham cua ham so bang 0 voi x = %.2f", x);
-												fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (-oo,%.2f)v(%.2f,%.2f)\n", x1, x2, x3);
+												fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (-oo,%.2f) v (%.2f,%.2f)\n", x1, x2, x3);
 											}
 										}
 									}
@@ -586,7 +586,7 @@ void XetDau20(float a, float b, float c, float d)
 								}
 								else {
 									if (x < x1 && y < x1) {
-										fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (%.2f,%.2f)v(%.2f,+oo)\n", x1, x2, x3);
+										fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (%.2f,%.2f) v (%.2f,+oo)\n", x1, x2, x3);
 									}
 									else {
 										if (x<x1 && x >x1) {
@@ -596,7 +596,7 @@ void XetDau20(float a, float b, float c, float d)
 										}
 										else {
 											if (x < x2 && y < x2) {
-												fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (%.2f,%.2f)v(%.2f,%.2f)v(%.2f,+oo)\n", x1, x, y, x2, x3);
+												fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (%.2f,%.2f) v (%.2f,%.2f) v (%.2f,+oo)\n", x1, x, y, x2, x3);
 												fprintf(output, "Dao ham cua ham so luon am voi x thuoc ((%.2f,%.2f)\n", x, y);
 												fprintf(output, "Dao ham cua ham so bang 0 voi x1= %.2f   x2= %.2f\n", x, y);
 											}
@@ -608,16 +608,16 @@ void XetDau20(float a, float b, float c, float d)
 												}
 												else {
 													if (x < x3 && y < x3) {
-														fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (%.2f,%.2f)v(%.2f,+oo)\n", x1, x2, x3);
+														fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (%.2f,%.2f) v (%.2f,+oo)\n", x1, x2, x3);
 													}
 													else {
 														if (x<x3 && y>x3) {
-															fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (%.2f,%.2f)v(%.2f,+oo)\n", x1, x2, y);
+															fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (%.2f,%.2f) v (%.2f,+oo)\n", x1, x2, y);
 															fprintf(output, "Dao ham cua ham so luon am voi x thuoc (%.2f,%.2f)\n", x3, y);
 															fprintf(output, "Dao ham cua ham so bang 0 voi x = %.2f\n", y);
 														}
 														else {
-															fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (%.2f,%.2f)v(%.2f,%.2f)v(%.2f,+oo)\n", x1, x2, x3, x, y);
+															fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (%.2f,%.2f) v (%.2f,%.2f) v (%.2f,+oo)\n", x1, x2, x3, x, y);
 															fprintf(output, "Dao ham cua ham so luon am voi x thuoc (%.2f,%.2f)\n", x, y);
 															fprintf(output, "Dao ham cua ham so bang 0 voi x1= %.2f   x2= %.2f\n", x, y);
 														}
@@ -636,7 +636,7 @@ void XetDau20(float a, float b, float c, float d)
 					{
 						if (x1 == x2 && x2 == x3) {
 							if (x < x1 && y < x1) {
-								fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (-oo,%.2f)v(%.2f,%.2f)\n", x, y, x1);
+								fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (-oo,%.2f) v (%.2f,%.2f)\n", x, y, x1);
 								fprintf(output, "Dao ham cua ham so luon am voi x thuoc (%.2f,%.2f)\n", x, y);
 								fprintf(output, "Dao ham cua ham so bang 0 voi x1= %.2f,x2= %.2f\n", x, y);
 							}
@@ -663,9 +663,9 @@ void XetDau20(float a, float b, float c, float d)
 										fprintf(output, "Dao ham cua ham so bang 0 voi x = %.2f\n", x);
 									}
 									else {
-										fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (-oo,%.2f)v(%.2f,%.2f) \n", x, y, x3);
+										fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (-oo,%.2f) v (%.2f,%.2f) \n", x, y, x3);
 										fprintf(output, "Dao ham cua ham so luon am voi x thuoc (%.2f,%.2f)\n", x, y);
-										fprintf(output, "Dao ham cua ham so bang 0 voi x = %.2f\n", x, y);
+										fprintf(output, "Dao ham cua ham so bang 0 voi x1 = %.2f   x2=%.2f \n", x, y);
 									}
 
 								}
@@ -683,16 +683,16 @@ void XetDau20(float a, float b, float c, float d)
 											fprintf(output, "Dao ham cua ham so bang 0 voi x = %.2f\n", x);
 										}
 										else {
-											fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (-oo,%.2f)v(%.2f,%.2f) \n", x, y, x1);
+											fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (-oo,%.2f) v (%.2f,%.2f) \n", x, y, x1);
 											fprintf(output, "Dao ham cua ham so luon am voi x thuoc (%.2f,%.2f)\n", x, y);
-											fprintf(output, "Dao ham cua ham so bang 0 voi x = %.2f\n", x, y);
+											fprintf(output, "Dao ham cua ham so bang 0 voix1 = %.2f  x2=%.2f \n", x, y);
 										}
 									}
 								}
 								else
 								{
 									if (x > x3 && y > x3) {
-										fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (-oo,%.2f)v(%.2f,%.2f)\n", x1, x2, x3);
+										fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (-oo,%.2f) v (%.2f,%.2f)\n", x1, x2, x3);
 									}
 									else {
 										if (x<x3 && y >x3) {
@@ -702,7 +702,7 @@ void XetDau20(float a, float b, float c, float d)
 										}
 										else {
 											if (x < x3 && y < x3) {
-												fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (-oo,%.2f)v(%.2f,%.2f)v(%.2f,+oo)\n", x1, x2, x, y, x3);
+												fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (-oo,%.2f) v (%.2f,%.2f) v (%.2f,%.2f)\n", x1, x2, x, y, x3);
 												fprintf(output, "Dao ham cua ham so luon am voi x thuoc ((%.2f,%.2f)\n", x, y);
 												fprintf(output, "Dao ham cua ham so bang 0 voi x1= %.2f   x2= %.2f\n", x, y);
 											}
@@ -714,16 +714,16 @@ void XetDau20(float a, float b, float c, float d)
 												}
 												else {
 													if (x < x2 && y < x2) {
-														fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (-oo,%.2f)v(%.2f,%.2f)\n", x1, x2, x3);
+														fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (-oo,%.2f) v (%.2f,%.2f)\n", x1, x2, x3);
 													}
 													else {
 														if (x<x1 && y>x1) {
-															fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (-oo,%.2f)v(%.2f,%.2f)\n", x, x2, x3);
+															fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (-oo,%.2f) v (%.2f,%.2f)\n", x, x2, x3);
 															fprintf(output, "Dao ham cua ham so luon am voi x thuoc (%.2f,%.2f)\n", x, x1);
 															fprintf(output, "Dao ham cua ham so bang 0 voi x = %.2f\n", x);
 														}
 														else {
-															fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (-oo,%.2f)v(%.2f,%.2f)v(%.2f,%.2f)\n", x, y, x1, x2, x3);
+															fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (-oo,%.2f) v (%.2f,%.2f) v (%.2f,%.2f)\n", x, y, x1, x2, x3);
 															fprintf(output, "Dao ham cua ham so luon am voi x thuoc (%.2f,%.2f)\n", x, y);
 															fprintf(output, "Dao ham cua ham so bang 0 voi x1= %.2f   x2= %.2f\n", x, y);
 														}
@@ -779,8 +779,8 @@ void XetDau21(float a, float b, float c)
 					{
 						if (x5 == x6)
 						{
-							fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (%.2f,+oo)\n", x5, x7);
-							fprintf(output, "Dao ham cua ham so luon am voi x thuoc (-oo,%.2f)v(%.2f,%.2f)\n", x5, x5, x7);
+							fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (%.2f,+oo)\n", x7);
+							fprintf(output, "Dao ham cua ham so luon am voi x thuoc (-oo,%.2f) v (%.2f,%.2f)\n", x5, x5, x7);
 							fprintf(output, "Dao ham cua ham so bang 0 voi x thuoc {%.2f,%.2f}\n", x5, x7);
 						}
 						else
@@ -793,8 +793,8 @@ void XetDau21(float a, float b, float c)
 							}
 							else
 							{
-								fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (%.2f,%.2f)v(%.2f,+oo)\n", x5, x6, x7);
-								fprintf(output, "Dao ham cua ham so luon am voi x thuoc (-oo,%.2f)v(%.2f,%.2f)\n", x5, x6, x7);
+								fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (%.2f,%.2f) v (%.2f,+oo)\n", x5, x6, x7);
+								fprintf(output, "Dao ham cua ham so luon am voi x thuoc (-oo,%.2f) v (%.2f,%.2f)\n", x5, x6, x7);
 								fprintf(output, "Dao ham cua ham so bang khong voi x thuoc {%.2f,%.2f,%.2f}\n", x5, x6, x7);
 							}
 						}
@@ -847,15 +847,15 @@ void XetDau21(float a, float b, float c)
 						}
 						if (x7 > x2)
 						{
-							fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (%.2f,%.2f)v(%.2f,+oo)\n", x5, x1, x7);
-							fprintf(output, "Dao ham cua ham so luon am voi moi x thuoc (-oo,%.2f)v(%.2f,%.2f)\n", x5, x2, x7);
+							fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (%.2f,%.2f) v (%.2f,+oo)\n", x5, x1, x7);
+							fprintf(output, "Dao ham cua ham so luon am voi moi x thuoc (-oo,%.2f) v (%.2f,%.2f)\n", x5, x2, x7);
 							fprintf(output, "Dao ham cua ham so bang 0 voi x thuoc {%.2f,%.2f}\n", x5, x7);
 						}
 					}
 					if (x1 == x2)
 					{
-						fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (%.2f,0)v(%.2f,+oo)\n", x5, x7);
-						fprintf(output, "Dao ham cua ham so luon am voi moi x thuoc (-oo,%.2f)v(0,%.2f)\n", x5, x7);
+						fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (%.2f,0) v (%.2f,+oo)\n", x5, x7);
+						fprintf(output, "Dao ham cua ham so luon am voi moi x thuoc (-oo,%.2f) v (0,%.2f)\n", x5, x7);
 						fprintf(output, "Dao ham cua ham so bang 0 voi moi x thuoc {%.2f,%.2f}\n", x5, x7);
 					}
 				}
@@ -871,8 +871,8 @@ void XetDau21(float a, float b, float c)
 						}
 						if (x7 < x2)
 						{
-							fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (%.2f,%.2f)v(0,%.2f)\n", x1, x5, x7);
-							fprintf(output, "Dao ham cua ham so luon am voi moi x thuoc (%.2f,0)v(%.2f,%.2f)\n", x5, x7, x2);
+							fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (%.2f,%.2f) v (0,%.2f)\n", x1, x5, x7);
+							fprintf(output, "Dao ham cua ham so luon am voi moi x thuoc (%.2f,0) v (%.2f,%.2f)\n", x5, x7, x2);
 							fprintf(output, "Dao ham cua ham so bang 0 voi x thuoc {%.2f,0,%.2f}\n", x5, x7);
 						}
 					}
@@ -902,8 +902,8 @@ void XetDau21(float a, float b, float c)
 						}
 						if (x2 != x3)
 						{
-							fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (0,%.2f)v(%.2f,+oo)\n", x3, x4);
-							fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (-oo,%.2f)v(%.2f,0)\n", x1, x2);
+							fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (0,%.2f) v (%.2f,+oo)\n", x3, x4);
+							fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (-oo,%.2f) v (%.2f,0)\n", x1, x2);
 							fprintf(output, "Dao ham cua ham so bang 0 voi x = 0\n");
 						}
 					}
@@ -935,8 +935,8 @@ void XetDau21(float a, float b, float c)
 				{
 					if (x1 == x4)
 					{
-						fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (%.2f,0)v(%.2f,+oo)\n", x5, x7);
-						fprintf(output, "Dao ham cua ham so luon am voi x thuoc (-oo,%.2f)v(0,%.2f)\n", x5, x7);
+						fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (%.2f,0) v (%.2f,+oo)\n", x5, x7);
+						fprintf(output, "Dao ham cua ham so luon am voi x thuoc (-oo,%.2f) v (0,%.2f)\n", x5, x7);
 						fprintf(output, "Dao ham cua ham so bang 0 voi x thuoc {%.2f,%.2f}\n", x5, x7);
 					}
 					else
@@ -950,8 +950,8 @@ void XetDau21(float a, float b, float c)
 							}
 							if (x7 > x4)
 							{
-								fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (%.2f,%.2f)v(%.2f,+oo)\n", x5, x1, x7);
-								fprintf(output, "Dao ham cua ham so luon am voi moi x thuoc (-oo,%.2f)v(%.2f,%.2f)\n", x5, x4, x7);
+								fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (%.2f,%.2f) v (%.2f,+oo)\n", x5, x1, x7);
+								fprintf(output, "Dao ham cua ham so luon am voi moi x thuoc (-oo,%.2f) v (%.2f,%.2f)\n", x5, x4, x7);
 								fprintf(output, "Dao ham cua ham so bang 0 voi x thuoc {%.2f,%.2f}\n", x5, x7);
 							}
 						}
@@ -961,20 +961,20 @@ void XetDau21(float a, float b, float c)
 							{
 								if (x7 < x3)
 								{
-									fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (%.2f,0)v(%.2f,%.2f)v(%.2f,+oo)\n", x5, x7, x3, x4);
-									fprintf(output, "Dao ham cua ham so luon am voi moi x thuoc (-oo,%.2f)v(%.2f,%.2f)v(0,%.2f)\n", x1, x2, x5, x7);
+									fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (%.2f,0) v (%.2f,%.2f) v (%.2f,+oo)\n", x5, x7, x3, x4);
+									fprintf(output, "Dao ham cua ham so luon am voi moi x thuoc (-oo,%.2f) v (%.2f,%.2f) v (0,%.2f)\n", x1, x2, x5, x7);
 									fprintf(output, "Dao ham cua ham so bang 0 khi x thuoc {%.2f,0,%.2f}\n", x5, x7);
 								}
 								if (x7 >= x3 && x7 <= x4)
 								{
-									fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (%.2f,0)v(%.2f,+oo)\n", x2, x4);
-									fprintf(output, "Dao ham cua ham so luon am voi moi x thuoc (-oo,%.2f)v(0,%.2f)\n", x1, x3);
+									fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (%.2f,0) v (%.2f,+oo)\n", x2, x4);
+									fprintf(output, "Dao ham cua ham so luon am voi moi x thuoc (-oo,%.2f) v (0,%.2f)\n", x1, x3);
 									fprintf(output, "Dao ham cua ham so bang 0 voi x = 0\n");
 								}
 								if (x7 > x4)
 								{
-									fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (%.2f,%.2f)v(%.2f,0)v(%.2f,+oo)\n", x5, x1, x2, x7);
-									fprintf(output, "Dao ham cua ham so luon am voi moi x thuoc (-oo,%.2f)v(0,%.2f)v(%.2f,%.2f)\n", x5, x3, x4, x7);
+									fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (%.2f,%.2f) v (%.2f,0) v (%.2f,+oo)\n", x5, x1, x2, x7);
+									fprintf(output, "Dao ham cua ham so luon am voi moi x thuoc (-oo,%.2f) v (0,%.2f) v (%.2f,%.2f)\n", x5, x3, x4, x7);
 									fprintf(output, "Dao ham cua ham so bang 0 voi moi x thuoc {%.2f,0,%.2f}\n", x5, x7);
 								}
 							}
@@ -982,20 +982,20 @@ void XetDau21(float a, float b, float c)
 							{
 								if (x7 < x4)
 								{
-									fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (%.2f,0)v(%.2f,%.2f)v(%.2f,+oo)\n", x5, x7, x4, x4);
-									fprintf(output, "Dao ham cua ham so luon am voi moi x thuoc (-oo,%.2f)v(%.2f,%.2f)v(0,%.2f)\n", x1, x1, x5, x7);
+									fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (%.2f,0) v (%.2f,%.2f) v (%.2f,+oo)\n", x5, x7, x4, x4);
+									fprintf(output, "Dao ham cua ham so luon am voi moi x thuoc (-oo,%.2f) v (%.2f,%.2f) v (0,%.2f)\n", x1, x1, x5, x7);
 									fprintf(output, "Dao ham cua ham so bang 0 voi moi x thuoc {%.2f,0,%.2f}\n", x5, x7);
 								}
 								if (x7 == x4)
 								{
-									fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (%.2f,0)v(%.2f,+oo)\n", x5, x7);
-									fprintf(output, "Dao ham cua ham so luon am voi moi x thuoc (-oo,%.2f)v(0,%.2f)\n", x5, x7);
+									fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (%.2f,0) v (%.2f,+oo)\n", x5, x7);
+									fprintf(output, "Dao ham cua ham so luon am voi moi x thuoc (-oo,%.2f) v (0,%.2f)\n", x5, x7);
 									fprintf(output, "Dao ham cua ham so bang 0 voi x = 0\n");
 								}
 								if (x7 > x4)
 								{
-									fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (%.2f,%.2f)v(%.2f,0)v(%.2f,+oo)\n", x5, x1, x1, x7);
-									fprintf(output, "Dao ham cua ham so luon am voi moi x thuoc (-oo,%.2f)v(0,%.2f)v(%.2f,%.2f)\n", x5, x4, x4, x7);
+									fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (%.2f,%.2f) v (%.2f,0) v (%.2f,+oo)\n", x5, x1, x1, x7);
+									fprintf(output, "Dao ham cua ham so luon am voi moi x thuoc (-oo,%.2f) v (0,%.2f) v (%.2f,%.2f)\n", x5, x4, x4, x7);
 									fprintf(output, "Dao ham cua ham so bang 0 voi moi x thuoc {%.2f,0,%.2f}\n", x5, x7);
 								}
 							}
@@ -1019,8 +1019,8 @@ void XetDau21(float a, float b, float c)
 							}
 							if (x7 < x4)
 							{
-								fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (%.2f,%.2f)v(0,%.2f)\n", x1, x5, x7);
-								fprintf(output, "Dao ham cua ham so luon am voi moi x thuoc (%.2f,0)v(%.2f,%.2f)\n", x5, x7, x4);
+								fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (%.2f,%.2f) v (0,%.2f)\n", x1, x5, x7);
+								fprintf(output, "Dao ham cua ham so luon am voi moi x thuoc (%.2f,0) v (%.2f,%.2f)\n", x5, x7, x4);
 								fprintf(output, "Dao ham cua ham so bang 0 voi x thuoc {%.2f,%.2f}\n", x5, x7);
 							}
 						}
@@ -1036,8 +1036,8 @@ void XetDau21(float a, float b, float c)
 								}
 								if (x7 > x3 && x7 < x4)
 								{
-									fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (%.2f,%.2f)v(%.2f,%.2f)\n", x1, x5, x3, x7);
-									fprintf(output, "Dao ham cua ham so luon am voi moi x thuoc (%.2f,%.2f)v(%.2f,%.2f)\n", x5, x2, x7, x4);
+									fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (%.2f,%.2f) v (%.2f,%.2f)\n", x1, x5, x3, x7);
+									fprintf(output, "Dao ham cua ham so luon am voi moi x thuoc (%.2f,%.2f) v (%.2f,%.2f)\n", x5, x2, x7, x4);
 									fprintf(output, "Dao ham cua ham so bang 0 khi x thuoc {%.2f,%.2f}\n", x5, x7);
 								}
 								if (x7 >= x4)
@@ -1129,9 +1129,9 @@ void XetDau22(float a, float b, float c, float d)
 				if (a > 0)
 				{
 					if (a * d - b * c < 0)
-						fprintf(output, "Dao ham cua ham so luon am voi x thuoc (-oo,%.2f)v(%.2f.+oo)\n", x1, x2);
+						fprintf(output, "Dao ham cua ham so luon am voi x thuoc (-oo,%.2f) v (%.2f.+oo)\n", x1, x2);
 					else
-						fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (-oo,%.2f)v(%.2f.+oo)\n", x1, x2);
+						fprintf(output, "Dao ham cua ham so luon duong voi x thuoc (-oo,%.2f) v (%.2f.+oo)\n", x1, x2);
 				}
 				else
 				{
@@ -1186,7 +1186,7 @@ void DH_4(float a, float b, float c, float d)
 	if (fabs(a * d - b * c) < epsilon) fprintf(output, "0\n");
 	else
 	{
-		fprintf(output, "%.2f / ", a * d - b * c);
+		fprintf(output, "%.2f / ", (double)a * (double)d - (double)b * (double)c);
 		if (2 * c * d != 0 || d * d != 0) fprintf(output, "(");
 		PT_2(c * c, 2 * c * d, d * d);
 		if (2 * c * d != 0 || d * d != 0) fprintf(output, ")");
