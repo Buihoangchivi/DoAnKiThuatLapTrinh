@@ -26,7 +26,7 @@ void Input(char ch, float& k)
 	fflush(input);
 	fscanf(input, "%s", &s);
 	k = 0;
-	int i,dem=0;
+	int i, dem = 0;
 	for (i = 0; i < strlen(s); i++)
 		if ((s[i] < '0' || s[i] > '9') && s[i] != ' ' && s[i] != '-') break;
 		else if (s[i] != '-') k = k * 10 + (int)(s[i] - '0'); else dem++;
@@ -47,7 +47,7 @@ void Input(char ch, float& k)
 	if (s[i] == '/')
 	{
 		float temp = 0;
-		int j,dem=0;
+		int j, dem = 0;
 		for (j = i + 1; j < strlen(s); j++)
 			if ((s[j] < '0' || s[j] > '9') && s[j] != ' ' && s[j] != '-') break;
 			else if (s[j] != '-') temp = temp * 10 + (int)(s[j] - '0'); else dem++;
@@ -440,9 +440,34 @@ void Output_Advanced_Equation(int& k, float& a, float& b, float& c, float& d, fl
 		Input('c', c);
 		Input('d', d);
 		Input('e', e);
-		fprintf(output, "* Phuong trinh co dang: ");
+		fprintf(output, "\n* Phuong trinh co dang: ");
 		PT_10(a, b, c, d, e);
 		fprintf(output, "\n");
+		break;
+	case 11:
+		Input('a', a);
+		if (a == 0)
+		{
+			fprintf(output, "\n* Ham so la ham hang co gia tri bang 1!!!\n");
+			k = 0;
+			if (output == stdout) system("pause");
+		}
+		else if (a == 1)
+			fprintf(output, "\n* Ham so da nhap co dang: y = Ln(x)\n");
+		else
+			fprintf(output, "\n* Ham so da nhap co dang: y = Ln(x) ^ (%d)\n", (int)a);
+		break;
+	case 12:
+		Input('a', a);
+		while (a < 0 || a == 1)
+		{
+			fprintf(output, "Nhap lai a (a > 0 va a != 1): ");
+			Input('a', a);
+		}
+		fprintf(output, "\n* Ham so co dang: Log%.2f(x)\n", a);
+		break;
+	case 13:
+		fprintf(output, "\n* Ham so co dang: e ^ x\n");
 		break;
 	case 14:
 		fprintf(output, "\n* Ham so co dang: y = Sin(x)\n");
@@ -507,8 +532,8 @@ void CacHamSoKhac(int& k, float& a, float& b, float& c, float& d, float& e)
 		fprintf(stdout, "Nhap 2 : Chon Phuong trinh Elips (x^2 / a^2) + (y^2 / b^2) = 1\n");
 		fprintf(stdout, "Nhap 3 : Chon Phuong trinh Hyperbol [(x - h)^2 / a^2] - [(y - k)^2 / b^2] = 1\n");
 		fprintf(stdout, "Nhap 4 : Chon Phuong trinh Parabol (ax + by)^2 + cx + dy + e = 0\n");
-		fprintf(stdout, "Nhap 5 : Chon Ham so y = [Ln(a)]^b\n");
-		fprintf(stdout, "Nhap 6 : Chon Ham so y = Log(x)a\n");
+		fprintf(stdout, "Nhap 5 : Chon Ham so y = [Ln(x)]^a\n");
+		fprintf(stdout, "Nhap 6 : Chon Ham so y = LogA(x)\n");
 		fprintf(stdout, "Nhap 7 : Chon Ham so y = e^x\n");
 		fprintf(stdout, "Nhap 8 : Ham so y = Sin(x)\n");
 		fprintf(stdout, "Nhap 9 : Chon Ham so y = Cos(x)\n");

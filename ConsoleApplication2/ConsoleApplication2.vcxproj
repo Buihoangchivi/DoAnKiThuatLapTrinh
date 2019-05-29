@@ -92,6 +92,7 @@
     <ClInclude Include="Equation.h" />
     <ClInclude Include="GioiHan.h" />
     <ClInclude Include="Input_Output.h" />
+    <ClInclude Include="Intersection.h" />
     <ClInclude Include="MinMax.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="TapXacDinh.h" />
@@ -105,6 +106,7 @@
     <ClCompile Include="Equation.cpp" />
     <ClCompile Include="GioiHan.cpp" />
     <ClCompile Include="Input_Output.cpp" />
+    <ClCompile Include="Intersection.cpp" />
     <ClCompile Include="MinMax.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="TapXacDinh.cpp" />

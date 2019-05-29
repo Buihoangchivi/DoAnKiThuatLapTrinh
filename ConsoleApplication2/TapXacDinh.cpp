@@ -13,7 +13,7 @@ void TapXacDinh(int k, float a, float b, float c, float d, float e)
 {
 	switch (k)
 	{
-	case 1:case 2:case 3:case 4:case 14:case 15:
+	case 1:case 2:case 3:case 4:case 13:case 14:case 15:
 		TapXacDinh_1();
 		break;
 	case 5:
@@ -21,6 +21,12 @@ void TapXacDinh(int k, float a, float b, float c, float d, float e)
 		break;
 	case 6:
 		TapXacDinh_3(a, b, c, d, e);
+		break;
+	case 11:
+		TapXacDinh_11(a);
+		break;
+	case 12:
+		TapXacDinh_12(a);
 		break;
 	case 16:
 		TapXacDinh_4();
@@ -80,6 +86,22 @@ void TapXacDinh_5()
 	fprintf(output, "Tap xac dinh cua Ham so la R \\ {k * Pi} (k thuoc Z)}\n");
 }
 
+void TapXacDinh_11(float a)
+{
+	if (a > 0)
+		if (output == stdout) fprintf(output, "\tTap xac dinh cua ham so la: D = (0; +%c)\n", char(236));
+		else fprintf(output, "\tTap xac dinh cua ham so la : D = (0; +oo)\n");
+	else if (a < 0)
+		if (output == stdout) fprintf(output, "\tTap xac dinh cua ham so la: D = (0; +%c)\\{1}\n", char(236));
+		else fprintf(output, "\tTap xac dinh cua ham so la : D = (0; +oo)\\{1}\n");
+}
+
+void TapXacDinh_12(float a)
+{
+	if (output == stdout) fprintf(output, "Tap xac dinh cua ham so la: D = (0; +%c)\n", char(236));
+	else fprintf(output, "Tap xac dinh cua ham so la : D = (0; +oo)\n");
+}
+
 void TapXacDinh_18(float a, float b)
 {
 	if (a > 0)
@@ -120,7 +142,7 @@ void TapXacDinh_19(float a, float b, float c)
 		else
 		{
 			if (a > 0)
-				fprintf(output, "Tap xac dinh cua Ham so la (-oo,%.2f]v[%.2f.+oo)\n", x, y);
+				fprintf(output, "Tap xac dinh cua Ham so la (-oo,%.2f] v [%.2f.+oo)\n", x, y);
 			else
 				fprintf(output, "Tap xac dinh cua Ham so la [%.2f,%.2f]", x, y);
 		}
@@ -159,7 +181,7 @@ void TapXacDinh_20(float a, float b, float c, float d)
 						if (x2 == x3)
 							fprintf(output, "[%.2f,+oo)\n", x1);
 						else
-							fprintf(output, "[%.2f,%.2f]v[%.2f,+oo)\n", x1, x2, x3);
+							fprintf(output, "[%.2f,%.2f] v [%.2f,+oo)\n", x1, x2, x3);
 					}
 				}
 			}
@@ -177,7 +199,7 @@ void TapXacDinh_20(float a, float b, float c, float d)
 						if (x2 == x3)
 							fprintf(output, "(-oo,%.2f]v{%.2f}\n", x1, x2);
 						else
-							fprintf(output, "(-oo,%.2f]v[%.2f,%.2f]\n", x1, x2, x3);
+							fprintf(output, "(-oo,%.2f] v [%.2f,%.2f]\n", x1, x2, x3);
 					}
 				}
 			}
@@ -205,7 +227,7 @@ void TapXacDinh_21(float a, float b, float c)
 			if (a > 0)
 			{
 				if (x1 != x2)
-					fprintf(output, "Tap xac dinh cua Ham so la (-oo,%.2f]v[%.2f,+oo)\n", x1, x2);
+					fprintf(output, "Tap xac dinh cua Ham so la (-oo,%.2f] v [%.2f,+oo)\n", x1, x2);
 				else
 					fprintf(output, "Tap xac dinh cua Ham so la R\n");
 			}
@@ -229,7 +251,7 @@ void TapXacDinh_21(float a, float b, float c)
 					else
 					{
 						if (x3 != x4)
-							fprintf(output, "Tap xac dinh cua Ham so la (-oo,%.2f]v[%.2f,%.2f]v[%.2f,+oo)\n", x1, x2, x3, x4);
+							fprintf(output, "Tap xac dinh cua Ham so la (-oo,%.2f] v [%.2f,%.2f] v [%.2f,+oo)\n", x1, x2, x3, x4);
 						if (x3 == x4)
 							fprintf(output, "Tap xac dinh cua ham so la R\n");
 					}
@@ -246,7 +268,7 @@ void TapXacDinh_21(float a, float b, float c)
 					else
 					{
 						if (x3 != x4)
-							fprintf(output, "Tap xac dinh cua Ham so la [%.2f,%.2f]v[%.2f,%.2f]\n", x1, x2, x3, x4);
+							fprintf(output, "Tap xac dinh cua Ham so la [%.2f,%.2f] v [%.2f,%.2f]\n", x1, x2, x3, x4);
 						if (x3 == x4)
 							fprintf(output, "Tap xac dinh cua ham so la {%.2f,%.2f}\n", x2, x3);
 					}
@@ -303,22 +325,21 @@ void TapXacDinh_22(float a, float b, float c, float d)
 			float x2 = -d / c;
 			if (x1 > x2)
 				swap(x1, x2);
-			a = d * a;
 			if (x1 == x2)
 			{
-				if (a > 0)
+				if (a*c > 0)
 					fprintf(output, "Tap xac dinh cua Ham so la R\\{%.2f}\n", -d / c);
 				else
 					fprintf(output, "Ham so khong xac dinh voi moi x thuoc R\n");
 			}
 			else
 			{
-				if (a > 0)
+				if (a*c > 0)
 				{
 					if (x1 == -d / c)
-						fprintf(output, "Tap xac dinh cua Ham so la (-oo,%.2f)v[%.2f.+oo)\n", x1, x2);
+						fprintf(output, "Tap xac dinh cua Ham so la (-oo,%.2f) v [%.2f.+oo)\n", x1, x2);
 					else
-						fprintf(output, "Tap xac dinh cua Ham so la (-oo,%.2f]v(%.2f.+oo)\n", x1, x2);
+						fprintf(output, "Tap xac dinh cua Ham so la (-oo,%.2f] v (%.2f.+oo)\n", x1, x2);
 				}
 				else
 				{
@@ -377,7 +398,7 @@ void TapXacDinh_23(float a, float b, float c, float d, float e)
 				if (x3 <= x1)
 				{
 					swap(x3, x2);
-					swap(x3, x1);
+					swap(x2, x1);
 				}
 				a = a / d;
 				if (a > 0)
@@ -392,11 +413,11 @@ void TapXacDinh_23(float a, float b, float c, float d, float e)
 						else
 						{
 							if (x1 == -e / d)
-								fprintf(output, "(%.2f,%.2f]v[%.2f,+oo)\n", x1, x2, x3);
+								fprintf(output, "(%.2f,%.2f] v [%.2f,+oo)\n", x1, x2, x3);
 							if (x2 == -e / d)
-								fprintf(output, "[%.2f,%.2f)v[%.2f,+oo)\n", x1, x2, x3);
+								fprintf(output, "[%.2f,%.2f) v [%.2f,+oo)\n", x1, x2, x3);
 							if (x3 == -e / d)
-								fprintf(output, "[%.2f,%.2f]v(%.2f,+oo)\n", x1, x2, x3);
+								fprintf(output, "[%.2f,%.2f] v (%.2f,+oo)\n", x1, x2, x3);
 						}
 					}
 				}
@@ -412,11 +433,11 @@ void TapXacDinh_23(float a, float b, float c, float d, float e)
 						else
 						{
 							if (x1 == -e / d)
-								fprintf(output, "(-oo,%.2f)v[%.2f,%.2f]\n", x1, x2, x3);
+								fprintf(output, "(-oo,%.2f) v [%.2f,%.2f]\n", x1, x2, x3);
 							if (x2 == -e / d)
-								fprintf(output, "(-oo,%.2f]v(%.2f,%.2f]\n", x1, x2, x3);
+								fprintf(output, "(-oo,%.2f] v (%.2f,%.2f]\n", x1, x2, x3);
 							if (x3 == -e / d)
-								fprintf(output, "(-oo,%.2f]v[%.2f,%.2f)\n", x1, x2, x3);
+								fprintf(output, "(-oo,%.2f] v [%.2f,%.2f)\n", x1, x2, x3);
 						}
 					}
 				}

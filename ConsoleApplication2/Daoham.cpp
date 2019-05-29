@@ -33,6 +33,15 @@ void DaoHam_XetDau(int k, float a, float b, float c, float d, float e)
 	case 6:
 		DaoHam6(a, b, c, d, e);
 		break;
+	case 11:
+		DaoHam11(a);
+		break;
+	case 12:
+		DaoHam12(a);
+		break;
+	case 13:
+		DaoHam13();
+		break;
 	case 14:
 		DaoHam14();
 		break;
@@ -186,6 +195,47 @@ void XetDau4(float a, float c, float d)
 	else if (a > 0) fprintf(output, "\tDao ham luon duong voi moi x thuoc R \\ {%.2f}\n", -d / c);
 	else fprintf(output, "\tDao ham luon am voi moi x thuoc R \\ {%.2f}\n", -d / c);
 	if (output == stdout) fprintf(output, "\tDao ham tien toi %c khi x = %.2f\n", (char)236, -d / c);
+}
+
+void XetDau11(float b)
+{
+	if (b == 1)
+		fprintf(output, "\tDao ham luon duong tren TXD cua ham so\n");
+	else if (b > 1)
+	{
+		if ((int)b % 2 != 0)
+		{
+			if (output == stdout) fprintf(output, "\tDao ham luon duong voi x thuoc (0; 1) va x thuoc (1; +%c)\n", (char)236);
+			else fprintf(output, "\tDao ham luon duong voi x thuoc (0; 1) va x thuoc (1; +oo)\n");
+		}
+		else
+		{
+			if (output == stdout) fprintf(output, "\tDao ham luon duong voi x thuoc (1; +%c)\n", (char)236);
+			else fprintf(output, "\tDao ham luon duong voi x thuoc (1; +oo)\n");
+			fprintf(output, "\tDao ham luon am voi x thuoc (0; 1)\n");
+		}
+		fprintf(output, "\tDao ham bang 0 tai x = 1\n");
+	}
+	else if (b < 0)
+	{
+		if ((int)b % 2 != 0)
+		{
+			if (output == stdout) fprintf(output, "\tDao ham luon am voi x thuoc (0; 1) va x thuoc (1; +%c)\n", (char)236);
+			else fprintf(output, "\tDao ham luon am voi x thuoc (0; 1) va x thuoc (1; +oo)\n");
+		}
+		else
+		{
+			if (output == stdout) fprintf(output, "\tDao ham luon am voi x thuoc (1; +%c)\n", (char)236);
+			else fprintf(output, "\tDao ham luon am voi x thuoc (1; +oo)\n");
+			fprintf(output, "\tDao ham luon duong voi x thuoc (0; 1)");
+		}
+	}
+}
+
+void XetDau12(float a)
+{
+	if (a > 0) fprintf(output, "\tDao ham luon duong tren TXD cua ham so\n");
+	else if (a > 0 && a < 1) fprintf(output, "\tDao ham luon am tren TXD cua ham so");
 }
 
 void XetDau14()
@@ -1219,6 +1269,32 @@ void DaoHam6(float a, float b, float c, float d, float e)
 	DH_5(a, b, c, d, e);
 	fprintf(output, "\nXet dau dao ham y':\n");
 	XetDau2(a * d, 2 * a * e, b * e - c * d);
+}
+
+void DaoHam11(float b)
+{
+	if (b != 1 && b != 2)
+		fprintf(output, "\tDao ham cua Ham so la: y' = (%d*Ln(x) ^ (%d)) / x\n", (int)b, (int)(b - 1));
+	else if (b == 1)
+		fprintf(output, "\tDao ham cua Ham so la: y' = 1 / x\n");
+	else if (b == 2)
+		fprintf(output, "\tDao ham cua Ham so la: y' = (2 * Ln(x)) / x\n");
+	fprintf(output, "\nXet dau dao ham y':\n");
+	XetDau11(b);
+}
+
+void DaoHam12(float a)
+{
+	fprintf(output, "\tDao ham cua Ham so la: y' = 1/(x*Ln(a))\n");
+	fprintf(output, "\nXet dau dao ham y':\n");
+	XetDau12(a);
+}
+
+void DaoHam13()
+{
+	fprintf(output, "Dao ham cua ham so co dang: y' = e ^ x\n");
+	fprintf(output, "Xet dau dao ham y':\n");
+	XetDau16();
 }
 
 void DaoHam14()

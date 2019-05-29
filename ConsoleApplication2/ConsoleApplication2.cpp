@@ -13,6 +13,7 @@
 #include "GioiHan.h"
 #include "MinMax.h"
 #include "Bangbienthien.h"
+#include "Intersection.h"
 #define fi "Input.txt"
 #define fo "Output.txt"
 #define MAX 50
@@ -43,7 +44,7 @@ void NhapCach_Input_Output()
 	else input = stdin;
 	system("cls");
 	cout << "Ban muon xuat du lieu vao dau?" << endl;
-	cout << "\tXuat ra file:             Nhap 1" << endl;
+	cout << "\tXuat ra file            : Nhap 1" << endl;
 	cout << "\tXuat ra man hinh console: Nhap 2" << endl;
 	cout << "Ban hay nhap vao lua chon: ";
 	cin >> a;
@@ -74,7 +75,7 @@ int _tmain(int argc, char* argv[])
 		arr_k[NN] = k; arr_a[NN] = a; arr_b[NN] = b;
 		arr_c[NN] = c; arr_d[NN] = d; arr_e[NN] = e;
 		NN++;
-		if (k <= 6 || k >= 11)
+		/*if (k <= 6 || k >= 11)
 		{
 			fprintf(output, "\n");
 			TapXacDinh(k, a, b, c, d, e);
@@ -87,9 +88,88 @@ int _tmain(int argc, char* argv[])
 			BBT(k, a, b, c, d, e);
 		}
 		if (output == stdout) system("pause");
-		else fprintf(output, "\n\n");
+		else fprintf(output, "\n\n");*/
 	Next:
 		system("cls");
+	}
+	if (NN >= 2)
+	{
+		fprintf(output, "* Tim giao diem cac ham so co ban:\n\n");
+		for (int i = 0; i < NN - 1; i++)
+			if (arr_k[i] < 7)
+				for (int j = i + 1; j < NN; j++)
+					if (arr_k[j] < 7)
+					{
+						fprintf(output, "\n- Hai ham so:\n\n\t");
+						switch (arr_k[i])
+						{
+						case 1:
+							fprintf(output, "+ Ham so co dang: y = ");
+							PT_1(arr_a[i], arr_b[i]);
+							fprintf(output, "\n\n\t");
+							break;
+						case 2:
+							fprintf(output, "+ Ham so co dang: y = ");
+							PT_2(arr_a[i], arr_b[i], arr_c[i]);
+							fprintf(output, "\n\n\t");
+							break;
+						case 3:
+							fprintf(output, "+ Ham so co dang: y = ");
+							PT_3(arr_a[i], arr_b[i], arr_c[i], arr_d[i]);
+							fprintf(output, "\n\n\t");
+							break;
+						case 4:
+							fprintf(output, "+ Ham so co dang: y = ");
+							PT_4(arr_a[i], arr_b[i], arr_c[i]);
+							fprintf(output, "\n\n\t");
+							break;
+						case 5:
+							fprintf(output, "+ Ham so co dang: y = ");
+							PT_5(arr_a[i], arr_b[i], arr_c[i], arr_d[i]);
+							fprintf(output, "\n\n\t");
+							break;
+						case 6:
+							fprintf(output, "+ Ham so co dang: y = ");
+							PT_6(arr_a[i], arr_b[i], arr_c[i], arr_d[i], arr_e[i]);
+							fprintf(output, "\n\n\t");
+							break;
+						}
+						switch (arr_k[j])
+						{
+						case 1:
+							fprintf(output, "+ Ham so co dang: y = ");
+							PT_1(arr_a[j], arr_b[j]);
+							fprintf(output, "\n\n");
+							break;
+						case 2:
+							fprintf(output, "+ Ham so co dang: y = ");
+							PT_2(arr_a[j], arr_b[j], arr_c[j]);
+							fprintf(output, "\n\n");
+							break;
+						case 3:
+							fprintf(output, "+ Ham so co dang: y = ");
+							PT_3(arr_a[j], arr_b[j], arr_c[j], arr_d[j]);
+							fprintf(output, "\n\n");
+							break;
+						case 4:
+							fprintf(output, "+ Ham so co dang: y = ");
+							PT_4(arr_a[j], arr_b[j], arr_c[j]);
+							fprintf(output, "\n\n");
+							break;
+						case 5:
+							fprintf(output, "+ Ham so co dang: y = ");
+							PT_5(arr_a[j], arr_b[j], arr_c[j], arr_d[j]);
+							fprintf(output, "\n\n");
+							break;
+						case 6:
+							fprintf(output, "+ Ham so co dang: y = ");
+							PT_6(arr_a[j], arr_b[j], arr_c[j], arr_d[j], arr_e[j]);
+							fprintf(output, "\n\n");
+							break;
+						}
+						Inter(arr_k[i], arr_k[j], i ,j);
+					}
+		if (output == stdout) system("pause");
 	}
 	Draw(argc, argv);
 	return 0;

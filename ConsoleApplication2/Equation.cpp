@@ -106,6 +106,7 @@ void GiaiPT_Bac3(float A, float B, float C, float D, float& X1, float& X2, float
 		if (k - pow(k * k + 1, 1.0 / 2) < 0)
 		{
 			TEMP3 = pow(-(k - pow(k * k + 1, 1.0 / 2)), 1.0 / 3);
+			TEMP3 = -TEMP3;
 		}
 		else
 			TEMP3 = pow(k - pow(k * k + 1, 1.0 / 2), 1.0 / 3);
@@ -163,54 +164,58 @@ void GiaiPT_Bac4(float A, float B, float C, float D, float E, float& X1, float& 
 	float A1 = A, B1 = B, C1 = C, D1 = D, E1 = E;
 	if (A != 1)
 	{
-		A = 1;
 		B = B / A;
 		C = C / A;
 		D = D / A;
 		E = E / A;
+		A = 1;
 	}
-	C = (6 * B1 * B1 / 16 - 3 * B1 * B1 / 4 + C1);
-	D = (-pow(B1, 3) * 4 / 64 + 3 * B1 * B1 * B1 / 16 - B1 * C1 / 2 + D1);
-	E = pow(B1, 4) / 256 - pow(B1, 4) / 64 + B1 * B1 * C1 / 16 - B1 * D1 / 4 + E1;
+	float A2 = A, B2 = B, C2 = C, D2 = D, E2 = E;
+	C = (6 * B2 * B2 / 16 - 3 * B2 * B2 / 4 + C2);
+	D = (-pow(B2, 3) * 4 / 64 + 3 * B2 * B2 * B2 / 16 - B2 * C2 / 2 + D2);
+	E = pow(B2, 4) / 256 - pow(B2, 4) / 64 + B2 * B2 * C2 / 16 - B2 * D2 / 4 + E2;
 	float M1, M2, M3;
 	short K1;
 	int count = 0;
 	GiaiPT_Bac3(8, -4 * C, -8 * E, 4 * C * E - D * D, M1, M2, M3, K1);
-	M1 = M3;
+	if (K == 3)
+		M1 = M3;
+	else if (K == 2)
+		M1 = M2;
 	if (2 * M1 - C > 0 && -(2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C == 0)
 	{
 		X1 = (pow(2 * M1 - C, 1.0 / 2) + pow(-(2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C, 1.0 / 2)) / 2;
-		X1 = X1 - B1 / 4;
+		X1 = X1 - B2 / 4;
 		count++;
 		X2 = (-pow(2 * M1 - C, 1.0 / 2) + pow((2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C, 1.0 / 2)) / 2;
-		X2 = X2 - B1 / 4;
+		X2 = X2 - B2 / 4;
 		count++;
 		K = count;
 	}
 	else
 	{
-		if (2 * M1 - C > 0 && -(2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C > 0)
+		if (2 * M1 - C > 0 && (-(2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C) > 0)
 		{
 			X1 = (pow(2 * M1 - C, 1.0 / 2) + pow(-(2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C, 1.0 / 2)) / 2;
-			X1 = X1 - B1 / 4;
+			X1 = X1 - B2 / 4;
 			count++;
 		}
-		if (2 * M1 - C > 0 && -(2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C > 0)
+		if (2 * M1 - C > 0 && (-(2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C) > 0)
 		{
 			X2 = (pow(2 * M1 - C, 1.0 / 2) - pow(-(2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C, 1.0 / 2)) / 2;
-			X2 = X2 - B1 / 4;
+			X2 = X2 - B2 / 4;
 			count++;
 		}
-		if (2 * M1 - C > 0 && (2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C > 0)
+		if (2 * M1 - C > 0 && ((2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C) > 0)
 		{
 			X3 = (-pow(2 * M1 - C, 1.0 / 2) + pow((2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C, 1.0 / 2)) / 2;
-			X3 = X3 - B1 / 4;
+			X3 = X3 - B2 / 4;
 			count++;
 		}
-		if (2 * M1 - C > 0 && (2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C > 0)
+		if (2 * M1 - C > 0 && ((2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C) > 0)
 		{
 			X4 = (-pow(2 * M1 - C, 1.0 / 2) - pow((2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C, 1.0 / 2)) / 2;
-			X4 = X4 - B1 / 4;
+			X4 = X4 - B2 / 4;
 			count++;
 		}
 		K = count;

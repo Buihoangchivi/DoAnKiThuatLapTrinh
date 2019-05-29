@@ -33,6 +33,15 @@ void BBT(int k, float a, float b, float c, float d, float e)
 	case 6:
 		BBT6(a, b, c, d, e);
 		break;
+	case 11:
+		BBT11(a);
+		break;
+	case 12:
+		BBT12(a);
+		break;
+	case 13:
+		BBT13();
+		break;
 	case 14:
 		BBT14();
 		break;
@@ -410,6 +419,155 @@ void BBT6(float a, float b, float c, float d, float e)
 			fprintf(output, "\t|-----|-------------||----------------\n");
 			fprintf(output, "\n");
 		}
+}
+
+void BBT11(float b)
+{
+	if (b > 0)
+	{
+		if ((int)b % 2 != 0)
+		{
+			fprintf(output, "\t|-----|-----------------|\n");
+			fprintf(output, "\t|  x  | 0     1   +oo   |\n");
+			fprintf(output, "\t|-----|-----------------|\n");
+			fprintf(output, "\t|f'(x)|   +   0   +     |\n");
+			fprintf(output, "\t|-----|-----------------|\n");
+			fprintf(output, "\t|     |           +oo   |\n");
+			fprintf(output, "\t|     |         /       |\n");
+			fprintf(output, "\t|     |        /        |\n");
+			fprintf(output, "\t|f(x) |       0         |\n");
+			fprintf(output, "\t|     |      /          |\n");
+			fprintf(output, "\t|     |     /           |\n");
+			fprintf(output, "\t|     | -oo             |\n");
+			fprintf(output, "\t|-----|-----------------|\n");
+			fprintf(output, "\n");
+		}
+		else
+		{
+			fprintf(output, "\t|-----|---------------------------|\n");
+			fprintf(output, "\t|  x  | 0          1          +oo |\n");
+			fprintf(output, "\t|-----|---------------------------|\n");
+			fprintf(output, "\t|f'(x)|      -     0      +       |\n");
+			fprintf(output, "\t|-----|---------------------------|\n");
+			fprintf(output, "\t|     |+oo                    +oo |\n");
+			fprintf(output, "\t|     |    \\                 /    |\n");
+			fprintf(output, "\t|     |     \\               /     |\n");
+			fprintf(output, "\t|f(x) |      \\             /      |\n");
+			fprintf(output, "\t|     |       \\           /       |\n");
+			fprintf(output, "\t|     |        \\         /        |\n");
+			fprintf(output, "\t|     |         \\       /         |\n");
+			fprintf(output, "\t|     |             0             |\n");
+			fprintf(output, "\t|-----|---------------------------|\n");
+			fprintf(output, "\n");
+		}
+	}
+	else if (b < 0)
+	{
+		if ((int)b % 2 != 0)
+		{
+			fprintf(output, "\t|-----|-----------------------------|\n");
+			fprintf(output, "\t|  x  | 0            1          +oo |\n");
+			fprintf(output, "\t|-----|-------------||--------------|\n");
+			fprintf(output, "\t|f'(x)|      -      ||     -        |\n");
+			fprintf(output, "\t|-----|-------------||--------------|\n");
+			fprintf(output, "\t|     | 0           ||+oo           |\n");
+			fprintf(output, "\t|     |   \\         ||    \\         |\n");
+			fprintf(output, "\t|     |    \\        ||     \\        |\n");
+			fprintf(output, "\t|f(x) |     \\  	    ||      \\       |\n");
+			fprintf(output, "\t|     |      \\      ||       \\      |\n");
+			fprintf(output, "\t|     |       \\     ||        \\     |\n");
+			fprintf(output, "\t|     |        \\    ||         \\    |\n");
+			fprintf(output, "\t|     |         -oo ||            0 |\n");
+			fprintf(output, "\t|-----|-------------||--------------|\n");
+			fprintf(output, "\n");
+		}
+		else
+		{
+			fprintf(output, "\t|-----|-----------------------------|\n");
+			fprintf(output, "\t|  x  | 0            1          +oo |\n");
+			fprintf(output, "\t|-----|-------------||--------------|\n");
+			fprintf(output, "\t|f'(x)|     +       ||     -        |\n");
+			fprintf(output, "\t|-----|-------------||--------------|\n");
+			fprintf(output, "\t|     |         +oo || +oo          |\n");
+			fprintf(output, "\t|     |        /    ||    \\         |\n");
+			fprintf(output, "\t|     |       /     ||     \\        |\n");
+			fprintf(output, "\t|f(x) |      / 	   ||      \\       |\n");
+			fprintf(output, "\t|     |     /       ||       \\      |\n");
+			fprintf(output, "\t|     |    /        ||        \\     |\n");
+			fprintf(output, "\t|     |   /         ||         \\    |\n");
+			fprintf(output, "\t|     | 0           ||           0  |\n");
+			fprintf(output, "\t|-----|-------------||--------------|\n");
+			fprintf(output, "\n");
+		}
+	}
+}
+
+void BBT12(float a)
+{
+	if (a > 1)
+	{
+		fprintf(output, "\t|-----|-----------------|\n");
+		fprintf(output, "\t|  x  | 0         +oo   |\n");
+		fprintf(output, "\t|-----|-----------------|\n");
+		fprintf(output, "\t|f'(x)|       +         |\n");
+		fprintf(output, "\t|-----|-----------------|\n");
+		fprintf(output, "\t|     |           +oo   |\n");
+		fprintf(output, "\t|     |         /       |\n");
+		fprintf(output, "\t|     |        /        |\n");
+		fprintf(output, "\t|f(x) |       /         |\n");
+		fprintf(output, "\t|     |      /          |\n");
+		fprintf(output, "\t|     |     /           |\n");
+		fprintf(output, "\t|     | -oo             |\n");
+		fprintf(output, "\t|-----|-----------------|\n");
+		fprintf(output, "\n");
+	}
+	else if (a > 0 && a < 1)
+	{
+		fprintf(output, "\t|-----|-----------------|\n");
+		fprintf(output, "\t|  x  |  0        +oo   |\n");
+		fprintf(output, "\t|-----|-----------------|\n");
+		fprintf(output, "\t|f'(x)|        -        |\n");
+		fprintf(output, "\t|-----|-----------------|\n");
+		fprintf(output, "\t|     | +oo             |\n");
+		fprintf(output, "\t|     |     \\          |\n");
+		fprintf(output, "\t|     |      \\         |\n");
+		fprintf(output, "\t|f(x) |       \\        |\n");
+		fprintf(output, "\t|     |        \\       |\n");
+		fprintf(output, "\t|     |         \\      |\n");
+		fprintf(output, "\t|     |          -oo    |\n");
+		fprintf(output, "\t|-----|-----------------|\n");
+		fprintf(output, "\n");
+	}
+}
+
+void BBT13()
+{
+	fprintf(output, "|=====|===========================|\n");
+	fprintf(output, "|  x  |-oo                     +oo|\n");
+	fprintf(output, "|-----|---------------------------|\n");
+	fprintf(output, "|f'(x)|             +             |\n");
+	fprintf(output, "|-----|---------------------------|\n");
+	fprintf(output, "|     |                      +oo  |\n");
+	fprintf(output, "|     |                     /     |\n");
+	fprintf(output, "|     |                    /      |\n");
+	fprintf(output, "|     |                   /       |\n");
+	fprintf(output, "|     |                  /        |\n");
+	fprintf(output, "|     |                 /         |\n");
+	fprintf(output, "|     |                /          |\n");
+	fprintf(output, "|     |               /           |\n");
+	fprintf(output, "| f(x)|              /            |\n");
+	fprintf(output, "|     |             /             |\n");
+	fprintf(output, "|     |            /              |\n");
+	fprintf(output, "|     |           /               |\n");
+	fprintf(output, "|     |          /                |\n");
+	fprintf(output, "|     |         /                 |\n");
+	fprintf(output, "|     |        /                  |\n");
+	fprintf(output, "|     |       /                   |\n");
+	fprintf(output, "|     |      /                    |\n");
+	fprintf(output, "|     |     /                     |\n");
+	fprintf(output, "|     |    /                      |\n");
+	fprintf(output, "|     |  0                        |\n");
+	fprintf(output, "|=====|===========================|\n");
 }
 
 void BBT14()
