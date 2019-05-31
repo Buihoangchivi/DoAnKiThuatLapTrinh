@@ -26,6 +26,7 @@ int NN;
 
 using namespace std;
 
+//Chọn cách nhập xuất qua màn hình hoặc qua file
 void NhapCach_Input_Output()
 {
 	int a;
@@ -67,25 +68,37 @@ int _tmain(int argc, char* argv[])
 	NhapCach_Input_Output();
 	while (true)
 	{
+		//Nhập loại hàm số qua màn hình hoặc qua file
 		if (input == stdin) Input_Equation_Console(k);
-		else Input_Equation_File(k);	
+		else Input_Equation_File(k);
+		//k = 0 thì dừng việc nhập hàm số
 		if (k == 0) break;
+		//Xuất hàm số ra màn hình hoặc qua file
 		Output_Equation(k, a, b, c, d, e);
+		//k = 0 thì nhập lại một hàm số mới
 		if (k == 0) goto Next;
+		//Lưu giữ các hệ số của hàm số vào mảng
 		arr_k[NN] = k; arr_a[NN] = a; arr_b[NN] = b;
 		arr_c[NN] = c; arr_d[NN] = d; arr_e[NN] = e;
 		NN++;
+		//Không xét các hàm đường tròn, elips, hypebol và parabol
 		if (k <= 6 || k >= 11)
 		{
 			fprintf(output, "\n");
+			//Tìm tập xác định
 			TapXacDinh(k, a, b, c, d, e);
 			fprintf(output, "\n");
+			//Tìm đạo hàm và xét dấu
 			DaoHam_XetDau(k, a, b, c, d, e);
 			fprintf(output, "\n");
+			//Chọn điểm cần tính giới hạn (dương vô cùng, âm vô cùng hoặc một điểm cụ thể) 
+			//và tính giới hạn của hàm số
 			Choice_And_Lim(k, a, b, c, d, e);
 			fprintf(output, "\n");
+			//Tìm cực trị hàm số
 			MinMax(k, a, b, c, d, e);
 			fprintf(output, "\n");
+			//Vẽ bảng biến thiên đồ thị hàm số
 			BBT(k, a, b, c, d, e);
 			fprintf(output, "\n");
 		}
@@ -94,6 +107,7 @@ int _tmain(int argc, char* argv[])
 	Next:
 		system("cls");
 	}
+	//Chỉ tìm giao điểm khi có 2 hàm số trở lên
 	if (NN >= 2)
 	{
 		fprintf(output, "* Tim giao diem cac ham so co ban:\n\n");
@@ -169,10 +183,12 @@ int _tmain(int argc, char* argv[])
 							fprintf(output, "\n\n");
 							break;
 						}
-						Inter(arr_k[i], arr_k[j], i ,j);
+						//Tìm giao điểm của 2 hàm số
+						Inter(arr_k[i], arr_k[j], i, j);
 					}
 		if (output == stdout) system("pause");
 	}
+	//Vẽ đồ thị các hàm số
 	Draw(argc, argv);
 	return 0;
 }

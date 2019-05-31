@@ -72,6 +72,24 @@ void DaoHam_XetDau(int k, float a, float b, float c, float d, float e)
 	case 23:
 		DaoHam23(a, b, c, d, e);
 		break;
+	case 24:
+		DaoHam24(a, b);
+		break;
+	case 25:
+		DaoHam25(a, b, c);
+		break;
+	case 26:
+		DaoHam26(a, b, c, d);
+		break;
+	case 27:
+		DaoHam27(a, b, c);
+		break;
+	case 28:
+		DaoHam28(a, b, c, d);
+		break;
+	case 29:
+		DaoHam29(a, b, c, d, e);
+		break;
 	default:
 		break;
 	}
@@ -355,7 +373,7 @@ void XetDau20(float a, float b, float c, float d)
 	{
 		float x1, x2, x3, x, y;
 		short k, l;
-		GiaiPT_Bac3(a, b, c, d, x1, x2, x3, k); 
+		GiaiPT_Bac3(a, b, c, d, x1, x2, x3, k);
 		GiaiPT_Bac2(3 * a, 2 * b, c, x, y, l);
 		if (l == -1) {
 			switch (k)
@@ -407,7 +425,7 @@ void XetDau20(float a, float b, float c, float d)
 				}
 			}
 		}
-		else 
+		else
 		{
 			if (l == 0) {
 				switch (k)
@@ -1382,5 +1400,72 @@ void DaoHam23(float a, float b, float c, float d, float e)
 	fprintf(output, "))\nXet dau dao ham y':\n");
 	XetDau23(a, b, c, d, e);
 }
+
+void DaoHam24(float a, float b)
+{
+	fprintf(output, "Dao ham cua ham so co dang: y' = (");
+	PT_1(a * a, a * b);
+	fprintf(output, ") / |");
+	PT_1(a, b);
+	fprintf(output, "|\n");
+}
+
+void DaoHam25(float a, float b, float c)
+{
+	fprintf(output, "Dao ham cua ham so co dang: y' = ((");
+	PT_1(2 * a, b);
+	fprintf(output, ") * (");
+	PT_2(a, b, c);
+	fprintf(output, ")) / |");
+	PT_2(a, b, c);
+	fprintf(output, "|\n");
+}
+
+void DaoHam26(float a, float b, float c, float d)
+{
+	fprintf(output, "Dao ham cua ham so co dang: y' = ((");
+	PT_2(3 * a, 2 * b, c);
+	fprintf(output, ") * (");
+	PT_3(a, b, c, d);
+	fprintf(output, ")) / |");
+	PT_3(a, b, c, d);
+	fprintf(output, "|\n");
+}
+
+void DaoHam27(float a, float b, float c)
+{
+	fprintf(output, "Dao ham cua ham so co dang: y' = ((");
+	PT_3(4 * a, 0, 2 * b, 0);
+	fprintf(output, ") * (");
+	PT_4(a, b, c);
+	fprintf(output, ")) / |");
+	PT_4(a, b, c);
+	fprintf(output, "|\n");
+}
+
+void DaoHam28(float a, float b, float c, float d)
+{
+	fprintf(output, "Dao ham cua ham so co dang:\ny' = ((");
+	DH_4(a, b, c, d);
+	fprintf(output, ") * (");
+	PT_5(a, b, c, d);
+	fprintf(output, ")) / |");
+	PT_5(a, b, c, d);
+	fprintf(output, "|\n");
+}
+
+void DaoHam29(float a, float b, float c, float d, float e)
+{
+	fprintf(output, "Dao ham cua ham so co dang:\ny' = ((");
+	DH_5(a, b, c, d, e);
+	fprintf(output, ") * (");
+	PT_6(a, b, c, d, e);
+	fprintf(output, ")) / |");
+	PT_6(a, b, c, d, e);
+	fprintf(output, "|\n");
+}
+
+
+
 
 

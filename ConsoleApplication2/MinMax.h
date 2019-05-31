@@ -13,5 +13,10 @@ void MinMax_14();
 void MinMax_15();
 void MinMax_16();
 void MinMax_17();
+void MinMax_18(float a, float b);
+void MinMax_19(float a, float b, float c);
+void MinMax_20(float a, float b, float c, float d);
+void MinMax_21(float a, float b, float c);
+void MinMax_22(float a, float b, float c, float d);
 
 #endif#pragma once

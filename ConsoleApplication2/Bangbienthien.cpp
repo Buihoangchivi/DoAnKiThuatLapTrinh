@@ -842,7 +842,7 @@ void BBT19(float a, float b, float c) {
 						fprintf(output, "|     |                    \\     ||     ||                 \\         /                  |\n");
 						fprintf(output, "|     |                     \\    ||     ||                  \\       /                   |\n");
 						fprintf(output, "|     |                      \\   ||     ||                   \\     /                    |\n");
-						fprintf(output, "|     |                       0  ||     ||                    %.2f                      |\n", Equa_2(a, b, c, -b / 2 * a));
+						fprintf(output, "|     |                       0  ||     ||                    %.2f                      |\n", sqrt(Equa_2(a, b, c, -b / 2 * a)));
 						fprintf(output, "|=====|=================================================================================|\n");
 					}
 					else {
@@ -1260,7 +1260,7 @@ void BBT20(float a, float b, float c, float d)
 								fprintf(output, "|-----|---------------------------------------------------------|\n");
 								fprintf(output, "|f'(x)|             +         ||        ||             +        |\n");
 								fprintf(output, "|-----|-----------------------||--------||----------------------|\n");
-								fprintf(output, "|     |                      0||        ||                  %.2f|\n", Equa_3(a, b, c, d, x3));
+								fprintf(output, "|     |                      0||        ||                  %.2f|\n", sqrt(Equa_3(a, b, c, d, x3)));
 								fprintf(output, "|     |                     / ||        ||                  /   |\n");
 								fprintf(output, "|     |                    /  ||        ||                 /    |\n");
 								fprintf(output, "|     |                   /   ||        ||                /     |\n");
@@ -1913,7 +1913,7 @@ void BBT20(float a, float b, float c, float d)
 									fprintf(output, "|-----|---------------------------------------------------------|\n");
 									fprintf(output, "|f'(x)|             +         ||        ||             +        |\n");
 									fprintf(output, "|-----|-----------------------||--------||----------------------|\n");
-									fprintf(output, "|     |                      0||        ||                  %.2f|\n", Equa_3(a, b, c, d, x3));
+									fprintf(output, "|     |                      0||        ||                  %.2f|\n", sqrt(Equa_3(a, b, c, d, x3)));
 									fprintf(output, "|     |                     / ||        ||                  /   |\n");
 									fprintf(output, "|     |                    /  ||        ||                 /    |\n");
 									fprintf(output, "|     |                   /   ||        ||                /     |\n");
@@ -1940,7 +1940,7 @@ void BBT20(float a, float b, float c, float d)
 										fprintf(output, "|-----|---------------------------------------------------------|\n");
 										fprintf(output, "|f'(x)|             +         ||        ||             +        |\n");
 										fprintf(output, "|-----|-----------------------||--------||----------------------|\n");
-										fprintf(output, "|     |                      0||        ||                  %.2f|\n", Equa_3(a, b, c, d, x3));
+										fprintf(output, "|     |                      0||        ||                  %.2f|\n", sqrt(Equa_3(a, b, c, d, x3)));
 										fprintf(output, "|     |                     / ||        ||                  /   |\n");
 										fprintf(output, "|     |                    /  ||        ||                 /    |\n");
 										fprintf(output, "|     |                   /   ||        ||                /     |\n");
@@ -1969,7 +1969,7 @@ void BBT20(float a, float b, float c, float d)
 											fprintf(output, "|-----|---------------------------------------------------------|\n");
 											fprintf(output, "|f'(x)|             +         ||        ||             +        |\n");
 											fprintf(output, "|-----|-----------------------||--------||----------------------|\n");
-											fprintf(output, "|     |                      0||        ||                  %.2f|\n", Equa_3(a, b, c, d, x3));
+											fprintf(output, "|     |                      0||        ||                  %.2f|\n", sqrt(Equa_3(a, b, c, d, x3)));
 											fprintf(output, "|     |                     / ||        ||                  /   |\n");
 											fprintf(output, "|     |                    /  ||        ||                 /    |\n");
 											fprintf(output, "|     |                   /   ||        ||                /     |\n");
@@ -1998,7 +1998,7 @@ void BBT20(float a, float b, float c, float d)
 												fprintf(output, "|-----|---------------------------------------------------------|\n");
 												fprintf(output, "|f'(x)|             +         ||        ||             +        |\n");
 												fprintf(output, "|-----|-----------------------||--------||----------------------|\n");
-												fprintf(output, "|     |                      0||        ||                  %.2f|\n", Equa_3(a, b, c, d, x3));
+												fprintf(output, "|     |                      0||        ||                  %.2f|\n", sqrt(Equa_3(a, b, c, d, x3)));
 												fprintf(output, "|     |                     / ||        ||                  /   |\n");
 												fprintf(output, "|     |                    /  ||        ||                 /    |\n");
 												fprintf(output, "|     |                   /   ||        ||                /     |\n");
@@ -2026,7 +2026,7 @@ void BBT20(float a, float b, float c, float d)
 												fprintf(output, "|-----|---------------------------------------------------------|\n");
 												fprintf(output, "|f'(x)|             +         ||        ||             +        |\n");
 												fprintf(output, "|-----|-----------------------||--------||----------------------|\n");
-												fprintf(output, "|     |                      0||        ||                  %.2f|\n", Equa_3(a, b, c, d, x3));
+												fprintf(output, "|     |                      0||        ||                  %.2f|\n", sqrt(Equa_3(a, b, c, d, x3)));
 												fprintf(output, "|     |                     / ||        ||                  /   |\n");
 												fprintf(output, "|     |                    /  ||        ||                 /    |\n");
 												fprintf(output, "|     |                   /   ||        ||                /     |\n");
@@ -2068,7 +2068,7 @@ void BBT20(float a, float b, float c, float d)
 							fprintf(output, "|-----|----------------------------------------------------------------------|\n");
 							fprintf(output, "|f'(x)|            +                      -                      +           |\n");
 							fprintf(output, "|-----|----------------------------------------------------------------------|\n");
-							fprintf(output, "|     |                      %.2f                                         +oo|\n", Equa_3(a, b, c, d, x));
+							fprintf(output, "|     |                      %.2f                                         +oo|\n", sqrt(Equa_3(a, b, c, d, x)));
 							fprintf(output, "|     |                     /    \\                                        /  |\n");
 							fprintf(output, "|     |                    /      \\                                      /   |\n");
 							fprintf(output, "|     |                   /        \\                                    /    |\n");
@@ -2087,7 +2087,7 @@ void BBT20(float a, float b, float c, float d)
 							fprintf(output, "|     |      /                                  \\          /                 |\n");
 							fprintf(output, "|     |     /                                    \\        /                  |\n");
 							fprintf(output, "|     |    /                                      \\      /                   |\n");
-							fprintf(output, "|     |  0                                         \\ %.2f                    |\n", Equa_3(a, b, c, d, y));
+							fprintf(output, "|     |  0                                         \\ %.2f                    |\n", sqrt(Equa_3(a, b, c, d, y)));
 							fprintf(output, "|=====|======================================================================|\n");
 						}
 						else {
@@ -2116,7 +2116,7 @@ void BBT20(float a, float b, float c, float d)
 								fprintf(output, "|     |                  \\          /                  |\n");
 								fprintf(output, "|     |                   \\        /                   |\n");
 								fprintf(output, "|     |                    \\      /                    |\n");
-								fprintf(output, "|     |                      %.2f                      |\n", Equa_3(a, b, c, d, y));
+								fprintf(output, "|     |                      %.2f                      |\n", sqrt(Equa_3(a, b, c, d, y)));
 								fprintf(output, "|=====|================================================|\n");
 
 							}
@@ -2158,7 +2158,7 @@ void BBT20(float a, float b, float c, float d)
 							fprintf(output, "|-----|--------------------------------------------------------------------------|\n");
 							fprintf(output, "|f'(x)|             -                        +                       -           |\n");
 							fprintf(output, "|-----|--------------------------------------------------------------------------|\n");
-							fprintf(output, "|     |  -oo                                         %.2f                        |\n", Equa_3(a, b, c, d, y));
+							fprintf(output, "|     |  -oo                                         %.2f                        |\n", sqrt(Equa_3(a, b, c, d, y)));
 							fprintf(output, "|     |    \\                                        /   \\                        |\n");
 							fprintf(output, "|     |     \\                                      /     \\                       |\n");
 							fprintf(output, "|     |      \\                                    /       \\                      |\n");
@@ -2177,7 +2177,7 @@ void BBT20(float a, float b, float c, float d)
 							fprintf(output, "|     |                   \\          /                                 \\         |\n");
 							fprintf(output, "|     |                    \\        /                                   \\        |\n");
 							fprintf(output, "|     |                     \\      /                                     \\       |\n");
-							fprintf(output, "|     |                       %.2f                                          0    |\n", Equa_3(a, b, c, d, x));
+							fprintf(output, "|     |                       %.2f                                          0    |\n", sqrt(Equa_3(a, b, c, d, x)));
 							fprintf(output, "|=====|==========================================================================|\n");
 						}
 						else {
@@ -2187,7 +2187,7 @@ void BBT20(float a, float b, float c, float d)
 								fprintf(output, "|-----|--------------------------------------------------|\n");
 								fprintf(output, "|f'(x)|            +                      -              |\n");
 								fprintf(output, "|-----|--------------------------------------------------|\n");
-								fprintf(output, "|     |                      %.2f                        |\n", Equa_3(a, b, c, d, x));
+								fprintf(output, "|     |                      %.2f                        |\n", sqrt(Equa_3(a, b, c, d, x)));
 								fprintf(output, "|     |                     /    \\                       |\n");
 								fprintf(output, "|     |                    /      \\                      |\n");
 								fprintf(output, "|     |                   /        \\                     |\n");
@@ -2250,7 +2250,7 @@ void BBT20(float a, float b, float c, float d)
 								fprintf(output, "|-----|----------------------------------------------------------------------|\n");
 								fprintf(output, "|f'(x)|            +                      -                      +           |\n");
 								fprintf(output, "|-----|----------------------------------------------------------------------|\n");
-								fprintf(output, "|     |                      %.2f                                         +oo|\n", Equa_3(a, b, c, d, x));
+								fprintf(output, "|     |                      %.2f                                         +oo|\n", sqrt(Equa_3(a, b, c, d, x)));
 								fprintf(output, "|     |                     /    \\                                        /  |\n");
 								fprintf(output, "|     |                    /      \\                                      /   |\n");
 								fprintf(output, "|     |                   /        \\                                    /    |\n");
@@ -2269,7 +2269,7 @@ void BBT20(float a, float b, float c, float d)
 								fprintf(output, "|     |      /                                  \\          /                 |\n");
 								fprintf(output, "|     |     /                                    \\        /                  |\n");
 								fprintf(output, "|     |    /                                      \\      /                   |\n");
-								fprintf(output, "|     |  0                                         \\ %.2f                    |\n", Equa_3(a, b, c, d, y));
+								fprintf(output, "|     |  0                                         \\ %.2f                    |\n", sqrt(Equa_3(a, b, c, d, y)));
 								fprintf(output, "|=====|======================================================================|\n");
 							}
 							else {
@@ -2298,7 +2298,7 @@ void BBT20(float a, float b, float c, float d)
 									fprintf(output, "|     |                  \\          /                  |\n");
 									fprintf(output, "|     |                   \\        /                   |\n");
 									fprintf(output, "|     |                    \\      /                    |\n");
-									fprintf(output, "|     |                      %.2f                      |\n", Equa_3(a, b, c, d, y));
+									fprintf(output, "|     |                      %.2f                      |\n", sqrt(Equa_3(a, b, c, d, y)));
 									fprintf(output, "|=====|================================================|\n");
 								}
 								else
@@ -2569,7 +2569,7 @@ void BBT20(float a, float b, float c, float d)
 											fprintf(output, "|     |                   \\          /                   ||        ||   /                  |\n");
 											fprintf(output, "|     |                    \\        /                    ||        ||  /                   |\n");
 											fprintf(output, "|     |                     \\      /                     ||        || /                    |\n");
-											fprintf(output, "|     |                        %.2f                      ||        ||0                     |\n", Equa_3(a, b, c, d, y));
+											fprintf(output, "|     |                        %.2f                      ||        ||0                     |\n", sqrt(Equa_3(a, b, c, d, y)));
 											fprintf(output, "|=====|====================================================================================|\n");
 										}
 										else {
@@ -2579,7 +2579,7 @@ void BBT20(float a, float b, float c, float d)
 												fprintf(output, "|-----|---------------------------------------------------------------------------------------------------------|\n");
 												fprintf(output, "|f'(x)|            +                      -                      +            ||        ||             +        |\n");
 												fprintf(output, "|-----|-----------------------------------------------------------------------||--------||----------------------|\n");
-												fprintf(output, "|     |                      %.2f                                           0 ||        ||                  +oo |\n", Equa_3(a, b, c, d, x));
+												fprintf(output, "|     |                      %.2f                                           0 ||        ||                  +oo |\n", sqrt(Equa_3(a, b, c, d, x)));
 												fprintf(output, "|     |                     /    \\                                        /   ||        ||                  /   |\n");
 												fprintf(output, "|     |                    /      \\                                      /    ||        ||                 /    |\n");
 												fprintf(output, "|     |                   /        \\                                    /     ||        ||                /     |\n");
@@ -2598,7 +2598,7 @@ void BBT20(float a, float b, float c, float d)
 												fprintf(output, "|     |      /                                  \\          /                  ||        ||   /                  |\n");
 												fprintf(output, "|     |     /                                    \\        /                   ||        ||  /                   |\n");
 												fprintf(output, "|     |    /                                      \\      /                    ||        || /                    |\n");
-												fprintf(output, "|     |  0                                         \\ %.2f                     ||        ||0                     |\n", Equa_3(a, b, c, d, y));
+												fprintf(output, "|     |  0                                         \\ %.2f                     ||        ||0                     |\n", sqrt(Equa_3(a, b, c, d, y)));
 												fprintf(output, "|=====|=========================================================================================================|\n");
 											}
 											else {
@@ -2608,7 +2608,7 @@ void BBT20(float a, float b, float c, float d)
 													fprintf(output, "|-----|----------------------------------------------------------------------------------|\n");
 													fprintf(output, "|f'(x)|            +                      -            ||        ||             +        |\n");
 													fprintf(output, "|-----|------------------------------------------------||--------||----------------------|\n");
-													fprintf(output, "|     |                      %.2f                      ||        ||                  +oo |\n", Equa_3(a, b, c, d, x));
+													fprintf(output, "|     |                      %.2f                      ||        ||                  +oo |\n", sqrt(Equa_3(a, b, c, d, x)));
 													fprintf(output, "|     |                     /    \\                     ||        ||                  /   |\n");
 													fprintf(output, "|     |                    /      \\                    ||        ||                 /    |\n");
 													fprintf(output, "|     |                   /        \\                   ||        ||                /     |\n");
@@ -2694,7 +2694,7 @@ void BBT20(float a, float b, float c, float d)
 															fprintf(output, "|-----|-----------------------------------------------------------------------------------------------------|\n");
 															fprintf(output, "|f'(x)|             +         ||        ||         +                     -                     +            |\n");
 															fprintf(output, "|-----|-----------------------||--------||------------------------------------------------------------------|\n");
-															fprintf(output, "|     |                      0||        ||                  %.2f                                         +oo|\n", Equa_3(a, b, c, d, x));
+															fprintf(output, "|     |                      0||        ||                  %.2f                                         +oo|\n", sqrt(Equa_3(a, b, c, d, x)));
 															fprintf(output, "|     |                     / ||        ||                  /  \\                                      /     |\n");
 															fprintf(output, "|     |                    /  ||        ||                 /    \\                                    /      |\n");
 															fprintf(output, "|     |                   /   ||        ||                /      \\                                  /       |\n");
@@ -2713,7 +2713,7 @@ void BBT20(float a, float b, float c, float d)
 															fprintf(output, "|     |      /                ||        ||   /                                \\        /                    |\n");
 															fprintf(output, "|     |     /                 ||        ||  /                                  \\      /                     |\n");
 															fprintf(output, "|     |    /                  ||        || /                                    \\    /                      |\n");
-															fprintf(output, "|     | -oo                   ||        ||0                                       %.2f                      |\n", Equa_3(a, b, c, d, y));
+															fprintf(output, "|     | -oo                   ||        ||0                                       %.2f                      |\n", sqrt(Equa_3(a, b, c, d, y)));
 															fprintf(output, "|=====|=====================================================================================================|\n");
 														}
 													}
@@ -2736,7 +2736,7 @@ void BBT20(float a, float b, float c, float d)
 								fprintf(output, "|-----|----------------------------------------------------------------------|\n");
 								fprintf(output, "|f'(x)|            +                      -                      +           |\n");
 								fprintf(output, "|-----|----------------------------------------------------------------------|\n");
-								fprintf(output, "|     |                      %.2f                                         %.2f|\n", Equa_3(a, b, c, d, x), Equa_3(a, b, c, d, x1));
+								fprintf(output, "|     |                      %.2f                                         %.2f|\n", sqrt(Equa_3(a, b, c, d, x)), sqrt(Equa_3(a, b, c, d, x1)));
 								fprintf(output, "|     |                     /    \\                                        /  |\n");
 								fprintf(output, "|     |                    /      \\                                      /   |\n");
 								fprintf(output, "|     |                   /        \\                                    /    |\n");
@@ -2755,7 +2755,7 @@ void BBT20(float a, float b, float c, float d)
 								fprintf(output, "|     |      /                                  \\          /                 |\n");
 								fprintf(output, "|     |     /                                    \\        /                  |\n");
 								fprintf(output, "|     |    /                                      \\      /                   |\n");
-								fprintf(output, "|     | -oo                                        \\ %.2f                    |\n", Equa_3(a, b, c, d, y));
+								fprintf(output, "|     | -oo                                        \\ %.2f                    |\n", sqrt(Equa_3(a, b, c, d, y)));
 								fprintf(output, "|=====|======================================================================|\n");
 							}
 							else {
@@ -2765,7 +2765,7 @@ void BBT20(float a, float b, float c, float d)
 									fprintf(output, "|-----|--------------------------------------------------|\n");
 									fprintf(output, "|f'(x)|            +                      -              |\n");
 									fprintf(output, "|-----|--------------------------------------------------|\n");
-									fprintf(output, "|     |                      %.2f                        |\n", Equa_3(a, b, c, d, x));
+									fprintf(output, "|     |                      %.2f                        |\n", sqrt(Equa_3(a, b, c, d, x)));
 									fprintf(output, "|     |                     /    \\                       |\n");
 									fprintf(output, "|     |                    /      \\                      |\n");
 									fprintf(output, "|     |                   /        \\                     |\n");
@@ -2858,7 +2858,7 @@ void BBT20(float a, float b, float c, float d)
 										fprintf(output, "|-----|--------------------------------------------------|\n");
 										fprintf(output, "|f'(x)|            +                      -              |\n");
 										fprintf(output, "|-----|--------------------------------------------------|\n");
-										fprintf(output, "|     |                      %.2f                        |\n", Equa_3(a, b, c, d, x));
+										fprintf(output, "|     |                      %.2f                        |\n", sqrt(Equa_3(a, b, c, d, x)));
 										fprintf(output, "|     |                     /    \\                       |\n");
 										fprintf(output, "|     |                    /      \\                      |\n");
 										fprintf(output, "|     |                   /        \\                     |\n");
@@ -2886,7 +2886,7 @@ void BBT20(float a, float b, float c, float d)
 										fprintf(output, "|-----|----------------------------------------------------------------------|\n");
 										fprintf(output, "|f'(x)|            +                      -                      +           |\n");
 										fprintf(output, "|-----|----------------------------------------------------------------------|\n");
-										fprintf(output, "|     |                      %.2f                                         %.2f|\n", Equa_3(a, b, c, d, x), Equa_3(a, b, c, d, x3));
+										fprintf(output, "|     |                      %.2f                                         %.2f|\n", sqrt(Equa_3(a, b, c, d, x)), sqrt(Equa_3(a, b, c, d, x3)));
 										fprintf(output, "|     |                     /    \\                                        /  |\n");
 										fprintf(output, "|     |                    /      \\                                      /   |\n");
 										fprintf(output, "|     |                   /        \\                                    /    |\n");
@@ -2905,7 +2905,7 @@ void BBT20(float a, float b, float c, float d)
 										fprintf(output, "|     |      /                                  \\          /                 |\n");
 										fprintf(output, "|     |     /                                    \\        /                  |\n");
 										fprintf(output, "|     |    /                                      \\      /                   |\n");
-										fprintf(output, "|     | -oo                                        \\ %.2f                    |\n", Equa_3(a, b, c, d, y));
+										fprintf(output, "|     | -oo                                        \\ %.2f                    |\n", sqrt(Equa_3(a, b, c, d, y)));
 										fprintf(output, "|=====|======================================================================|\n");
 									}
 
@@ -2951,7 +2951,7 @@ void BBT20(float a, float b, float c, float d)
 											fprintf(output, "|-----|--------------------------------------------------|\n");
 											fprintf(output, "|f'(x)|            +                      -              |\n");
 											fprintf(output, "|-----|--------------------------------------------------|\n");
-											fprintf(output, "|     |                      %.2f                        |\n", Equa_3(a, b, c, d, x));
+											fprintf(output, "|     |                      %.2f                        |\n", sqrt(Equa_3(a, b, c, d, x)));
 											fprintf(output, "|     |                     /    \\                       |\n");
 											fprintf(output, "|     |                    /      \\                      |\n");
 											fprintf(output, "|     |                   /        \\                     |\n");
@@ -2979,7 +2979,7 @@ void BBT20(float a, float b, float c, float d)
 											fprintf(output, "|-----|----------------------------------------------------------------------|\n");
 											fprintf(output, "|f'(x)|            +                      -                      +           |\n");
 											fprintf(output, "|-----|----------------------------------------------------------------------|\n");
-											fprintf(output, "|     |                      %.2f                                         %.2f|\n", Equa_3(a, b, c, d, x), Equa_3(a, b, c, d, x1));
+											fprintf(output, "|     |                      %.2f                                         %.2f|\n", sqrt(Equa_3(a, b, c, d, x)), sqrt(Equa_3(a, b, c, d, x1)));
 											fprintf(output, "|     |                     /    \\                                        /  |\n");
 											fprintf(output, "|     |                    /      \\                                      /   |\n");
 											fprintf(output, "|     |                   /        \\                                    /    |\n");
@@ -2998,7 +2998,7 @@ void BBT20(float a, float b, float c, float d)
 											fprintf(output, "|     |      /                                  \\          /                 |\n");
 											fprintf(output, "|     |     /                                    \\        /                  |\n");
 											fprintf(output, "|     |    /                                      \\      /                   |\n");
-											fprintf(output, "|     | -oo                                        \\ %.2f                    |\n", Equa_3(a, b, c, d, y));
+											fprintf(output, "|     | -oo                                        \\ %.2f                    |\n", sqrt(Equa_3(a, b, c, d, y)));
 											fprintf(output, "|=====|======================================================================|\n");
 										}
 									}
@@ -3011,7 +3011,7 @@ void BBT20(float a, float b, float c, float d)
 										fprintf(output, "|-----|---------------------------------------------------------|\n");
 										fprintf(output, "|f'(x)|             +         ||        ||             +        |\n");
 										fprintf(output, "|-----|-----------------------||--------||----------------------|\n");
-										fprintf(output, "|     |                      0||        ||                 %.2f |\n", Equa_3(a, b, c, d, x3));
+										fprintf(output, "|     |                      0||        ||                 %.2f |\n", sqrt(Equa_3(a, b, c, d, x3)));
 										fprintf(output, "|     |                     / ||        ||                  /   |\n");
 										fprintf(output, "|     |                    /  ||        ||                 /    |\n");
 										fprintf(output, "|     |                   /   ||        ||                /     |\n");
@@ -3040,7 +3040,7 @@ void BBT20(float a, float b, float c, float d)
 											fprintf(output, "|-----|------------------------------------------------------------------------------------|\n");
 											fprintf(output, "|f'(x)|             +         ||        ||             +                                   |\n");
 											fprintf(output, "|-----|-----------------------||--------||-------------------------------------------------|\n");
-											fprintf(output, "|     |                      0||        ||                 %.2f                            |\n", Equa_3(a, b, c, d, x3));
+											fprintf(output, "|     |                      0||        ||                 %.2f                            |\n", sqrt(Equa_3(a, b, c, d, x3)));
 											fprintf(output, "|     |                     / ||        ||                  /   \\                          |\n");
 											fprintf(output, "|     |                    /  ||        ||                 /     \\                         |\n");
 											fprintf(output, "|     |                   /   ||        ||                /       \\                        |\n");
@@ -3059,7 +3059,7 @@ void BBT20(float a, float b, float c, float d)
 											fprintf(output, "|     |      /                ||        ||   /                                 \\           |\n");
 											fprintf(output, "|     |     /                 ||        ||  /                                   \\          |\n");
 											fprintf(output, "|     |    /                  ||        || /                                     \\         |\n");
-											fprintf(output, "|     | -oo                   ||        ||0                                        %.2f    |\n", Equa_3(a, b, c, d, x3));
+											fprintf(output, "|     | -oo                   ||        ||0                                        %.2f    |\n", sqrt(Equa_3(a, b, c, d, x3)));
 											fprintf(output, "|=====|====================================================================================|\n");
 										}
 										else {
@@ -3069,7 +3069,7 @@ void BBT20(float a, float b, float c, float d)
 												fprintf(output, "|-----|-----------------------------------------------------------------------------------------------------|\n");
 												fprintf(output, "|f'(x)|             +         ||        ||         +                     -                     +            |\n");
 												fprintf(output, "|-----|-----------------------||--------||------------------------------------------------------------------|\n");
-												fprintf(output, "|     |                      0||        ||                  %.2f                                        %.2f|\n", Equa_3(a, b, c, d, x), Equa_3(a, b, c, d, x3));
+												fprintf(output, "|     |                      0||        ||                  %.2f                                        %.2f|\n", sqrt(Equa_3(a, b, c, d, x)), sqrt(Equa_3(a, b, c, d, x3)));
 												fprintf(output, "|     |                     / ||        ||                  /  \\                                      /     |\n");
 												fprintf(output, "|     |                    /  ||        ||                 /    \\                                    /      |\n");
 												fprintf(output, "|     |                   /   ||        ||                /      \\                                  /       |\n");
@@ -3088,7 +3088,7 @@ void BBT20(float a, float b, float c, float d)
 												fprintf(output, "|     |      /                ||        ||   /                                \\        /                    |\n");
 												fprintf(output, "|     |     /                 ||        ||  /                                  \\      /                     |\n");
 												fprintf(output, "|     |    /                  ||        || /                                    \\    /                      |\n");
-												fprintf(output, "|     | -oo                   ||        ||0                                       %.2f                      |\n", Equa_3(a, b, c, d, y));
+												fprintf(output, "|     | -oo                   ||        ||0                                       %.2f                      |\n", sqrt(Equa_3(a, b, c, d, y)));
 												fprintf(output, "|=====|=====================================================================================================|\n");
 											}
 											else {
@@ -3098,7 +3098,7 @@ void BBT20(float a, float b, float c, float d)
 													fprintf(output, "|-----|----------------------------------------------------------------------|\n");
 													fprintf(output, "|f'(x)|            +                      -                      +           |\n");
 													fprintf(output, "|-----|----------------------------------------------------------------------|\n");
-													fprintf(output, "|     |                      %.2f                                         %.2f|\n", Equa_3(a, b, c, d, x), Equa_3(a, b, c, d, x3));
+													fprintf(output, "|     |                      %.2f                                         %.2f|\n", sqrt(Equa_3(a, b, c, d, x)), sqrt(Equa_3(a, b, c, d, x3)));
 													fprintf(output, "|     |                     /    \\                                        /  |\n");
 													fprintf(output, "|     |                    /      \\                                      /   |\n");
 													fprintf(output, "|     |                   /        \\                                    /    |\n");
@@ -3117,7 +3117,7 @@ void BBT20(float a, float b, float c, float d)
 													fprintf(output, "|     |      /                                  \\          /                 |\n");
 													fprintf(output, "|     |     /                                    \\        /                  |\n");
 													fprintf(output, "|     |    /                                      \\      /                   |\n");
-													fprintf(output, "|     | -oo                                        \\ %.2f                    |\n", Equa_3(a, b, c, d, y));
+													fprintf(output, "|     | -oo                                        \\ %.2f                    |\n", sqrt(Equa_3(a, b, c, d, y)));
 													fprintf(output, "|=====|======================================================================|\n");
 												}
 												else {
@@ -3128,7 +3128,7 @@ void BBT20(float a, float b, float c, float d)
 														fprintf(output, "|-----|---------------------------------------------------------|\n");
 														fprintf(output, "|f'(x)|             +         ||        ||             +        |\n");
 														fprintf(output, "|-----|-----------------------||--------||----------------------|\n");
-														fprintf(output, "|     |                      0||        ||                 %.2f |\n", Equa_3(a, b, c, d, x3));
+														fprintf(output, "|     |                      0||        ||                 %.2f |\n", sqrt(Equa_3(a, b, c, d, x3)));
 														fprintf(output, "|     |                     / ||        ||                  /   |\n");
 														fprintf(output, "|     |                    /  ||        ||                 /    |\n");
 														fprintf(output, "|     |                   /   ||        ||                /     |\n");
@@ -3159,7 +3159,7 @@ void BBT20(float a, float b, float c, float d)
 															fprintf(output, "|-----|----------------------------------------------------------------------------------|\n");
 															fprintf(output, "|f'(x)|            +                      -            ||        ||             +        |\n");
 															fprintf(output, "|-----|------------------------------------------------||--------||----------------------|\n");
-															fprintf(output, "|     |                      %.2f                      ||        ||                   %.2f|\n", Equa_3(a, b, c, d, x), Equa_3(a, b, c, d, x3));
+															fprintf(output, "|     |                      %.2f                      ||        ||                   %.2f|\n", sqrt(Equa_3(a, b, c, d, x)), sqrt(Equa_3(a, b, c, d, x3)));
 															fprintf(output, "|     |                     /    \\                     ||        ||                  /   |\n");
 															fprintf(output, "|     |                    /      \\                    ||        ||                 /    |\n");
 															fprintf(output, "|     |                   /        \\                   ||        ||                /     |\n");
@@ -3188,7 +3188,7 @@ void BBT20(float a, float b, float c, float d)
 															fprintf(output, "|-----|---------------------------------------------------------------------------------------------------------|\n");
 															fprintf(output, "|f'(x)|            +                      -                      +            ||        ||             +        |\n");
 															fprintf(output, "|-----|-----------------------------------------------------------------------||--------||----------------------|\n");
-															fprintf(output, "|     |                      %.2f                                           0 ||        ||                  %.2f|\n", Equa_3(a, b, c, d, x), Equa_3(a, b, c, d, x3));
+															fprintf(output, "|     |                      %.2f                                           0 ||        ||                  %.2f|\n", sqrt(Equa_3(a, b, c, d, x)), sqrt(Equa_3(a, b, c, d, x3)));
 															fprintf(output, "|     |                     /    \\                                        /   ||        ||                  /   |\n");
 															fprintf(output, "|     |                    /      \\                                      /    ||        ||                 /    |\n");
 															fprintf(output, "|     |                   /        \\                                    /     ||        ||                /     |\n");
@@ -3207,7 +3207,7 @@ void BBT20(float a, float b, float c, float d)
 															fprintf(output, "|     |      /                                  \\          /                  ||        ||   /                  |\n");
 															fprintf(output, "|     |     /                                    \\        /                   ||        ||  /                   |\n");
 															fprintf(output, "|     |    /                                      \\      /                    ||        || /                    |\n");
-															fprintf(output, "|     | -oo                                          %.2f                     ||        ||0                     |\n", Equa_3(a, b, c, d, y));
+															fprintf(output, "|     | -oo                                          %.2f                     ||        ||0                     |\n", sqrt(Equa_3(a, b, c, d, y)));
 															fprintf(output, "|=====|=========================================================================================================|\n");
 														}
 													}
@@ -3258,7 +3258,7 @@ void BBT21(float a, float b, float c)
 					fprintf(output, "\t|     |            \\         /                |\n");
 					fprintf(output, "\t|     |             \\       /                 |\n");
 					fprintf(output, "\t|     |              \\     /                  |\n");
-					fprintf(output, "\t|     |                %.2f                   |\n", Equa_4(a, b, c, x5));
+					fprintf(output, "\t|     |                %.2f                   |\n", sqrt(Equa_4(a, b, c, x5)));
 					fprintf(output, "\t|=====|=======================================|\n");
 				}
 				else
@@ -3287,7 +3287,7 @@ void BBT21(float a, float b, float c)
 						fprintf(output, "\t|     |            \\         /                |\n");
 						fprintf(output, "\t|     |             \\       /                 |\n");
 						fprintf(output, "\t|     |              \\     /                  |\n");
-						fprintf(output, "\t|     |                %.2f                   |\n", Equa_4(a, b, c, x5));
+						fprintf(output, "\t|     |                %.2f                   |\n", sqrt(Equa_4(a, b, c, x5)));
 						fprintf(output, "\t|=====|=======================================|\n");
 					}
 					else
@@ -3311,7 +3311,7 @@ void BBT21(float a, float b, float c)
 							fprintf(output, "\t|     |                    \\           /              |\n");
 							fprintf(output, "\t|     |                      \\        /               |\n");
 							fprintf(output, "\t|     |                        \\     /                |\n");
-							fprintf(output, "\t|     |                          %.2f                 |\n", Equa_4(a, b, c, x7));
+							fprintf(output, "\t|     |                          %.2f                 |\n", sqrt(Equa_4(a, b, c, x7)));
 							fprintf(output, "\t|=====|===============================================|\n");
 
 						}
@@ -3336,8 +3336,8 @@ void BBT21(float a, float b, float c)
 								fprintf(output, "\t|     |            \\         /                |\n");
 								fprintf(output, "\t|     |             \\       /                 |\n");
 								fprintf(output, "\t|     |              \\     /                  |\n");
-								fprintf(output, "\t|     |                %.2f                   |\n", Equa_4(a, b, c, x5));
-								fprintf(output, "\t|     |                %.2f                   |\n", Equa_4(a, b, c, x5));
+								fprintf(output, "\t|     |                %.2f                   |\n", sqrt(Equa_4(a, b, c, x5)));
+								fprintf(output, "\t|     |                %.2f                   |\n", sqrt(Equa_4(a, b, c, x5)));
 								fprintf(output, "\t|=====|=======================================|\n");
 							}
 							else
@@ -3347,7 +3347,7 @@ void BBT21(float a, float b, float c)
 								fprintf(output, "\t|-----|-------------------------------------------------------------------|\n");
 								fprintf(output, "\t|f'(x)|       -      0        +        0        -     0       +           |\n");
 								fprintf(output, "\t|-----|-------------------------------------------------------------------|\n");
-								fprintf(output, "\t|     | +oo                           %.2f                           +oo  |\n", Equa_4(a, b, c, x6));
+								fprintf(output, "\t|     | +oo                           %.2f                           +oo  |\n", sqrt(Equa_4(a, b, c, x6)));
 								fprintf(output, "\t| f(x)|    \\                        /     \\                        /      |\n");
 								fprintf(output, "\t|     |     \\                      /       \\                      /       |\n");
 								fprintf(output, "\t|     |      \\                    /         \\                    /        |\n");
@@ -3359,7 +3359,7 @@ void BBT21(float a, float b, float c)
 								fprintf(output, "\t|     |            \\        /                     \\        /              |\n");
 								fprintf(output, "\t|     |             \\      /                       \\      /               |\n");
 								fprintf(output, "\t|     |              \\    /                         \\    /                |\n");
-								fprintf(output, "\t|     |               %.2f                           %.2f                 |\n", Equa_4(a, b, c, x5), Equa_4(a, b, c, x7));
+								fprintf(output, "\t|     |               %.2f                           %.2f                 |\n", sqrt(Equa_4(a, b, c, x5)), sqrt(Equa_4(a, b, c, x7)));
 								fprintf(output, "\t|=====|===================================================================|\n");
 							}
 						}
@@ -3423,12 +3423,12 @@ void BBT21(float a, float b, float c)
 				{
 					if (x1 != x2)
 					{
-						fprintf(output, "\t|=====|====================================|\n");
+						fprintf(output, "\t|=====|===================================|\n");
 						fprintf(output, "\t|  x  |%.2f             0             %.2f|\n", x1, x2);
 						fprintf(output, "\t|-----|-----------------------------------|\n");
 						fprintf(output, "\t|f'(x)| 0        +             -          |\n");
 						fprintf(output, "\t|-----|-----------------------------------|\n");
-						fprintf(output, "\t|     |                 %.2f              |\n");
+						fprintf(output, "\t|     |                 %.2f              |\n",sqrt(Equa_4(a,b,c,0)));
 						fprintf(output, "\t| f(x)|              /      \\             |\n");
 						fprintf(output, "\t|     |             /        \\            |\n");
 						fprintf(output, "\t|     |            /          \\           |\n");
@@ -3497,7 +3497,7 @@ void BBT21(float a, float b, float c)
 							fprintf(output, "\t|     |            \\        /                            \\        /              |\n");
 							fprintf(output, "\t|     |             \\      /                              \\      /               |\n");
 							fprintf(output, "\t|     |              \\    /                                \\    /                |\n");
-							fprintf(output, "\t|     |               %.2f                                  %.2f                 |\n", Equa_4(a, b, c, x5), Equa_4(a, b, c, x7));
+							fprintf(output, "\t|     |               %.2f                                  %.2f                 |\n", sqrt(Equa_4(a, b, c, x5)), sqrt(Equa_4(a, b, c, x7)));
 							fprintf(output, "\t|=====|==========================================================================|\n");
 						}
 					}
@@ -3841,7 +3841,10 @@ void BBT22(float a, float b, float c, float d)
 			float x2 = -d / c;
 			if (x1 > x2)
 				swap(x1, x2);
-			a = d * a;
+			a = a / c;
+			c = c / c;
+			b = b / c;
+			d = d / c;
 			if (x1 == x2)
 			{
 				if (a * c > 0)

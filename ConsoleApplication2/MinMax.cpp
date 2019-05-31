@@ -66,7 +66,35 @@ void MinMax(int k, float a, float b, float c, float d, float e)
 		MinMax_17();
 		break;
 	}
-
+	case 18:
+	{
+		MinMax_18(a, b);
+		break;
+	}
+	case 19:
+	{
+		MinMax_19(a, b, c);
+		break;
+	}
+	case 20:
+	{
+		MinMax_20(a, b, c, d);
+		break;
+	}
+	case 21:
+	{
+		MinMax_21(a, b, c);
+		break;
+	}
+	case 22:
+	{
+		MinMax_22(a,b,c,d);
+		break;
+	}
+	case 23:
+	{
+		break;
+	}
 	default:
 		break;
 	}
@@ -239,4 +267,844 @@ void MinMax_16()
 void MinMax_17()
 {
 	fprintf(output, "Ham so khong co cuc tri!!!\n\n");
+}
+
+void MinMax_18(float a, float b) {
+	if (a > 0) {
+		fprintf(output, "Ham so khong co cuc tri\n");
+	}
+	else {
+		if (a != 0) {
+			fprintf(output, "Ham so khong co cuc tri\n");
+		}
+		else
+			fprintf(output, "Ham so khong co cuc tri\n");
+	}
+}
+
+void MinMax_19(float a, float b, float c) {
+	if (a == 0) {
+		MinMax_18(b, c);
+	}
+	else {
+		float x, y;
+		short k;
+		GiaiPT_Bac2(a, b, c, x, y, k);
+		if (k == -1 || k == 0) {
+			if (a > 0) {
+				fprintf(output, "Ham so co cuc tieu tai x= %.2f  y=0\n", -b / 2 * a);
+			}
+			else
+			{
+				fprintf(output, "Ham so khong co cuc tri\n");
+			}
+		}
+		else
+		{
+			if (a > 0) {
+				if (-b / 2 * a < x) {
+					fprintf(output, "Ham so co cuc tieu tai x= %.2f  y=0 \n", -b / 2 * a);
+				}
+				else {
+					if (-b / 2 * a > y) {
+						fprintf(output, "Ham so co cuc tieu tai x= %.2f y=%.2f \n", -b / 2 * a, sqrt(Equa_2(a, b, c, -b / 2 * a)));
+					}
+					else {
+						fprintf(output, "Ham so khong co cuc tri\n");
+					}
+				}
+			}
+			else
+				if (-b / 2 * a > x && -b / 2 * a < y) {
+					fprintf(output, "Ham so co cuc tieu tai x= %.2f y=0\n", -b / 2 * a);
+				}
+				else
+					if (-b / 2 * a < x) {
+						fprintf(output, "Ham so khong co cuc tri\n");
+					}
+					else {
+						fprintf(output, "Ham so khong co cuc tri\n");
+					}
+		}
+	}
+}
+
+void MinMax_20(float a, float b, float c, float d)
+{
+	if (a == 0)
+		MinMax_19(b, c, d);
+	else
+	{
+		float x1, x2, x3, x, y;
+		short k, l;
+		GiaiPT_Bac3(a, b, c, d, x1, x2, x3, k);
+		GiaiPT_Bac2(3 * a, 2 * b, c, x, y, l);
+		if (l == -1) {
+			switch (k)
+			{
+			case 1:
+				if (a > 0)
+				{
+
+				}
+				else {
+					fprintf(output, "Ham so khong co cuc tri\n");
+				}
+				break;
+			case 3:
+				if (a > 0)
+				{
+					if (x1 == x2 && x2 == x3) {
+						fprintf(output, "Ham so khong co cuc tri\n");
+					}
+					else
+					{
+						if (x1 == x2) {
+							fprintf(output, "Ham so khong co cuc tri\n");
+						}
+						else
+						{
+							if (x2 == x3) {
+								fprintf(output, "Ham so khong co cuc tri\n");
+							}
+							else
+							{
+								fprintf(output, "Ham so khong co cuc tri\n");
+							}
+						}
+					}
+				}
+				else
+				{
+					if (x1 == x2 && x2 == x3)
+					{
+						fprintf(output, "Ham so khong co cuc tri\n");
+					}
+					else
+					{
+						if (x1 == x2)
+						{
+							fprintf(output, "Ham so khong co cuc tri\n");
+						}
+						else
+						{
+							if (x2 == x3)
+							{
+								fprintf(output, "Ham so khong co cuc tri\n");
+							}
+							else
+							{
+								fprintf(output, "Ham so khong co cuc tri\n");
+							}
+						}
+					}
+				}
+			}
+		}
+		else
+		{
+			if (l == 0) {
+				switch (k)
+				{
+				case 1:
+					if (a > 0)
+					{
+						if (x > x1) {
+							fprintf(output, "Ham so khong co cuc tri\n");
+						}
+						else
+						{
+							fprintf(output, "Ham so khong co cuc tri\n");
+						}
+					}
+					else {
+						if (x > x1)
+						{
+							fprintf(output, "Ham so khong co cuc tri\n");
+						}
+						else {
+							fprintf(output, "Ham so khong co cuc tri\n");
+						}
+					}
+					break;
+				case 3:
+					if (a > 0)
+					{
+						if (x1 == x2 && x2 == x3) {
+							if (x < x1)
+							{
+								fprintf(output, "Ham so khong co cuc tri\n");
+							}
+							else {
+								fprintf(output, "Ham so khong co cuc tri\n");
+							}
+						}
+						else
+						{
+							if (x1 == x2) {
+								if (x < x3)
+								{
+									fprintf(output, "Ham so khong co cuc tri\n");
+								}
+								else {
+									fprintf(output, "Ham so khong co cuc tri\n");
+								}
+							}
+							else
+							{
+								if (x2 == x3) {
+									if (x < x1)
+									{
+										fprintf(output, "Ham so khong co cuc tri\n");
+									}
+									else {
+										fprintf(output, "Ham so khong co cuc tri\n");
+									}
+								}
+								else {
+									if (x < x1) {
+										fprintf(output, "Ham so khong co cuc tri\n");
+									}
+									else {
+										if (x > x1 && x < x2) {
+											fprintf(output, "Ham so khong co cuc tri\n");
+										}
+										else {
+											if (x > x2 && x < x3) {
+												fprintf(output, "Ham so khong co cuc tri\n");
+											}
+											else {
+												fprintf(output, "Ham so khong co cuc tri\n");
+											}
+
+										}
+									}
+								}
+							}
+						}
+					}
+					else
+					{
+						if (x1 == x2 && x2 == x3) {
+							if (x > x1)
+							{
+								fprintf(output, "Ham so khong co cuc tri\n");
+							}
+							else {
+								fprintf(output, "Ham so khong co cuc tri\n");
+							}
+						}
+						else
+						{
+							if (x1 == x2)
+							{
+								if (x > x3)
+								{
+									fprintf(output, "Ham so khong co cuc tri\n");
+								}
+								else {
+
+									fprintf(output, "Ham so khong co cuc tri\n");
+								}
+							}
+							else
+							{
+								if (x2 == x3)
+								{
+									if (x > x1)
+									{
+
+										fprintf(output, "Ham so khong co cuc tri\n");
+									}
+									else {
+										fprintf(output, "Ham so khong co cuc tri\n");
+									}
+								}
+								else
+								{
+									fprintf(output, "Ham so khong co cuc tri\n");
+									if (x > x3) {
+										fprintf(output, "Ham so khong co cuc tri\n");
+									}
+									else {
+										if (x > x2 && x < x3) {
+											fprintf(output, "Ham so khong co cuc tri\n");
+										}
+										else {
+											if (x > x1 && x < x2) {
+												fprintf(output, "Ham so khong co cuc tri\n");
+											}
+											else {
+												fprintf(output, "Ham so khong co cuc tri\n");
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			else {
+				switch (k)
+				{
+				case 1:
+					if (a > 0)
+					{
+						if (x > x1 && y > x1) {
+							fprintf(output, "Ham so co 1 cuc dai tai x=%.2f y=%.2f va 1 cuc tieu tai x=%.2f y=%.2f\n", x, sqrt(Equa_3(a, b, c, d, x)), y, sqrt(Equa_3(a, b, c, d, y)));
+						}
+						else {
+							if (x < x1 && y>x1) {
+								fprintf(output, "Ham so co 1 cuc tieu tai x=%.2f y=%.2f\n", y, sqrt(Equa_3(a, b, c, d, y)));
+							}
+							else
+							{
+								fprintf(output, "Ham so khong co cuc tri\n");
+							}
+						}
+					}
+					else {
+						if (x < x1 && y < x1) {
+							fprintf(output, "Ham so co 1 cuc dai tai x=%.2f y=%.2f va 1 cuc tieu tai x=%.2f y=%.2f\n", y, sqrt(Equa_3(a, b, c, d, y)), x, sqrt(Equa_3(a, b, c, d, x)));
+						}
+						else {
+							if (x<x1 && y>x1) {
+								fprintf(output, "Ham so co 1 cuc dai tai x=%.2f y=%.2f\n", x, sqrt(Equa_3(a, b, c, d, x)));
+							}
+							else {
+								fprintf(output, "Ham so khong co cuc tri\n");
+							}
+						}
+					}
+					break;
+				case 3:
+					if (a > 0)
+					{
+						if (x1 == x2 && x2 == x3) {
+							if (x > x1 && y > x1) {
+								fprintf(output, "Ham so co 1 cuc dai tai x=%.2f y=%.2f va 1 cuc tieu tai x=%.2f y=%.2f\n", x, sqrt(Equa_3(a, b, c, d, x)), y, sqrt(Equa_3(a, b, c, d, y)));
+							}
+							else {
+								if (x < x1 && y>x1) {
+									fprintf(output, "Ham so co 1 cuc tieu tai x=%.2f y=%.2f\n", y, sqrt(Equa_3(a, b, c, d, y)));
+								}
+								else
+								{
+									fprintf(output, "Ham so khong co cuc tri\n");
+								}
+							}
+						}
+						else
+						{
+							if (x1 == x2) {
+								if (x < x3 && y < x3)
+								{
+									fprintf(output, "Ham so khong co cuc tri\n");
+								}
+								else {
+									if (x<x3 && y>x3) {
+										fprintf(output, "Ham so khong co cuc tri\n");
+									}
+									else {
+										fprintf(output, "Ham so khong co cuc tri\n");
+									}
+								}
+							}
+							else
+							{
+								if (x2 == x3) {
+									if (x < x1 && y < x1)
+									{
+										fprintf(output, "Ham so khong co cuc tri\n");
+									}
+									else {
+										if (x<x1 && y>x1) {
+											fprintf(output, "Ham so khong co cuc tri\n");
+										}
+										else {
+											fprintf(output, "Ham so khong co cuc tri\n");
+										}
+									}
+								}
+								else {
+									if (x < x1 && y < x1) {
+										fprintf(output, "Ham so khong co cuc tri\n");
+									}
+									else {
+										if (x<x1 && x >x1) {
+											fprintf(output, "Ham so co 1 cuc tieu tai x=%.2f y=%.2f\n", y, sqrt(Equa_3(a, b, c, d, y)));
+										}
+										else {
+											if (x < x2 && y < x2) {
+												fprintf(output, "Ham so co 1 cuc dai tai x=%.2f y=%.2f va 1 cuc tieu tai x=%.2f y=%.2f\n", x, sqrt(Equa_3(a, b, c, d, x)), y, sqrt(Equa_3(a, b, c, d, y)));
+											}
+											else {
+												if (x<x2 && y>x2) {
+													fprintf(output, "Ham so co 1 cuc dai tai x=%.2f y=%.2f\n", x, sqrt(Equa_3(a, b, c, d, x)));
+												}
+												else {
+													if (x < x3 && y < x3) {
+														fprintf(output, "Ham so khong co cuc tri\n");
+													}
+													else {
+														if (x<x3 && y>x3) {
+															fprintf(output, "Ham so co 1 cuc tieu tai x=%.2f y=%.2f\n", y, sqrt(Equa_3(a, b, c, d, y)));
+														}
+														else {
+															fprintf(output, "Ham so co 1 cuc dai tai x=%.2f y=%.2f va 1 cuc tieu tai x=%.2f y=%.2f\n", x, sqrt(Equa_3(a, b, c, d, x)), y, sqrt(Equa_3(a, b, c, d, y)));
+														}
+													}
+												}
+
+											}
+
+										}
+									}
+								}
+							}
+						}
+					}
+					else
+					{
+						if (x1 == x2 && x2 == x3) {
+							if (x < x1 && y < x1) {
+								fprintf(output, "Ham so co 1 cuc dai tai x=%.2f y=%.2f va 1 cuc tieu tai x=%.2f y=%.2f\n", x, sqrt(Equa_3(a, b, c, d, x)), y, sqrt(Equa_3(a, b, c, d, y)));
+							}
+							else {
+								if (x<x1 && y>x1) {
+									fprintf(output, "Ham so co 1 cuc dai tai x=%.2f y=%.2f\n", x, sqrt(Equa_3(a, b, c, d, x)));
+								}
+								else
+								{
+									fprintf(output, "Ham so khong co cuc tri\n");
+								}
+							}
+						}
+						else
+						{
+							if (x1 == x2)
+							{
+								if (x > x3 && y > x3)
+								{
+									fprintf(output, "Ham so khong co cuc tri\n");
+								}
+								else {
+									if (x<x3 && y>x3) {
+										fprintf(output, "Ham so co 1 cuc dai tai x=%.2f y=%.2f\n", x, sqrt(Equa_3(a, b, c, d, x)));
+									}
+									else {
+										fprintf(output, "Ham so co 1 cuc dai tai x=%.2f y=%.2f va 1 cuc tieu tai x=%.2f y=%.2f\n", x, sqrt(Equa_3(a, b, c, d, x)), y, sqrt(Equa_3(a, b, c, d, y)));
+									}
+
+								}
+							}
+							else
+							{
+								if (x2 == x3)
+								{
+									if (x > x1 && y > x1)
+									{
+										fprintf(output, "Ham so co 1 cuc dai tai x=%.2f y=%.2f va 1 cuc tieu tai x=%.2f y=%.2f\n", x, sqrt(Equa_3(a, b, c, d, x)), y, sqrt(Equa_3(a, b, c, d, y)));
+									}
+									else {
+										if (x<x3 && y>x3) {
+											fprintf(output, "Ham so co 1 cuc dai tai x=%.2f y=%.2f\n", x, sqrt(Equa_3(a, b, c, d, x)));
+										}
+										else {
+											fprintf(output, "Ham so co 1 cuc dai tai x=%.2f y=%.2f va 1 cuc tieu tai x=%.2f y=%.2f\n", x, sqrt(Equa_3(a, b, c, d, x)), y, sqrt(Equa_3(a, b, c, d, y)));
+										}
+									}
+								}
+								else
+								{
+									if (x > x3 && y > x3) {
+										fprintf(output, "Ham so khong co cuc tri\n");
+									}
+									else {
+										if (x<x3 && y >x3) {
+											fprintf(output, "Ham so co 1 cuc dai tai x=%.2f y=%.2f\n", x, sqrt(Equa_3(a, b, c, d, x)));
+										}
+										else {
+											if (x < x3 && y < x3) {
+												fprintf(output, "Ham so co 1 cuc dai tai x=%.2f y=%.2f va 1 cuc tieu tai x=%.2f y=%.2f\n", x, sqrt(Equa_3(a, b, c, d, x)), y, sqrt(Equa_3(a, b, c, d, y)));
+											}
+											else {
+												if (x<x2 && y>x2) {
+													fprintf(output, "Ham so co 1 cuc dai tai x=%.2f y=%.2f va 1 cuc tieu tai x=%.2f y=%.2f\n", x, sqrt(Equa_3(a, b, c, d, x)), y, sqrt(Equa_3(a, b, c, d, y)));
+												}
+												else {
+													if (x<x2 && y<x2)
+														fprintf(output, "Ham so khong co cuc tri\n");
+													else {
+														if (x<x1 && y>x1) {
+															fprintf(output, "Ham so co 1 cuc dai tai x=%.2f y=%.2f\n", x, sqrt(Equa_3(a, b, c, d, x)));
+														}
+														else {
+															fprintf(output, "Ham so co 1 cuc dai tai x=%.2f y=%.2f va 1 cuc tieu tai x=%.2f y=%.2f\n", x, sqrt(Equa_3(a, b, c, d, x)), y, sqrt(Equa_3(a, b, c, d, y)));
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+void MinMax_21(float a, float b, float c)
+{
+	if (a == 0)
+		MinMax_19(b, 0, c);
+	else
+	{
+		float x1, x2, x3, x4, x5, x6, x7;
+		short k, l;
+		GiaiPT_Bac4(a, 0, b, 0, c, x1, x2, x3, x4, k);
+		GiaiPT_Bac3(4 * a, 0, 2 * b, 0, x5, x6, x7, l);
+		switch (k) {
+		case 0:
+			if (l == 1)//tu co nghiem bang 0
+			{
+				if (a > 0)
+				{
+					fprintf(output, "Ham so co 1 cuc tieu tai x = %.2f\n", x5);
+				}
+				else
+					fprintf(output, "Ham so khong xac dinh\n");
+			}
+			if (l == 3)
+			{
+				if (a > 0)
+				{
+					if (x5 == x6 && x6 == x7)
+					{
+						fprintf(output, "Ham so co 1 cuc tieu tai x = %.2f\n", x5);
+					}
+					else
+					{
+						if (x5 == x6)
+						{
+							fprintf(output, "Ham so co 1 cuc tieu tai x = %.2f\n", x7);
+						}
+						else
+						{
+							if (x6 == x7)
+							{
+								fprintf(output, "Ham so co 1 cuc tieu tai x = %.2f\n", x5);
+							}
+							else
+							{
+								fprintf(output, "Ham so co 2 cuc tieu tai x = %.2f va x = %.2f\n", x5, x7);
+								fprintf(output, "Ham so co 1 cuc dai tai x = %.2f\n", x6);
+							}
+						}
+					}
+				}
+				else
+					fprintf(output, "Ham so khong xac dinh\n");
+			}
+			break;
+		case 2:
+			if (l == 1 || (l == 3 && x5 == x7))
+			{
+				if (a > 0)
+				{
+					if (x1 != x2)
+					{
+						fprintf(output, "Ham so khong co cuc tri\n");
+					}
+					if (x1 == x2)
+					{
+						fprintf(output, "Ham so co 1 cuc tieu tai x = 0\n");
+					}
+				}
+				else
+				{
+					if (x1 != x2)
+					{
+						fprintf(output, "Ham so co 1 cuc dai tai x = 0\n");
+					}
+					if (x1 == x2)
+					{
+						fprintf(output, "Ham so khong co cuc tri\n");
+					}
+				}
+			}
+			if (l == 3 && x5 != x7)
+			{
+				if (a > 0)
+				{
+					if (x1 != x2)
+					{
+						if (x7 <= x2)
+						{
+							fprintf(output, "Ham so khong co cuc tri\n");
+						}
+						if (x7 > x2)
+						{
+							fprintf(output, "Ham so co 2 cuc tieu tai x = %.2f va x = %.2f\n", x5, x7);
+						}
+					}
+					if (x1 == x2)//Truong hop nay thuc ra khong ton tai
+					{
+
+					}
+				}
+				if (a < 0)
+				{
+					if (x1 != x2)
+					{
+						if (x7 >= x2)//Truong hop nay thuc ra khong ton tai
+						{
+
+						}
+						if (x7 < x2)
+						{
+							fprintf(output, "Ham so co 1 cuc tieu tai x = %.2f\n", x6);
+							fprintf(output, "Ham so co 2 cuc dai tai x = %.2f va x = %.2f\n", x5, x7);
+						}
+					}
+					if (x1 == x2)
+					{
+						fprintf(output, "Ham so khong co cuc tri\n");
+					}
+				}
+			}
+			break;
+		case 4:
+			if (l == 1 || (l == 3 && x5 == x7))//Truong hop l==1 khong ton tai => chi co truong hop f(x)=ax^4 => chi co truong hop x1=x2=x3=x4=0
+			{
+				if (a > 0)
+				{
+					if (x1 == x4)
+					{
+						fprintf(output, "Ham so co 1 cuc tieu tai x = 0\n");
+					}
+					else
+					{
+						if (x2 == x3)
+						{
+							fprintf(output, "Ham so khong co cuc tri\n");
+						}
+						if (x2 != x3)//Truong hop nay khong ton tai
+						{
+						}
+					}
+				}
+				if (a < 0)
+				{
+					if (x1 == x4)
+					{
+						fprintf(output, "Ham so khong co cuc tri\n");
+					}
+					else//Truong hop nay khong ton tai 
+					{
+					}
+				}
+			}
+			if (l == 3 && x5 != x7)
+			{
+				if (a > 0)
+				{
+					if (x1 == x4)
+					{
+						fprintf(output, "Ham so co 2 cuc tieu tai x = %.2f va x = %.2f\n", x5, x7);
+						fprintf(output, "Ham so co 1 cuc dai tai x = %.2f\n", x6);
+					}
+					else
+					{
+						if (x2 == x3)
+						{
+							if (x7 <= x4)
+							{
+								fprintf(output, "Ham so khong co cuc tri\n");
+							}
+							if (x7 > x4)//Truong hop nay khong ton tai
+							{
+							}
+						}
+						else
+						{
+							if (x3 != x4)
+							{
+								if (x7 < x3)//Truong hop nay khong ton tai
+								{
+								}
+								if (x7 >= x3 && x7 <= x4)
+								{
+									fprintf(output, "Ham so co 1 cuc dai tai x = %.2f\n", x6);
+								}
+								if (x7 > x4)//Truong hop nay khong ton tai
+								{
+								}
+							}
+							if (x3 == x4)
+							{
+								if (x7 < x4)//Truong hop nay khong ton tai
+								{
+								}
+								if (x7 == x4)
+								{
+									fprintf(output, "Ham so co 2 cuc tieu tai x = %.2f va x = %.2f\n", x5, x7);
+									fprintf(output, "Ham so co 1 cuc dai tai x = %.2f\n", x6);
+								}
+								if (x7 > x4)//Truong hop nay khong ton tai
+								{
+								}
+							}
+						}
+					}
+				}
+				if (a < 0)
+				{
+					if (x1 == x4)
+					{
+						fprintf(output, "Ham so khong co cuc tri\n");
+					}
+					else
+					{
+						if (x2 == x3)
+						{
+							if (x7 >= x4)//Truong hop nay khong ton tai
+							{
+							}
+							if (x7 < x4)
+							{
+								fprintf(output, "Ham so co 1 cuc tieu tai x = %.2f\n", x6);
+								fprintf(output, "Ham so co 2 cuc dai tai x = %.2f va x = %.2f\n", x5, x7);
+							}
+						}
+						else
+						{
+							if (x3 != x4)
+							{
+								if (x7 <= x3)//Truong hop nay khong ton tai
+								{
+								}
+								if (x7 > x3 && x7 < x4)
+								{
+									fprintf(output, "Ham so co 2 cuc dai tai x = %.2f va x = %.2f\n", x5, x7);
+								}
+								if (x7 >= x4)//Truong hop nay khong ton tai
+								{
+								}
+							}
+							if (x3 == x4)
+								fprintf(output, "Ham so khong co cuc tri\n");
+						}
+					}
+				}
+			}
+			break;
+		default:
+			break;
+		}
+	}
+}
+
+void MinMax_22(float a, float b, float c, float d)
+{
+	if (a == 0)
+	{
+		if (b == 0)
+			fprintf(output, "Ham so khong co cuc tri\n");
+		else
+		{
+			if (b < 0)
+			{
+				c = -c;
+				d = -d;
+			}
+			if (c > 0) {
+				if (-d - b * c < 0)
+				{
+					fprintf(output, "Ham so khong co cuc tri\n");
+				}
+				else
+				{
+					fprintf(output, "Ham so khong co cuc tri\n");
+				}
+			}
+			else
+			{
+				if (c != 0) {
+					if (-d - b * c < 0)
+					{
+						fprintf(output, "Ham so khong co cuc tri\n");
+					}
+					else
+					{
+						fprintf(output, "Ham so khong co cuc tri\n");
+					}
+				}
+				else
+				{
+					if (d >= 0)
+						fprintf(output, "Ham so khong co cuc tri\n");
+					else
+						fprintf(output, "Ham so khong xac dinh\n");
+				}
+			}
+		}
+	}
+	else
+	{
+		if (c == 0)
+		{
+			if (d == 0)
+				fprintf(output, "Ham so khong xac dinh\n");
+			else
+				MinMax_18(a / d, b / d);
+		}
+		else
+		{
+			float x1 = -b / a;
+			float x2 = -d / c;
+			if (x1 > x2)
+				swap(x1, x2);
+			a = a / c;
+			b = b / c;
+			c = c / c;
+			d = d / c;
+			if (x1 == x2)
+			{
+				if (a * c > 0)
+					fprintf(output, "Ham so khong co cuc tri\n");
+				if (a * c < 0)
+					fprintf(output, "Ham so khong xac dinh\n");
+			}
+			else
+			{
+				if (a > 0)
+				{
+					if (a * d - b * c < 0)
+					{
+						fprintf(output, "Ham so khong co cuc tri\n");
+					}
+					else
+					{
+						fprintf(output, "Ham so khong co cuc tri\n");
+					}
+				}
+				else
+				{
+					if (a * d - b * c < 0)
+					{
+						fprintf(output, "Ham so khong co cuc tri\n");
+					}
+					else
+					{
+						fprintf(output, "Ham so khong co cuc tri\n");
+					}
+				}
+			}
+		}
+	}
 }
