@@ -1,6 +1,7 @@
 ﻿#ifndef _MY_TXD
 #define _MY_TXD
 
+<<<<<<< HEAD
 //Xác định Tập xác định của các hàm số với các hệ số tương ứng
 void TapXacDinh(int k, float a, float b, float c, float d, float e);
 
@@ -14,6 +15,16 @@ void TapXacDinh_2(float a, float b, float c, float d);
 void TapXacDinh_3(float a, float b, float c, float d, float e);
 
 //Tập xác định của hàm Tan(x)
+=======
+//k là loại hàm số; a, b, c, d, e là các hệ số của hàm số đó (nếu có).
+void TapXacDinh(int k, float a, float b, float c, float d, float e); 
+//Xuất ra tập xác định là R
+void TapXacDinh_1(); 
+//Tập xác định của hàm phân thức hữu tỉ (ax+b)/(cx+d)
+void TapXacDinh_2(float a, float b, float c, float d); 
+//Tập xác định của hàm phân thức (ax^2+bx+c)/(dx+e)
+void TapXacDinh_3(float a, float b, float c, float d, float e); 
+>>>>>>> 552c98105db49f4fc5e82d7f7596b52e5f1b32a0
 void TapXacDinh_4();
 
 //Tập xác định của hàm Cot(x)
