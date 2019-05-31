@@ -866,8 +866,8 @@ void XetDau21(float a, float b, float c)
 					}
 					if (x1 == x2)
 					{
-						fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (-oo,0)\n");
-						fprintf(output, "Dao ham cua ham so luon am voi moi x thuoc (0,+oo)\n");
+						fprintf(output, "Dao ham cua ham so luon am voi moi x thuoc (-oo,0)\n");
+						fprintf(output, "Dao ham cua ham so luon duong voi moi x thuoc (0,+oo)\n");
 					}
 				}
 				else

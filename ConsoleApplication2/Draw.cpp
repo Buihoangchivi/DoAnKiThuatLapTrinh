@@ -657,7 +657,7 @@ void PT21(float a, float b, float c)
 									else
 									{
 										glVertex2f(i, sqrt(fabs(Equa_4(a, b, c, i))));
-										glVertex2f(x3, sqrt(fabs(Equa_4(a, b, c, x3))));
+										glVertex2f(x4, sqrt(fabs(Equa_4(a, b, c, x4))));
 									}
 						}
 						if (x3 == x4)

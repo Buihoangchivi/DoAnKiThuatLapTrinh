@@ -160,65 +160,123 @@ void GiaiPT_Bac3(float A, float B, float C, float D, float& X1, float& X2, float
 
 void GiaiPT_Bac4(float A, float B, float C, float D, float E, float& X1, float& X2, float& X3, float& X4, short& K)
 {
+	K = 0;
 	X1 = FLT_MIN, X2 = FLT_MIN, X3 = FLT_MIN, X4 = FLT_MIN;
 	float A1 = A, B1 = B, C1 = C, D1 = D, E1 = E;
-	if (A != 1)
-	{
-		B = B / A;
-		C = C / A;
-		D = D / A;
-		E = E / A;
-		A = 1;
-	}
-	float A2 = A, B2 = B, C2 = C, D2 = D, E2 = E;
-	C = (6 * B2 * B2 / 16 - 3 * B2 * B2 / 4 + C2);
-	D = (-pow(B2, 3) * 4 / 64 + 3 * B2 * B2 * B2 / 16 - B2 * C2 / 2 + D2);
-	E = pow(B2, 4) / 256 - pow(B2, 4) / 64 + B2 * B2 * C2 / 16 - B2 * D2 / 4 + E2;
-	float M1, M2, M3;
-	short K1;
 	int count = 0;
-	GiaiPT_Bac3(8, -4 * C, -8 * E, 4 * C * E - D * D, M1, M2, M3, K1);
-	if (K == 3)
-		M1 = M3;
-	else if (K == 2)
-		M1 = M2;
-	if (2 * M1 - C > 0 && -(2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C == 0)
+	if (E == 0)
 	{
-		X1 = (pow(2 * M1 - C, 1.0 / 2) + pow(-(2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C, 1.0 / 2)) / 2;
-		X1 = X1 - B2 / 4;
+		float N1, N2, N3;
+		short KK;
+		X1 = 0;
 		count++;
-		X2 = (-pow(2 * M1 - C, 1.0 / 2) + pow((2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C, 1.0 / 2)) / 2;
-		X2 = X2 - B2 / 4;
-		count++;
+		GiaiPT_Bac3(A, B, C, D, X2, X3, X4, KK);
+		if (X2 != FLT_MIN)
+			count++;
+		if (X3 != FLT_MIN)
+			count++;
+		if (X4 != FLT_MIN)
+			count++;
 		K = count;
+	}
+	else if (B == 0 && D == 0)
+	{
+		float x, y;
+		short k;
+		GiaiPT_Bac2(A, C, E, x, y, k);
+		if (k == 0)
+		{
+			if (x > 0)
+			{
+				count = 2;
+				X1 = -pow(x, 1.0 / 2);
+				X2 = pow(x, 1.0 / 2);
+			}
+			K = count;
+		}
+		else if (k == 1)
+		{
+			if (x > 0)
+			{
+				count += 2;
+				X1 = -pow(x, 1.0 / 2);
+				X2 = pow(x, 1.0 / 2);
+			}
+			if (y > 0)
+			{
+				count += 2;
+				X3 = pow(y, 1.0 / 2);
+				X4 = -pow(y, 1.0 / 2);
+			}
+			K = count;
+		}
 	}
 	else
 	{
-		if (2 * M1 - C > 0 && (-(2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C) > 0)
+		if (A != 1)
+		{
+			B = B / A;
+			C = C / A;
+			D = D / A;
+			E = E / A;
+			A = 1;
+		}
+		float A2 = A, B2 = B, C2 = C, D2 = D, E2 = E;
+		C = (6 * B2 * B2 / 16 - 3 * B2 * B2 / 4 + C2);
+		D = (-pow(B2, 3) * 4 / 64 + 3 * B2 * B2 * B2 / 16 - B2 * C2 / 2 + D2);
+		E = pow(B2, 4) / 256 - pow(B2, 4) / 64 + B2 * B2 * C2 / 16 - B2 * D2 / 4 + E2;
+		float M1, M2, M3;
+		short K1;
+		GiaiPT_Bac3(8, -4 * C, -8 * E, 4 * C * E - D * D, M1, M2, M3, K1);
+		if (K1 == 3)
+			M1 = M3;
+		else if (K1 == 2)
+			M1 = M2;
+		if (2 * M1 - C > 0 && (-(2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C) == 0)
 		{
 			X1 = (pow(2 * M1 - C, 1.0 / 2) + pow(-(2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C, 1.0 / 2)) / 2;
 			X1 = X1 - B2 / 4;
 			count++;
-		}
-		if (2 * M1 - C > 0 && (-(2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C) > 0)
-		{
-			X2 = (pow(2 * M1 - C, 1.0 / 2) - pow(-(2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C, 1.0 / 2)) / 2;
+			X2 = (-pow(2 * M1 - C, 1.0 / 2) + pow((2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C, 1.0 / 2)) / 2;
 			X2 = X2 - B2 / 4;
 			count++;
+			K = count;
 		}
-		if (2 * M1 - C > 0 && ((2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C) > 0)
+		if (2 * M1 - C == 0)
 		{
-			X3 = (-pow(2 * M1 - C, 1.0 / 2) + pow((2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C, 1.0 / 2)) / 2;
-			X3 = X3 - B2 / 4;
-			count++;
+			X1 = pow(-M1, 1.0 / 2);
+			X2 = -pow(-M1, 1.0 / 2);
+			K = 2;
+			count = 2;
 		}
-		if (2 * M1 - C > 0 && ((2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C) > 0)
+		else
 		{
-			X4 = (-pow(2 * M1 - C, 1.0 / 2) - pow((2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C, 1.0 / 2)) / 2;
-			X4 = X4 - B2 / 4;
-			count++;
+			if (2 * M1 - C > 0 && (-(2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C) > 0)
+			{
+				X1 = (pow(2 * M1 - C, 1.0 / 2) + pow(-(2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C, 1.0 / 2)) / 2;
+				X1 = X1 - B2 / 4;
+				count++;
+			}
+			if (2 * M1 - C > 0 && (-(2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C) > 0)
+			{
+				X2 = (pow(2 * M1 - C, 1.0 / 2) - pow(-(2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C, 1.0 / 2)) / 2;
+				X2 = X2 - B2 / 4;
+				count++;
+			}
+			if (2 * M1 - C > 0 && ((2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C) > 0)
+			{
+				X3 = (-pow(2 * M1 - C, 1.0 / 2) + pow((2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C, 1.0 / 2)) / 2;
+				X3 = X3 - B2 / 4;
+				count++;
+			}
+			if (2 * M1 - C > 0 && ((2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C) > 0)
+			{
+				X4 = (-pow(2 * M1 - C, 1.0 / 2) - pow((2 * D) / pow(2 * M1 - C, 1.0 / 2) - 2 * M1 - C, 1.0 / 2)) / 2;
+				X4 = X4 - B2 / 4;
+				count++;
+			}
+			K = count;
 		}
-		K = count;
 	}
 	if (K != 0)
 		while (X1 == FLT_MIN)
@@ -239,7 +297,6 @@ void GiaiPT_Bac4(float A, float B, float C, float D, float E, float& X1, float& 
 				X4 = FLT_MIN;
 			}
 		}
-
 	for (int i = 0; i < count; i++)
 	{
 		if (X1 > X2 && X2 != FLT_MIN)

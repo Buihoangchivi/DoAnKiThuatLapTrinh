@@ -22,7 +22,7 @@ void PT4(float a, float b, float c);
 void PT5(float a, float b, float c, float d);
 void PT6(float a, float b, float c, float d, float e);
 void PT7(float a, float b, float c);
-void PT8(float a, float b, float c);
+void PT8(float a, float b);
 void PT9(float a, float b, float c, float d);
 void PT10(float a, float b, float c, float d, float e);
 void PT11(float a);
