@@ -13,13 +13,13 @@ void TapXacDinh(int k, float a, float b, float c, float d, float e)
 {
 	switch (k)
 	{
-	case 1:case 2:case 3:case 4:case 13:case 14:case 15:
+	case 1:case 2:case 3:case 4:case 13:case 14:case 15:case 24:case 25:case 26:case 27:
 		TapXacDinh_1();
 		break;
-	case 5:
+	case 5:case 28:
 		TapXacDinh_2(a, b, c, d);
 		break;
-	case 6:
+	case 6:case 29:
 		TapXacDinh_3(a, b, c, d, e);
 		break;
 	case 11:

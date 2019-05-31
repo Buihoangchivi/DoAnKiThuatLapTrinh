@@ -1,10 +1,13 @@
-#include "Equation.h"
+﻿#include "Equation.h"
 #include <iostream>
 #include <cmath>
 #define epsilon 1e-5
 #define PI 3.14159265
 
 using namespace std;
+
+int count1 = 0;
+int count2 = 0;
 
 float Equa_1(float a, float b, float x)
 {
@@ -306,4 +309,272 @@ void GiaiPT_Bac4(float A, float B, float C, float D, float E, float& X1, float& 
 		if (X3 > X4 && X4 != FLT_MIN)
 			swap(X3, X4);
 	}
+}
+
+// Tính giá trị biểu thức bậc 4 đủ
+float Equa_4s(float a, float b, float c, float d, float e, float x)
+{
+	return a * pow(x, 4) + b * pow(x, 3) + c * pow(x, 2) + d * x + e;
+}
+// Tính giá trị biểu thức bậc 5 đủ
+float Equa_5s(float a, float b, float c, float d, float e, float f, float x)
+{
+	return a * pow(x, 5) + b * pow(x, 4) + c * pow(x, 3) + d * pow(x, 2) + e * x + f;
+}
+
+// Hàm tìm nghiệm bậc 5 của pt đồng biến
+float FindSolution5_1(float a, float b, float c, float d, float e, float f, float start, float end)
+{
+	if (start <= end)
+	{
+		float mid = start + (end - start) / 2;
+		if (fabs(Equa_5s(a, b, c, d, e, f, mid)) < 1e-2)
+			return mid;
+		if (count1 == 500)
+		{
+			return FLT_MIN;
+		}
+		if (Equa_5s(a, b, c, d, e, f, mid) > 0)
+		{
+			count1++;
+			return FindSolution5_1(a, b, c, d, e, f, start, mid);
+		}
+		count1++;
+		return FindSolution5_1(a, b, c, d, e, f, mid, end);
+	}
+	return FLT_MIN;
+}
+
+// Hàm tìm nghiệm bậc 5 của pt nghịch biến
+float FindSolution5_2(float a, float b, float c, float d, float e, float f, float start, float end)
+{
+	if (start <= end)
+	{
+		float mid = start + (end - start) / 2;
+		if (fabs(Equa_5s(a, b, c, d, e, f, mid)) < 1e-2)
+			return mid;
+		if (count2 == 500)
+		{
+			return FLT_MIN;
+		}
+		if (Equa_5s(a, b, c, d, e, f, mid) < 0)
+		{
+			count2++;
+			return FindSolution5_2(a, b, c, d, e, f, start, mid);
+		}
+		count2++;
+		return FindSolution5_2(a, b, c, d, e, f, mid, end);
+	}
+	return FLT_MIN;
+}
+
+void GiaiPT_Bac5(float a, float b, float c, float d, float e, float f, float& x1, float& x2, float& x3, float& x4, float& x5, short& k)
+{
+	k = 0;
+	float start = -100, end = 100;
+	int count = 0;
+	float A = 5 * a, B = 4 * b, C = 3 * c, D = 2 * d, E = e;
+	float X, Y, Z, T;
+	short K;
+	x1 = FLT_MIN, x2 = FLT_MIN, x3 = FLT_MIN, x4 = FLT_MIN, x5 = FLT_MIN;
+	float Fx1 = FLT_MIN, Fx2 = FLT_MIN, Fx3 = FLT_MIN, Fx4 = FLT_MIN;
+	GiaiPT_Bac4(A, B, C, D, E, X, Y, Z, T, K);
+	if (K == 0)
+	{
+		if (Equa_4s(A, B, C, D, E, 0) > 0)
+			FindSolution5_1(a, b, c, d, e, f, start, end);
+		else
+			FindSolution5_2(a, b, c, d, e, f, start, end);
+		count1 = 0;
+		count2 = 0;
+	}
+	else if (K > 0)
+	{
+		Fx1 = Equa_5s(a, b, c, d, e, f, X);
+		count++;
+		if (Equa_4s(A, B, C, D, E, X + epsilon) * Equa_4s(A, B, C, D, E, X - epsilon) < 0)
+		{
+			if (Equa_4s(A, B, C, D, E, X - epsilon) > 0)
+			{
+				if (FindSolution5_1(a, b, c, d, e, f, start, X) != FLT_MIN)
+				{
+					x1 = FindSolution5_1(a, b, c, d, e, f, start, X);
+					k++;
+				}
+			}
+			else if (Equa_4s(A, B, C, D, E, X - epsilon) < 0)
+			{
+				if (FindSolution5_2(a, b, c, d, e, f, start, X) != FLT_MIN)
+				{
+					x1 = FindSolution5_2(a, b, c, d, e, f, start, X);
+					k++;
+				}
+
+			}
+		}
+		count1 = 0;
+		count2 = 0;
+	}
+
+	if (K > 1)
+	{
+		Fx2 = Equa_5s(a, b, c, d, e, f, Y);
+		count++;
+		if (Equa_4s(A, B, C, D, E, Y + epsilon) * Equa_4s(A, B, C, D, E, Y - epsilon) < 0)
+		{
+			if (Equa_4s(A, B, C, D, E, Y - epsilon) > 0)
+			{
+				if (FindSolution5_1(a, b, c, d, e, f, X, Y) != FLT_MIN)
+				{
+					x2 = FindSolution5_1(a, b, c, d, e, f, X, Y);
+					k++;
+				}
+			}
+			else if (Equa_4s(A, B, C, D, E, Y - epsilon) < 0)
+			{
+				if (FindSolution5_2(a, b, c, d, e, f, X, Y) != FLT_MIN)
+				{
+					x2 = FindSolution5_2(a, b, c, d, e, f, X, Y);
+					k++;
+				}
+
+			}
+		}
+		count1 = 0;
+		count2 = 0;
+		if (k == 2)
+		{
+			count++;
+			if (Equa_4s(A, B, C, D, E, Y + epsilon) > 0)
+			{
+				x3 = FindSolution5_1(a, b, c, d, e, f, Y, end);
+				k++;
+			}
+			else if (Equa_4s(A, B, C, D, E, Y + epsilon) < 0)
+			{
+				x3 = FindSolution5_2(a, b, c, d, e, f, Y, end);
+				k++;
+			}
+			count1 = 0;
+			count2 = 0;
+			return;
+		}
+	}
+	if (K > 2)
+	{
+
+		Fx3 = Equa_5s(a, b, c, d, e, f, Z);
+		count++;
+		if (Equa_4s(A, B, C, D, E, Z + epsilon) * Equa_4s(A, B, C, D, E, Z - epsilon) < 0)
+		{
+			if (Equa_4s(A, B, C, D, E, Z - epsilon) > 0)
+			{
+				if (FindSolution5_1(a, b, c, d, e, f, Y, Z) != FLT_MIN)
+				{
+					x3 = FindSolution5_1(a, b, c, d, e, f, Y, Z);
+					k++;
+				}
+			}
+			else if (Equa_4s(A, B, C, D, E, Z - epsilon) < 0)
+			{
+				if (FindSolution5_2(a, b, c, d, e, f, Y, Z) != FLT_MIN)
+				{
+					x3 = FindSolution5_2(a, b, c, d, e, f, Y, Z);
+					k++;
+				}
+			}
+		}
+		count1 = 0;
+		count2 = 0;
+		if (K == 3)
+		{
+			count++;
+			if (Equa_4s(A, B, C, D, E, Z + epsilon) > 0)
+			{
+				x4 = FindSolution5_1(a, b, c, d, e, f, Z, end);
+				k++;
+			}
+			else if (Equa_4s(A, B, C, D, E, Z + epsilon) < 0)
+			{
+				x4 = FindSolution5_2(a, b, c, d, e, f, Z, end);
+				k++;
+			}
+			count1 = 0;
+			count2 = 0;
+			return;
+		}
+	}
+	if (K > 3)
+	{
+		Fx4 = Equa_5s(a, b, c, d, e, f, T);
+		count++;
+		if (Equa_4s(A, B, C, D, E, T + epsilon) * Equa_4s(A, B, C, D, E, T - epsilon) < 0)
+		{
+			if (Equa_4s(A, B, C, D, E, T - epsilon) > 0)
+			{
+				if (FindSolution5_1(a, b, c, d, e, f, Z, T) != FLT_MIN)
+				{
+					x4 = FindSolution5_1(a, b, c, d, e, f, Z, T);
+					k++;
+				}
+			}
+			else if (Equa_4s(A, B, C, D, E, T - epsilon) < 0)
+			{
+				//if (FindSolution5_2(a, b, c, d, e, f, Z, T) != FLT_MIN)
+				if (FindSolution5_2(a, b, c, d, e, f, Z, T) != FLT_MIN)
+				{
+					x4 = FindSolution5_2(a, b, c, d, e, f, Z, T);
+					k++;
+				}
+
+			}
+		}
+		count1 = 0;
+		count2 = 0;
+	}
+	if (Equa_4s(A, B, C, D, E, T + epsilon) > 0)
+	{
+		x5 = FindSolution5_1(a, b, c, d, e, f, T, end);
+		k++;
+	}
+	else if (Equa_4s(A, B, C, D, E, T + epsilon) < 0)
+	{
+		x5 = FindSolution5_2(a, b, c, d, e, f, T, end);
+		k++;
+	}
+	count1 = 0;
+	count2 = 0;
+	if (k != 0)
+		while (x1 == FLT_MIN)
+		{
+			if (k == 1)
+			{
+				for (int i = 0; i < 4; i++)
+				{
+					swap(x1, x2);
+					swap(x2, x3);
+					swap(x3, x4);
+				}
+			}
+			for (int i = 0; i < K; i++)
+			{
+				x1 = x2;
+				x2 = x3;
+				x3 = x4;
+				x4 = x5;
+				x5 = FLT_MIN;
+			}
+		}
+	for (int i = 0; i < k; i++)
+		for (int j = i + 1; j < k; j++)
+		{
+			if (x1 == FLT_MIN && x2 != FLT_MIN)
+				swap(x1, x2);
+			if (x2 == FLT_MIN && x3 != FLT_MIN)
+				swap(x2, x3);
+			if (x3 == FLT_MIN && x4 != FLT_MIN)
+				swap(x3, x4);
+			if (x4 == FLT_MIN && x5 != FLT_MIN)
+				swap(x4, x5);
+		}
 }

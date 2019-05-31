@@ -69,9 +69,6 @@ void BBT(int k, float a, float b, float c, float d, float e)
 	case 22:
 		BBT22(a, b, c, d);
 		break;
-	case 23:
-		BBT23(a, b, c, d, e);
-		break;
 	default:
 		break;
 	}
@@ -745,6 +742,7 @@ void BBT18(float a, float b) {
 			fprintf(output, "Ham so khong co bang bien thien\n");
 	}
 }
+
 void BBT19(float a, float b, float c) {
 	if (a == 0) {
 		BBT1(b, c);
@@ -3226,6 +3224,7 @@ void BBT20(float a, float b, float c, float d)
 		}
 	}
 }
+
 void BBT21(float a, float b, float c)
 {
 	if (a == 0)
@@ -3709,7 +3708,7 @@ void BBT21(float a, float b, float c)
 	}
 }
 
-void XetDau22(float a, float b, float c, float d)
+void BBT22(float a, float b, float c, float d)
 {
 	if (a == 0)
 	{

@@ -507,7 +507,7 @@ void Ham_Khac(int& k, int temp)
 		fprintf(stdout, "Nhap 4: Chon Ham so ax^4 + bx^2 + c\n");
 		fprintf(stdout, "Nhap 5: Chon Ham so (ax + b) / (cx + d)\n");
 		fprintf(stdout, "Nhap 6: Chon Ham so (ax^2 + bx + c) / (dx + e)\n");
-		fprintf(stdout, "Nhap 0: De dung chuong trinh\n");
+		fprintf(stdout, "Nhap 0: De chon lai mot Ham so khac\n");
 		fprintf(stdout, "Nhap vao 1 so N: ");
 		while (true)
 		{
@@ -519,7 +519,11 @@ void Ham_Khac(int& k, int temp)
 			}
 			else break;
 		}
-		if (n == 0) return;
+		if (n == 0)
+		{
+			k = 0;
+			return;
+		}
 		k += n;
 	}
 }
@@ -541,7 +545,7 @@ void CacHamSoKhac(int& k, float& a, float& b, float& c, float& d, float& e)
 		fprintf(stdout, "Nhap 11: Chon Ham so y = Cotan(x)\n");
 		fprintf(stdout, "Nhap 12: Ban muon tinh ham can thuc cua cac ham so co ban\n");
 		fprintf(stdout, "Nhap 13: Ban muon tinh ham tri tuyet doi cua cac ham so co ban\n");
-		fprintf(stdout, "Nhap 0 : De dung chuong trinh\n");
+		fprintf(stdout, "Nhap 0 : De chon lai mot Ham so khac\n");
 		fprintf(stdout, "Nhap vao 1 so N: ");
 		while (true)
 		{

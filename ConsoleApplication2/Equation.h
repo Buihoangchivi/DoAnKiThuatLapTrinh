@@ -14,5 +14,10 @@ void Equa_10(float a, float b, float c, float d, float e, float x, float &y1, fl
 void GiaiPT_Bac2(float a, float b, float c, float &x, float &y, short &k);
 void GiaiPT_Bac3(float A, float B, float C, float D, float& X1, float& X2, float& X3, short& K);
 void GiaiPT_Bac4(float A, float B, float C, float D, float E, float& X1, float& X2, float& X3, float& X4, short& K);
+float Equa_4s(float a, float b, float c, float d, float e, float x);
+float Equa_5s(float a, float b, float c, float d, float e, float f, float x);
+float FindSolution5_1(float a, float b, float c, float d, float e, float f, float start, float end);
+float FindSolution5_2(float a, float b, float c, float d, float e, float f, float start, float end);
+void GiaiPT_Bac5(float a, float b, float c, float d, float e, float f, float& x1, float& x2, float& x3, float& x4, float& x5, short& k);
 
 #endif

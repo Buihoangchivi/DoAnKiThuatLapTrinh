@@ -21,6 +21,5 @@ void BBT19(float a, float b, float c);
 void BBT20(float a, float b, float c, float d);
 void BBT21(float a, float b, float c);
 void BBT22(float a, float b, float c, float d);
-void BBT23(float a, float b, float c, float d, float e);
 
 #endif

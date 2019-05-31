@@ -897,8 +897,7 @@ void PT23(float a, float b, float c, float d, float e)
 				{
 					swap(x3, x2);
 					swap(x2, x1);
-				}/*
-				a = a / d;*/
+				}
 				if (a * d > 0)
 				{
 					if (x1 == x2)
@@ -1063,6 +1062,84 @@ void PT23(float a, float b, float c, float d, float e)
 	glEnd();
 }
 
+float min(float a, float b)
+{
+	if (a < b) return a;
+	return b;
+}
+
+void PT24(float a, float b)
+{
+	glColor3f(0, 1, 1);
+	glBegin(GL_LINES);
+	for (float i = xMin; i <= xMax; i += cl)
+	{
+		glVertex2f(i, fabs(Equa_1(a, b, i)));
+		glVertex2f(i + cl, min(yMax, fabs(Equa_1(a, b, i + cl))));
+	}
+	glEnd();
+}
+
+void PT25(float a, float b, float c)
+{
+	glColor3f(1, 1, 0);
+	glBegin(GL_LINES);
+	for (float i = xMin; i < xMax; i += cl)
+	{
+		glVertex2f(i, fabs(Equa_2(a, b, c, i)));
+		glVertex2f(i + cl, min(yMax, fabs(Equa_2(a, b, c, i + cl))));
+	}
+	glEnd();
+}
+
+void PT26(float a, float b, float c, float d)
+{
+	glColor3f(0, 0, 1);
+	glBegin(GL_LINES);
+	for (float i = xMin; i <= xMax; i += cl)
+	{
+		glVertex2f(i, fabs(Equa_3(a, b, c, d, i)));
+		glVertex2f(i + cl, min(yMax, fabs(Equa_3(a, b, c, d, i + cl))));
+	}
+	glEnd();
+}
+
+void PT27(float a, float b, float c)
+{
+	glColor3f(1, 0, 0);
+	glBegin(GL_LINES);
+	for (float i = xMin; i < xMax; i += cl)
+	{
+		glVertex2f(i, fabs(Equa_4(a, b, c, i)));
+		glVertex2f(i + cl, min(yMax, fabs(Equa_4(a, b, c, i + cl))));
+	}
+	glEnd();
+}
+
+void PT28(float a, float b, float c, float d)
+{
+	glColor3f(0, 1, 0);
+	glBegin(GL_LINES);
+	for (float i = xMin; i <= xMax; i += cl)
+	{
+		glVertex2f(i, fabs(Equa_5(a, b, c, d, i)));
+		glVertex2f(i + cl, min(yMax, fabs(Equa_5(a, b, c, d, i + cl))));
+	}
+	glEnd();
+}
+
+void PT29(float a, float b, float c, float d, float e)
+{
+	glColor3f(1, 0, 1);
+	glBegin(GL_LINES);
+	for (float i = xMin; i <= xMax; i += cl)
+	{
+		glVertex2f(i, fabs(Equa_6(a, b, c, d, e, i)));
+		glVertex2f(i + cl, min(yMax, fabs(Equa_6(a, b, c, d, e, i + cl))));
+	}
+	glEnd();
+}
+
 void Display(void)
 {
 	/* draw unit square polygon */
@@ -1167,6 +1244,24 @@ void Display(void)
 			break;
 		case 23:
 			PT23(arr_a[i], arr_b[i], arr_c[i], arr_d[i], arr_e[i]);
+			break;
+		case 24:
+			PT24(arr_a[i], arr_b[i]);
+			break;
+		case 25:
+			PT25(arr_a[i], arr_b[i], arr_c[i]);
+			break;
+		case 26:
+			PT26(arr_a[i], arr_b[i], arr_c[i], arr_d[i]);
+			break;
+		case 27:
+			PT27(arr_a[i], arr_b[i], arr_c[i]);
+			break;
+		case 28:
+			PT28(arr_a[i], arr_b[i], arr_c[i], arr_d[i]);
+			break;
+		case 29:
+			PT29(arr_a[i], arr_b[i], arr_c[i], arr_d[i], arr_e[i]);
 			break;
 		default:
 			break;
