@@ -4,10 +4,10 @@
 //Tìm đạo hàm và xét dấu các hàm số với các hệ số tương ứng
 void DaoHam_XetDau(int k, float a, float b, float c, float d, float e);
 
-//Xét dấu đạo hàm Hàm số hằng y = ax + b
+//Xét dấu đạo hàm Hàm số bậc nhất y = ax + b
 void XetDau0(float a);
 
-//Xét dấu đạo hàm Hàm số bậc nhất ax^2 + bx + c
+//Xét dấu đạo hàm Hàm số bậc hai ax^2 + bx + c
 void XetDau1(float a, float b);
 
 //Xét dấu đạo hàm Hàm số bậc ba ax^3 + bx^2 + cx + d
