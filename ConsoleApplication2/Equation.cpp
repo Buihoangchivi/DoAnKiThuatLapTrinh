@@ -41,8 +41,8 @@ float Equa_6(float a, float b, float c, float d, float e, float x)
 
 void Equa_7(float a, float b, float r, float x, float& y1, float& y2)
 {
-	y1 = -sqrt(r * r - (x - a) * (x - a));
-	y2 = -y1;
+	y1 = -sqrt(r * r - (x - a) * (x - a)) + b;
+	y2 = sqrt(r * r - (x - a) * (x - a)) + b;
 }
 
 void Equa_8(float a, float b, float x, float& y1, float& y2)
