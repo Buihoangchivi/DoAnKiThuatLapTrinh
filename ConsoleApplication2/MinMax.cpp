@@ -13,7 +13,7 @@ void MinMax(int k, float a, float b, float c, float d, float e)
 {
 	switch (k)
 	{
-	case 1:case 11:case 12:case 13:
+	case 1:case 5:case 11:case 12:case 13:case 14:case 15:case 18:
 	{
 		MinMax_1();
 		break;
@@ -33,34 +33,16 @@ void MinMax(int k, float a, float b, float c, float d, float e)
 		MinMax_4(a, b, c);
 		break;
 	}
-	case 5:
-	{
-		MinMax_5();
-		break;
-	}
 	case 6:
 	{
 		MinMax_6(a, b, c, d, e);
 		break;
 	}
-	case 14:
-	{
-		MinMax_17();
-		break;
-	}
-
-	case 15:
-	{
-		MinMax_15();
-		break;
-	}
-
 	case 16:
 	{
 		MinMax_16();
 		break;
 	}
-
 	case 17:
 	{
 		MinMax_17();
@@ -213,11 +195,6 @@ void MinMax_4(float a, float b, float c)
 	}
 }
 
-void MinMax_5()
-{
-	fprintf(output, "\nHam so khong co cuc tieu hay cuc dai !!!\n\n");
-}
-
 void MinMax_6(float a, float b, float c, float d, float e)
 {
 	float a1 = a * d;
@@ -243,7 +220,7 @@ void MinMax_6(float a, float b, float c, float d, float e)
 	}
 }
 
-void MinMax_14()
+void MinMax_16()
 {
 	if (output == stdout) fprintf(output, "Ham so co cuc tieu tai cac diem (-%c/2 + k* 2%c,-1), k thuoc Z\n\n", (char)227, (char)227);
 	else fprintf(output, "Ham so co cuc tieu tai cac diem (-Pi/2 + k* 2Pi,-1), k thuoc Z\n\n");
@@ -251,7 +228,7 @@ void MinMax_14()
 	else fprintf(output, "Ham so co cuc dai tai cac diem (Pi/2 + k* 2Pi,1), k thuoc Z\n\n");
 }
 
-void MinMax_15()
+void MinMax_17()
 {
 	if (output == stdout) fprintf(output, "Ham so co cuc tieu tai cac diem (%c + k* 2%c,-1), k thuoc Z\n\n", (char)227, (char)227);
 	else fprintf(output, "Ham so co cuc tieu tai cac diem (Pi + k* 2Pi,-1), k thuoc Z\n\n");
@@ -259,32 +236,9 @@ void MinMax_15()
 	else fprintf(output, "Ham so co cuc dai tai cac diem (k* 2Pi,1), k thuoc Z\n\n");
 }
 
-void MinMax_16()
-{
-	fprintf(output, "\nHam so khong co cuc tri!!!\n\n");
-}
-
-void MinMax_17()
-{
-	fprintf(output, "Ham so khong co cuc tri!!!\n\n");
-}
-
-void MinMax_18(float a, float b) {
-	if (a > 0) {
-		fprintf(output, "Ham so khong co cuc tri\n");
-	}
-	else {
-		if (a != 0) {
-			fprintf(output, "Ham so khong co cuc tri\n");
-		}
-		else
-			fprintf(output, "Ham so khong co cuc tri\n");
-	}
-}
-
 void MinMax_19(float a, float b, float c) {
 	if (a == 0) {
-		MinMax_18(b, c);
+		MinMax_1(b, c);
 	}
 	else {
 		float x, y;
