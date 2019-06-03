@@ -543,8 +543,8 @@ void CacHamSoKhac(int& k, float& a, float& b, float& c, float& d, float& e)
 		fprintf(stdout, "Nhap 9 : Chon Ham so y = Cos(x)\n");
 		fprintf(stdout, "Nhap 10: Chon Ham so y = Tan(x)\n");
 		fprintf(stdout, "Nhap 11: Chon Ham so y = Cotan(x)\n");
-		fprintf(stdout, "Nhap 12: Ban muon tinh ham can thuc cua cac ham so co ban\n");
-		fprintf(stdout, "Nhap 13: Ban muon tinh ham tri tuyet doi cua cac ham so co ban\n");
+		fprintf(stdout, "Nhap 12: Ban muon khao sat ham can thuc cua cac ham so co ban\n");
+		fprintf(stdout, "Nhap 13: Ban muon khao sat ham tri tuyet doi cua cac ham so co ban\n");
 		fprintf(stdout, "Nhap 0 : De chon lai mot Ham so khac\n");
 		fprintf(stdout, "Nhap vao 1 so N: ");
 		while (true)
